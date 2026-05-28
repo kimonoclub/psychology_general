@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理学入門：記憶・運動・睡眠の進化論的アプローチ（ビジュアル副読本）</title>
+    
+    <!-- Google Fonts: 格調高い日本語明朝体と洗練された英字セリフ体の組み合わせ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* ==========================================
+           1. CORE DESIGN SYSTEM (WEB VIEW)
+           ========================================== */
+        :root {
+            --primary-color: #1a3022;    /* 墨緑（深緑） */
+            --accent-color: #af5239;     /* 煉瓦色（テラコッタサビオレンジ） */
+            --bg-color: #f6f8f6;         /* 生成り・薄いサージ */
+            --text-color: #2b3530;       /* 鉄紺・墨黒 */
+            --light-card: #ffffff;       /* 白色 */
+            --border-color: #d8e0da;     /* 薄灰緑 */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2e7e4;
+            color: var(--text-color);
+            font-family: 'Noto Serif JP', serif;
+            font-size: 16px;
+            line-height: 1.9;
+            margin: 0;
+            padding: 40px 0;
+        }
+
+        /* 本のページを模したコンテナ（Web上での見え方） */
+        .book-container {
+            background-color: var(--bg-color);
+            box-shadow: 0 15px 45px rgba(27, 41, 33, 0.15);
+            margin: 0 auto;
+            max-width: 840px;
+            padding: 80px 90px;
+            position: relative;
+        }
+
+        /* ==========================================
+           2. TYPOGRAPHY & HIGHLIGHTS
+           ========================================== */
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        p {
+            margin: 0 0 1.6em 0;
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+
+        /* 太字マーカーの装飾 */
+        .highlight {
+            border-bottom: 2px solid rgba(175, 82, 57, 0.3);
+            font-weight: 700;
+            color: #1a3022;
+        }
+
+        .bold-text {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* ==========================================
+           3. COVER PAGE (表紙デザイン)
+           ========================================== */
+        .cover-page {
+            align-items: center;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            padding: 60px 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        .cover-page::before {
+            border: 1px solid var(--border-color);
+            content: '';
+            bottom: 12px;
+            left: 12px;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .cover-header {
+            z-index: 1;
+        }
+
+        .cover-header .subject {
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .cover-header hr {
+            border: none;
+            border-top: 1px solid var(--accent-color);
+            margin: 15px auto;
+            width: 80px;
+        }
+
+        .cover-title {
+            margin: 40px 0;
+            z-index: 1;
+        }
+
+        .cover-title h1 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+        }
+
+        .cover-title .subtitle {
+            color: var(--accent-color);
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        .cover-image {
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            height: 380px;
+            overflow: hidden;
+            width: 100%;
+            z-index: 1;
+            margin: 30px 0;
+        }
+
+        .cover-image img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            display: block;
+        }
+
+        .cover-footer {
+            z-index: 1;
+        }
+
+        .cover-footer .author {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .cover-footer .school {
+            color: #707b73;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* ==========================================
+           4. BOOK LAYOUT ELEMENTS (章・セクション)
+           ========================================== */
+        .chapter {
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .chapter-num {
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .chapter-title {
+            border-bottom: 2px solid var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+
+        /* サブタイトル付きセクション見出し */
+        .section-header {
+            align-items: center;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            justify-content: space-between;
+            margin: 45px 0 25px 0;
+            padding-left: 18px;
+        }
+
+        .section-header h3 {
+            font-size: 21px;
+        }
+
+        .section-header .en-title {
+            color: #707b73;
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* 視覚的イラスト枠・カード */
+        .visual-illustration {
+            background-color: var(--light-card);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(27, 41, 33, 0.03);
+            margin: 35px 0;
+            overflow: hidden;
+        }
+
+        .visual-illustration img {
+            display: block;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            width: 100%;
+        }
+
+        .visual-illustration .caption {
+            background-color: #f8faf9;
+            border-top: 1px solid var(--border-color);
+            color: #5c6a61;
+            font-size: 13px;
+            font-style: italic;
+            padding: 12px 20px;
+            text-align: center;
+        }
+
+        /* 重要な定義ボックス */
+        .definition-box {
+            background-color: #ffffff;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 8px 8px 0;
+            border: 1px solid var(--border-color);
+            border-left-width: 4px;
+            margin: 30px 0;
+            padding: 24px 30px;
+        }
+
+        .definition-box h4 {
+            color: var(--primary-color);
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .definition-box p {
+            font-size: 15px;
+            margin: 0;
+        }
+
+        /* コラム風アサイド（サバンナの知恵） */
+        .aside-column {
+            background-color: #fbf5f2; /* 薄いテラコッタベージュ */
+            border-radius: 8px;
+            border: 1px dashed var(--accent-color);
+            margin: 40px 0;
+            padding: 30px 35px;
+        }
+
+        .aside-column h4 {
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .aside-column h4 i {
+            margin-right: 8px;
+        }
+
+        .aside-column p {
+            font-size: 14.5px;
+            margin-bottom: 0;
+        }
+
+        /* 学問的繋がり復習コラム */
+        .linkage-column {
+            background-color: #f4f7f5; /* 薄いサージグリーン */
+            border-radius: 8px;
+            border: 1px solid var(--primary-color);
+            margin: 45px 0;
+            padding: 30px 35px;
+        }
+
+        .linkage-column h4 {
+            color: var(--primary-color);
+            font-size: 18px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .linkage-column h4 i {
+            margin-right: 8px;
+        }
+
+        .linkage-column p {
+            font-size: 14.5px;
+            margin-bottom: 1em;
+        }
+
+        .linkage-column p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 学術的テーブル設計 */
+        .comparison-table {
+            border-collapse: collapse;
+            margin: 35px 0;
+            width: 100%;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 20px;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+        }
+
+        .comparison-table tr:nth-child(even) td {
+            background-color: #f8faf9;
+        }
+
+        /* レスポンシブ＆ノンブル用擬似フッター */
+        .book-footer {
+            border-top: 1px solid var(--border-color);
+            color: #707b73;
+            display: flex;
+            font-size: 12px;
+            justify-content: space-between;
+            margin-top: 80px;
+            padding-top: 15px;
+        }
+
+        /* ==========================================
+           5. INTERACTIVE ASSIGNMENT FORM (提出セクション)
+           ========================================== */
+        .assignment-section {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            margin-top: 100px;
+            padding: 60px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(26, 48, 34, 0.15);
+        }
+
+        .assignment-section h2 {
+            color: #ffffff;
+            font-size: 26px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            color: #e2e7e4;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .input-group input[type="text"], 
+        .input-group textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        .input-group input[type="text"]:focus, 
+        .input-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .quiz-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quiz-item p {
+            margin-bottom: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .quiz-options label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: color 0.2s;
+            color: #d8e0da;
+        }
+
+        .quiz-options label:hover {
+            color: #ffffff;
+        }
+
+        .quiz-options input[type="radio"] {
+            accent-color: var(--accent-color);
+            width: 18px;
+            height: 18px;
+        }
+
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(175, 82, 57, 0.3);
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background-color: #943d2b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(175, 82, 57, 0.4);
+        }
+
+        /* ==========================================
+           6. PRINT OPTIMIZATION (PDF化・印刷用)
+           ========================================== */
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+                font-size: 14pt; /* A4書籍サイズに最適化 */
+                line-height: 1.8;
+                padding: 0;
+            }
+
+            .book-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .cover-page {
+                height: 280mm; /* A4用紙の縦長にフィッティング */
+                margin-bottom: 0;
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .chapter {
+                margin-top: 0;
+                page-break-before: always;
+                break-before: page;
+            }
+
+            h2, h3, h4 {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            .visual-illustration, .definition-box, .aside-column, .linkage-column, .comparison-table {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .assignment-section {
+                display: none; /* 提出セクションは印刷しない */
+            }
+
+            .definition-box {
+                border-left-color: #000000 !important;
+            }
+            
+            .aside-column, .linkage-column {
+                border-color: #000000 !important;
+                background-color: #f9f9f9 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="book-container">
+
+    <!-- ==========================================
+         COVER PAGE (表紙)
+         ========================================== -->
+    <div class="cover-page">
+        <div class="cover-header">
+            <span class="subject">Psychology General &amp; Evolutionary Science</span>
+            <hr>
+        </div>
+        
+        <div class="cover-title">
+            <h1>心理学入門</h1>
+            <div class="subtitle">記憶・運動・睡眠の進化論的アプローチ</div>
+        </div>
+        
+        <div class="cover-image">
+            <img src="1.png" alt="心理学入門復習心理学入門エビングハウス記憶" onerror="this.src='https://placehold.co/800x400/1a3022/ffffff?text=Psychology+General'">
+        </div>
+        
+        <div class="cover-footer">
+            <p class="author">心理学入門 講義副読本</p>
+            <p class="school">第5回 フォローアップ学習教材</p>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         CHAPTER 1 (記憶のメカニズムと系列位置効果)
+         ========================================== -->
+    <div class="chapter" id="chap1">
+        <div class="chapter-num">01</div>
+        <h2 class="chapter-title">記憶のメカニズムと系列位置効果</h2>
+        
+        <p>私たちが日々の生活の中で経験した出来事や、授業で新しく学習した知識を脳の中に保存し、後で必要なときに思い出すための一連のプロセスを<strong class="highlight">「記憶（Memory）」</strong>と呼びます。心理学の歴史において、この記憶という現象を初めて科学的かつ定量的に測定することに挑戦したのが、ドイツの心理学者であるヘルマン・エビングハウス（Hermann Ebbinghaus）です。彼は、過去の先入観や個人的なイメージによる影響を徹底的に排除するため、母音と子音を組み合わせた意味を持たない単語（無意味つづり：例えば <strong class="bold-text">「BIT」</strong> や <strong class="bold-text">「JAT」</strong>、<strong class="bold-text">「KOF」</strong> など）を大量に考案し、自分自身を被験者として暗記テストを繰り返しました。</p>
+
+        <p>その結果、一度覚えた情報が時間の経過とともにどのように失われていくかを調べ、グラフに描き表しました。これが有名な「エビングハウスの忘却曲線」です。この研究によって、脳に入ってきた情報は覚えた直後に最も速いスピードで失われ、なんと1日後には全体の約3割ほどしか頭の中に残らないという驚くべき事実が実証されました。つまり、私たちの脳は「そもそも急速に忘れるように作られている」のです。この急速な忘却に抗い、学んだことを知識として定着させるためには、適切なタイミングでの定期的な復習が極めて重要な意味を持ちます。</p>
+
+        <div class="section-header">
+            <h3>系列位置効果とその内的背景</h3>
+            <span class="en-title">Serial Position Effect</span>
+        </div>
+
+        <p>しかし、提示されるすべての情報が、まったく均等に忘れ去られるわけではありません。心理学の実験では、いくつかの単語リストを順番に提示して暗記してもらうと、その単語がリストの中の「どの順番（位置）で提示されたか」によって、明らかに覚えやすさが異なることが分かっています。この現象を<strong class="highlight">「系列位置効果（Serial position effect）」</strong>といいます。この効果を詳細に分析すると、対照的な2つの心理学的メカニズムが見えてきます。</p>
+
+        <div class="definition-box">
+            <h4>初頭効果（Primacy effect）</h4>
+            <p>提示された単語リストの<strong class="bold-text">「最初の方」</strong>にある単語を、比較的よく記憶している現象を指します。これは、最初の方に出てきた情報に対して、私たちの脳が頭の中で何度も繰り返して唱え直す（これを心理学で<strong class="bold-text">「リハーサル」</strong>と呼びます）時間的余裕が十分に確保できるためです。繰り返し唱えられた情報は、一時的な保管場所から、長期的な保存領域である<strong class="bold-text">「長期貯蔵庫」</strong>へと送られ、安定した記憶へと定着していきます。</p>
+        </div>
+
+        <div class="definition-box">
+            <h4>新近効果（Recency effect）</h4>
+            <p>提示された単語リストの<strong class="bold-text">「最後の方」</strong>にある単語を、非常によく記憶している現象を指します。こちらは、直近に目にしたり耳にしたりしたばかりの情報が、いまだ脳内の一時的な作業用記憶スペース（<strong class="bold-text">「短期貯蔵庫」</strong>）の中に、消えずにそのまま留まっているために発生します。まだ記憶がフレッシュな状態であるため、すぐに思い出すことができるのです。</p>
+        </div>
+
+        <div class="visual-illustration">
+            <img src="1.png" alt="エビングハウスの忘却曲線と記憶のプロセス" onerror="this.src='https://placehold.co/800x400/f6f8f6/1a3022?text=Ebbinghaus+Forgetting+Curve'">
+            <div class="caption">図1：エビングハウスの忘却曲線と記憶の保持率の変化プロセス。短期貯蔵庫からリハーサルを経て長期貯蔵庫へと記憶を移すことが定着の鍵となります。</div>
+        </div>
+
+        <p>この系列位置効果をグラフに表すと、最初と最後の正答率が高く、中盤の正答率が大きく落ち込む「U字型」の美しい曲線（系列位置曲線）を描くことになります。これを私たちの身近な大学の講義に当てはめて考えてみましょう。90分間の講義の冒頭で説明された重要な定義（初頭効果）や、最後にまとめとして語られた結論（新近効果）は、私たちの記憶に比較的残りやすいと言えます。しかし、講義の中だるみが生じやすい「中盤の具体的な解説や事例」は、最も脳から抜け落ちやすい弱点エリアなのです。したがって、効率よく自習やテスト勉強を進めるためには、あえて中盤に語られた内容を意識的にピックアップして復習する工夫が必要になります。</p>
+
+        <!-- 義務教育からの復習コラム -->
+        <div class="linkage-column">
+            <h4><i class="fa-solid fa-graduation-cap"></i> 学びの繋がり：小学校での「九九の暗記」を心理学で読み解く</h4>
+            <p>皆さんは小学校2年生の算数の時間、必死になって「九九（くく）」を暗唱した経験があるはずです。あの時、何度も声に出して「ににんがし、にさんがろく……」と繰り返した行為は、心理学における典型的な<strong class="bold-text">「維持リハーサル」</strong>に他なりません。当時の私たちは、九九の数字の意味を深く考える（精緻化する）余裕はなく、ただひたすら音として繰り返すことで、短期貯蔵庫からなんとか長期貯蔵庫へと記憶を転送しようとしていたのです。</p>
+            <p>また、九九を上から順番に暗唱するとき、「最初の一の段や二の段」と「最後の九の段」はスラスラ言えるのに、「七の段や八の段（中盤）」で一瞬つまずいてしまった経験はありませんか？これもまさに、幼少期の皆さんの脳内で<strong class="bold-text">「系列位置効果」</strong>が忠実に作動していた証拠なのです。</p>
+        </div>
+
+        <div class="book-footer">
+            <span>心理学入門：記憶・運動・睡眠の進化論的アプローチ</span>
+            <span>1</span>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         CHAPTER 2 (身体運動と脳の認知機能・BDNF)
+         ========================================== -->
+    <div class="chapter" id="chap2">
+        <div class="chapter-num">02</div>
+        <h2 class="chapter-title">身体運動と脳の認知機能</h2>
+        
+        <p>近年の認知心理学や認知神経科学における最もエキサイティングな発見の一つは、私たちの身体活動（運動）が、脳の記憶力や学習の効率に対して決定的な影響を及ぼしているという客観的事実です。これまで、「勉強中に体を動かすのは集中していない証拠だ」と考えられたり、テスト前に部活動を全面的に休止して机にしがみつくことばかりが推奨されたりしてきました。しかし最新の脳科学は、それがむしろ学習効率を下げている可能性を指摘しています。</p>
+
+        <p>私たちが、息が軽く上がる程度の適度な有酸素運動（例えば早歩きのウォーキングや軽いジョギング、階段の上り下りなど）を行うと、脳の記憶の中枢である「海馬（かいば）」において、<strong class="highlight">「BDNF（脳由来神経栄養因子：Brain-Derived Neurotrophic Factor）」</strong>というタンパク質の一種が劇的に増加することが実証されています。</p>
+
+        <div class="definition-box">
+            <h4>脳由来神経栄養因子（BDNF）とは</h4>
+            <p>脳内の神経細胞（ニューロン）の生存を保護し、新しく健全な神経細胞が誕生することを強力に手助けする、まさに「脳にとっての最高のごちそう（栄養剤）」とも言える物質です。さらに、神経細胞同士の接合部である「シナプス」の結びつきをより柔軟に、かつ強固にアップデートすることで、新しい情報を素早くスムーズに処理・学習する脳のインフラを物理的に作り出す役割を担っています。</p>
+        </div>
+
+        <p>神経科学の研究グループが行った比較実験によれば、ただ机に向かってテキストを黙読し続けるグループよりも、学習の前後に20分程度の軽い運動を挟んだグループの方が、その後のテストにおける記憶の定着率が統計的に有意に高いことが実証されました。身体をアクティブに動かすことは、脳のエネルギーを消費して疲れさせる行為ではなく、むしろ脳が新しい情報を効率よく吸収して長期貯蔵庫へと安定的に保存するための「土壌を豊かに耕す」プロセスなのです。</p>
+
+        <div class="visual-illustration">
+            <img src="2.png" alt="脳内のネットワークとBDNFの作用イメージ" onerror="this.src='https://placehold.co/800x400/f6f8f6/1a3022?text=Brain+Networks+and+BDNF'">
+            <div class="caption">図2：適度な運動をすることによって、脳の深部でBDNFが分泌され、神経細胞が活性化して新たなシナプス結合が次々と形成されるイメージ図。</div>
+        </div>
+
+        <!-- 義務教育からの復習コラム -->
+        <div class="linkage-column">
+            <h4><i class="fa-solid fa-running"></i> 学びの繋がり：中学校・高校の部活動と「保健体育」での睡眠・運動の学び</h4>
+            <p>中学校や高校の「保健体育」の授業で、「適度な運動はストレスを解消し、心身の健康的な発達を促す」と学んだ記憶があると思います。当時の皆さんは「そんなの当たり前だ」「ただ健康に良いだけだろう」と聞き流していたかもしれません。しかし、その身体的な発散が、脳科学的にはまさに脳内のBDNFを活性化させ、皆さんの勉強を大いに助けていたのです。</p>
+            <p>「部活動を一生懸命やっている生徒ほど、引退した後にものすごい集中力を発揮して一気に成績を伸ばす（いわゆる『受験の追い込み力』）」という現象がよく見られます。これも単なる精神論（根性）だけではなく、運動によって日頃から海馬の神経回路（BDNF）が豊かに耕されていたことによって、学力を急速に吸収する脳の基盤（認知的予備能）が完成していたためと説明できるのです。</p>
+        </div>
+
+        <div class="book-footer">
+            <span>心理学入門：記憶・運動・睡眠の進化論的アプローチ</span>
+            <span>2</span>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         CHAPTER 3 (睡眠の機能とレミニセンス現象)
+         ========================================== -->
+    <div class="chapter" id="chap3">
+        <div class="chapter-num">03</div>
+        <h2 class="chapter-title">睡眠の機能とレミニセンス現象</h2>
+        
+        <p>昼間に獲得した情報を脳の中にしっかりと定着させるために、運動に並んで、あるいはそれ以上に重要となる決定的な日常行動が<strong class="highlight">「睡眠（Sleep）」</strong>です。テスト前になると、多くの学生が睡眠時間を削って、いわゆる「一夜漬け」で乗り切ろうと画策します。しかし心理学から見れば、これは自らの記憶力を最も低下させる、著しく非効率なアプローチです。私たちが眠っている間、脳は決して活動を停止して休んでいるわけではなく、起きている間に乱雑に詰め込まれた大量の情報を整理整頓する「大掃除」を自律的に行っています。</p>
+
+        <p>睡眠は、急速な眼球運動を伴う<strong class="bold-text">「レム睡眠（REM sleep）」</strong>と、眼球運動を伴わない深い眠りである<strong class="bold-text">「ノンレム睡眠（Non-REM sleep）」</strong>という対照的な2つのフェーズから構成され、一晩の睡眠の中でこのサイクルが約90分おきに何度も繰り返されています。
+        ノンレム睡眠（特に「徐波睡眠」と呼ばれる最も深い段階）のとき、脳は昼間に学習した「事実や意味、言葉」といった学習情報（エピソード記憶）を、一時的な海馬から強固な大脳皮質へと美しく整理・再配置して長期記憶へと昇華させます。一方、レム睡眠のときには、楽器の演奏やスポーツの技術といった「体で覚える手続き記憶」を定着させるとともに、その日に生じた嫌な気持ちや興奮などの感情の生理的リフレッシュを行っています。</p>
+
+        <div class="definition-box">
+            <h4>レミニセンス現象（Reminiscence）とは</h4>
+            <p>何かを学習した直後のテストよりも、適切な睡眠をしっかりと取って一晩眠った後の方が、むしろ記憶の再生数（思い出す量）やパフォーマンスが飛躍的に向上する心理現象を指します。脳が寝ている時間を利用して、乱雑に散らばっていた情報（知識のピース）を綺麗につなぎ合わせ、整頓してくれたことを証明する重要な現象です。</p>
+        </div>
+
+        <p>心理学における単語ペアの暗記実験でも、昼に覚えてその日の夕方にテストをしたグループに比べ、夜に覚えてしっかり睡眠を取り、翌朝にテストをしたグループの方が、想起できる単語数が有意に増加することが統計的に明らかになっています。</p>
+
+        <div class="aside-column">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> 睡眠不足がもたらす恐怖「ネガティブバイアス」</h4>
+            <p>もし皆さんが徹夜で勉強を続けたらどうなるでしょうか。睡眠不足に陥ると、脳の感情や恐怖を司る<strong class="bold-text">「扁桃体（へんとうたい）」</strong>という部位の働きが過剰になり、コントロールを失って暴走し始めます。これによって、脳は「嫌な出来事や、不快な記憶、失敗への恐怖」ばかりを異常なほど強く頭に焼き付け、逆に楽しかったことやポジティブな情報を一切思い出せなくなる、最悪の偏り（<strong class="bold-text">「ネガティブバイアス」</strong>）が作動してしまいます。徹夜明けに気分が暗くなったり、些細なことでひどく落ち込んだりするのは、この脳のブレーキが壊れているためなのです。慢性的な睡眠不足は、単に学習効率を下げるだけでなく、うつ病や深刻な意欲の低下を直接引き起こします。</p>
+        </div>
+
+        <!-- 義務教育からの復習コラム -->
+        <div class="linkage-column">
+            <h4><i class="fa-solid fa-bed"></i> 学びの繋がり：高校での「生物」や「家庭科」で学んだ睡眠習慣を科学する</h4>
+            <p>高校の生物で自律神経や脳の仕組みを学んだり、家庭科の「生活習慣と健康」の単元で「睡眠は成長ホルモンを分泌させ、心身を回復させるために重要である」と教えられたりしたことを覚えているでしょうか。当時の教科書的な知識は、今、私たちの「学習効率」というダイレクトな利益として深く繋がってきます。</p>
+            <p>皆さんが高校の定期テストや大学入試、英検の勉強などをしていたとき、「寝る直前に暗記した単語や歴史の年号が、翌朝起きたらなぜかスラスラ言えた」という不思議な体験はなかったでしょうか。まさに高校の保健や生物で学んだレム睡眠・ノンレム睡眠のサイクル（図3参照）が脳内で忠実に回転し、皆さんの知らないところで脳が「記憶の定着（レミニセンス現象）」を勝手に終わらせてくれていたからなのです。テスト前の徹夜がどれほど「百害あって一利なし」であるか、科学的な知識として再確認できます。</p>
+        </div>
+
+        <div class="book-footer">
+            <span>心理学入門：記憶・運動・睡眠の進化論的アプローチ</span>
+            <span>3</span>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         CHAPTER 4 (重点項目：サバンナの脳と現代社会)
+         ========================================== -->
+    <div class="chapter" id="chap4">
+        <div class="chapter-num">04</div>
+        <h2 class="chapter-title">重点項目：サバンナの脳と現代社会の不適合</h2>
+        
+        <p>私たちはここまで、記憶を良くする系列位置効果、運動の効果（BDNF）、そして睡眠の力（レミニセンス現象）を個別に学んできました。しかし、なぜ私たちの脳はこのような一見風変わりなシステム（動かなければ頭が悪くなり、眠らなければ不快なことばかり覚えてしまうシステム）を持っているのでしょうか。その謎を解き明かすために、進化心理学の視点に立ち、<strong class="highlight">「私たちの心と体は、本来、過酷な大自然の環境を生き抜くために作られている」</strong>という生物学的大前提から見つめ直す必要があります。</p>
+
+        <p>ホモ・サピエンス（現生人類）の遺伝子や、私たちの脳の神経系プラットフォームは、その歴史の大半（約30万年間）を過ごした、広大で過酷な<strong class="bold-text">「アフリカの東部のサバンナ環境」</strong>を生き残るために精巧にチューニングされてきました。サバンナで生きるということは、毎日が猛獣の脅威、突然の天候の崩壊、飢餓による全滅の危機との戦いでした。群れからほんの少しはぐれるだけで、野生動物の餌食になり死を迎える過酷な世界です。</p>
+
+        <p>このような極限状態で命を繋ぎ、遺伝子を次世代に残すためには、私たちのすべての心身の反応が「生存最優先」でなければなりませんでした。例えば、危険を避けるための「ネガティブバイアス」は、過去の失敗（敵に襲われた、毒を口にした）を恐怖と共に強烈に記憶に焼き付けることで、同じ致命的ミスを絶対に繰り返させないための生存システムでした。また、群れから阻害されたときに恐怖や不安で脳の働きを一時的に高める「寂しさの効果」は、孤独な警戒状況で野生動物に不意を突かれないための心身の防御機構だったのです。そして、当時のサバンナでは、生き延びるために毎日10数キロも走ったり、獲物を追いかけて「身体を活発に動かすこと」は当たり前の生活前提でした。また、太陽が沈み暗闇に包まれれば、外敵から見つかりにくいシェルターで「深く睡眠を取り、体を回復させて情報を整理すること」以外に選択肢はなかったのです。</p>
+
+        <div class="visual-illustration">
+            <img src="3.png" alt="広大なサバンナの風景" onerror="this.src='https://placehold.co/800x400/fbf5f2/af5239?text=African+Savannah'">
+            <div class="caption">図3：約30万年前に人類の脳が設計された場所、過酷で美しき東アフリカのサバンナの風景。現代の私たちの脳は、いまだにこの過酷な自然の中で生き抜くつもりで稼働しています。</div>
+        </div>
+
+        <p>しかし、現代社会の生活環境は、私たちが本来生きるように想定されて設計されたサバンナの前提から、あまりにも大きく乖離してしまっています。この甚だしいズレを、心理学や人類学では<strong class="highlight">「進化の不適合（Evolutionary Mismatch：環境ミスマッチ）」</strong>と呼びます。現代人が陥っている様々な深刻な不調（集中力の欠如、慢性的な睡眠障害、理由のない不安、うつ病のリスク増大など）のほぼすべては、この「サバンナ用に作られた精密な脳」を「過度に人工化された現代社会」のなかで無理やり稼働させているために発生しているエラー反応なのです。</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">ライフスタイル</th>
+                    <th style="width: 37%;">サバンナでの大前提（本来の設計）</th>
+                    <th style="width: 38%;">現代社会の実態（環境ミスマッチ）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>身体活動（運動）</strong></td>
+                    <td>食糧獲得のために1日10数キロも移動する。動くことでBDNFが増え、脳が最高の状態になる。</td>
+                    <td>1日中デスクワークやスマホの前に座りっぱなしで、1歩も活動しない生活。</td>
+                </tr>
+                <tr>
+                    <td><strong>睡眠サイクル</strong></td>
+                    <td>太陽が沈むと眠りにつき、深いノンレム睡眠で情報整理と脳の修復を行う。</td>
+                    <td>LEDの強いブルーライトやスマホの過剰な情報刺激で深夜まで脳が興奮し続ける。</td>
+                </tr>
+                <tr>
+                    <td><strong>不安・警戒システム</strong></td>
+                    <td>一時的な猛獣の恐怖が去れば安心する。ネガティブバイアスは実質的な生存手段。</td>
+                    <td>SNSの悪意やネットの情報過多による「終わらない慢性的ストレス」に脳が警戒を続ける。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>人間は、本来的に「動くようにできている」し、「規則正しく眠るようにできている」生物です。コロンビア大学のヤコフ・スターン（Yakov Stern）教授らの高名な研究によると、若いうちから好奇心を持って新しいことや未知の体験に主体的に「挑戦」し、身体をアクティブに駆動させる習慣（これを<strong class="bold-text">「認知的予備能（Cognitive Reserve）」</strong>と呼びます）を培っている人ほど、老後において認知症や記憶力低下といった脳の機能低下を劇的に遅らせ、発症リスクを大幅（約35%）に低下させることが分かっています。つまり、私たちの脳は「使わない、動かさない、変化がない」環境に置かれると、まるで不要な筋肉が落ちていくかのように、ものすごいスピードで衰えていってしまうシステムなのです。</p>
+
+        <p>私たちが、自分自身の精巧な脳と体が「本来どのような環境（サバンナ）を想定して設計されたのか」という科学的な事実を知り、その事実を羅針盤として「日々の生活習慣（早起き、定期的な運動、十分な睡眠、SNSの遮断）」を見直すことは、単に健康になるためだけでなく、過酷な現代情報社会の中で自分自身の心と脳を守り、最も効率的に能力を発揮して元気に生き抜くための、最も本質的で唯一の心理学的アプローチなのです。</p>
+
+        <div class="book-footer">
+            <span>心理学入門：記憶・運動・睡眠の進化論的アプローチ</span>
+            <span>4</span>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         INTERACTIVE ASSIGNMENT SECTION (提出)
+         ========================================== -->
+    <section class="assignment-section" id="assignment">
+        <h2><i class="fa-solid fa-pen-to-square"></i> フォローアップ課題提出フォーム</h2>
+        <p style="color: #d8e0da; font-size: 14px; margin-bottom: 30px;">
+            この副読本で学習した内容を振り返るための、確認テストです。
+            回答を完了し、「回答を採点して提出する」ボタンをクリックすると、お使いのメールソフトが起動します。そのまま送信することで、出席および課題提出となります。
+        </p>
+        
+        <form id="submission-form">
+            <div class="input-group">
+                <label for="student-id"><i class="fa-solid fa-id-card"></i> 学籍番号</label>
+                <input type="text" id="student-id" placeholder="例：24A000" required>
+            </div>
+
+            <!-- 第1問 -->
+            <div class="quiz-item">
+                <p>問1：リストの「最初の方」の単語をよく覚えている現象（初頭効果）が起こる、心理学的な理由として適切なものはどれですか？</p>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q1" value="0"> 
+                        <span>1. まだ短期貯蔵庫にそのままフレッシュに記憶が残っているため</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="1"> 
+                        <span>2. 脳内で「リハーサル」を行うことで、記憶が「長期貯蔵庫」へ移動しやすくなるため</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="0"> 
+                        <span>3. 運動することによって脳由来神経栄養因子（BDNF）が一時的に急増したため</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 第2問 -->
+            <div class="quiz-item">
+                <p>問2：進化心理学における「進化の不適合（環境ミスマッチ）」の説明として、正しいものはどれですか？</p>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q2" value="0"> 
+                        <span>1. 現代人の脳がデジタル環境に完全に適応し、野生の能力を全て失ってしまったこと</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="1"> 
+                        <span>2. 30万年前のサバンナ用に設計された「脳の仕組み」と「現代の生活環境」との間に大きなズレが生じていること</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="0"> 
+                        <span>3. 人間が元来持っていた「ネガティブバイアス」を完全に忘却してしまい、危機を回避できなくなったこと</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="question"><i class="fa-solid fa-comment-dots"></i> 講義への質問・感想（任意）</label>
+                <textarea id="question" rows="4" placeholder="今回の副読本や講義について、不明な点や深く興味を持った点があれば、自由に入力してください。"></textarea>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="sendMail()">
+                <i class="fa-solid fa-paper-plane"></i> 回答を採点してメールで提出する
+            </button>
+        </form>
+    </section>
+
+    <!-- フッター -->
+    <footer style="margin-top: 80px; text-align: center; font-size: 12px; color: #707b73; border-top: 1px solid var(--border-color); padding-top: 20px;">
+        © 2026 心理学入門 副読本 • 四国大学
+    </footer>
+
+</div>
+
+<!-- 自動採点およびmailto送信機能のJavaScript -->
+<script>
+    function sendMail() {
+        // 学籍番号のバリデーション
+        const studentId = document.getElementById('student-id').value.trim();
+        if (!studentId) {
+            alert('学籍番号を正しく入力してください。');
+            return;
+        }
+
+        // 採点
+        let correctCount = 0;
+        const q1 = document.querySelector('input[name="q1"]:checked');
+        const q2 = document.querySelector('input[name="q2"]:checked');
+
+        if (!q1 || !q2) {
+            alert('すべての問題に回答してください。');
+            return;
+        }
+
+        if (q1.value === "1") correctCount++;
+        if (q2.value === "1") correctCount++;
+
+        // 得点計算（正解率 * 100）
+        const score = Math.floor((correctCount / 2) * 100);
+
+        // 質問・感想の取得
+        const question = document.getElementById('question').value.trim() || "特になし";
+
+        // メールの各設定
+        const email = "yoshinori-shibasaki@shikoku-u.ac.jp";
+        const subject = encodeURIComponent(`[フォローアップ提出]${studentId}`);
+        const bodyText = `学籍番号: ${studentId}
+得点: ${score}点 (正解数: ${correctCount}/2)
+
+【問1回答】: ${q1.value === "1" ? "正解" : "不正解"}
+【問2回答】: ${q2.value === "1" ? "正解" : "不正解"}
+
+【質問事項・感想】
+${question}`;
+
+        const body = encodeURIComponent(bodyText);
+
+        // mailtoの起動
+        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+        // メッセージボックス
+        alert(`採点が完了しました。\nあなたの得点は 【 ${score} 点 】 です。\n\nOKを押すとメールソフトが起動しますので、内容を書き換えずに「送信」ボタンを押して課題を提出してください。`);
+    }
+</script>
+
+</body>
+</html>

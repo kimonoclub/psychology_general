@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理学入門：自分はどう作られるか（ビジュアル副読本）</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root { --primary-color: #1a3022; --accent-color: #af5239; --bg-color: #f6f8f6; --text-color: #2b3530; }
+        body { background-color: #e2e7e4; color: var(--text-color); font-family: 'Noto Serif JP', serif; line-height: 1.9; padding: 40px 20px; }
+        .book-container { background-color: var(--bg-color); max-width: 840px; margin: 0 auto; padding: 80px 90px; box-shadow: 0 15px 45px rgba(27, 41, 33, 0.15); }
+        h1, h2, h3 { color: var(--primary-color); font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
+        .highlight { border-bottom: 2px solid rgba(175, 82, 57, 0.3); font-weight: 700; color: var(--primary-color); }
+        .visual-illustration { background: #fff; border: 1px solid #d8e0da; margin: 40px 0; padding: 10px; }
+        .caption { font-size: 13px; color: #5c6a61; text-align: center; padding: 10px; border-top: 1px solid #d8e0da; }
+        .definition-box { background: #fff; border-left: 4px solid var(--primary-color); border: 1px solid #d8e0da; padding: 25px; margin: 30px 0; }
+        .linkage-column { background: #f4f7f5; border: 1px solid var(--primary-color); padding: 30px; margin: 40px 0; }
+        .assignment-section { background-color: var(--primary-color); color: #fff; padding: 50px; border-radius: 12px; margin-top: 80px; }
+        .submit-btn { background-color: var(--accent-color); color: #fff; border: none; padding: 16px 40px; border-radius: 30px; cursor: pointer; width: 100%; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+<div class="book-container">
+    <header class="text-center mb-16">
+        <h1 class="text-3xl font-bold mb-4">心理学入門 第6回</h1>
+        <p class="text-xl text-accent-color italic">自分はどう作られるか ―アタッチメントと内的ワーキングモデル―</p>
+    </header>
+
+    <!-- STREAMING_CHUNK: 第1章 海馬の脆弱性 -->
+    <section>
+        <h2 class="text-2xl mb-6">1. 脳の発達初期と環境の「刻印」</h2>
+        <p>私たちが「自分」という存在を感じ、情動や記憶を司る脳の中枢に<strong class="highlight">海馬（Hippocampus）</strong>があります。近年の神経科学の研究により、この海馬は発達の初期段階において、周囲の環境やストレスに対して極めて脆弱であることが明らかになっています。</p>
+        <div class="visual-illustration">
+            <img src="1.png" alt="海馬の位置と神経新生" onerror="this.src='https://placehold.co/800x400/f6f8f6/1a3022?text=Hippocampus+Brain+Development'">
+            <div class="caption">図1：海馬は幼少期の環境からの影響をダイレクトに受け取る「脳の成長点」です。</div>
+        </div>
+        <p>ラットを用いた有名な実験では、養育者から引き離された環境で育った個体は、そうでない個体と比較して海馬の神経細胞増殖量（神経新生）が有意に低下していました。これは単に「一時的に元気がなくなる」というレベルではなく、脳の物理的な構造そのものが、過酷な環境に適応しようとして恒久的に変化してしまうことを意味しています。私たちが「自分」をどう作り上げるかという物語は、私たちがまだ言葉を持たない、記憶すら定着していない「幼少期の環境」という名の筆で、脳の深部に静かに描き込まれているのです。</p>
+    </section>
+
+    <!-- STREAMING_CHUNK: 第2章 アタッチメント -->
+    <section>
+        <h2 class="text-2xl mb-6">2. アタッチメント（愛着）という生存戦略</h2>
+        <p>特定の他者（主に養育者）との間に形成される情緒的な絆を<strong class="highlight">アタッチメント（Attachment）</strong>と呼びます。アタッチメントは、ただの「仲良し関係」ではなく、人間の生物学的な生存戦略です。メアリー・エインズワースのストレンジ・シチュエーション法によれば、養育者と分離・再会した時の子供の行動から、その愛着のタイプが分類されます。</p>
+        <div class="visual-illustration">
+            <img src="2.png" alt="愛着の評価実験" onerror="this.src='https://placehold.co/800x400/f6f8f6/1a3022?text=Strange+Situation+Procedure'">
+            <div class="caption">図2：愛着の型（A群：回避型、B群：安定型、C群：抵抗型、D群：無秩序型）。再会時の反応が鍵となります。</div>
+        </div>
+        <p>安定した愛着が形成されると、その養育者は子供にとっての<strong class="highlight">安全基地（Secure base）</strong>として機能します。ここから外の世界へと探索活動を行い、不安を感じればすぐ戻ってこられる場所があるからこそ、人間は自律的な社会性を獲得できるのです。</p>
+    </section>
+
+    <!-- STREAMING_CHUNK: 第3章 内的ワーキングモデル -->
+    <section>
+        <h2 class="text-2xl mb-6">3. 内的ワーキングモデルと無意識の「物語」</h2>
+        <p>幼少期の愛着関係を基盤に、子どもの脳内には<strong class="highlight">内的ワーキングモデル（Internal Working Model: IWM）</strong>という「心の設計図」が構築されます。これは、「自分は他者から大切にされる価値がある存在か」「他者は自分を助けてくれる信頼できる存在か」という、自分と他者に対する無意識の期待です。このモデルは3歳以前の記憶がほとんどない「幼児期健忘」の時期に作られるため、自分では意識できません。しかし、この無意識の「眼鏡」を通して、私たちはその後の人生のあらゆる人間関係を解釈し、行動を選択してしまうのです。</p>
+    </section>
+
+    <!-- STREAMING_CHUNK: 義務教育の復習コラム -->
+    <div class="linkage-column">
+        <h3 class="text-lg font-bold mb-3"><i class="fa-solid fa-graduation-cap"></i> 学びの繋がり：小学校での「道徳」や高校の「家庭科」の学びを心理学的に再評価する</h3>
+        <p>小学校や高校で「人は支え合って生きるものだ」といった道徳の授業を受けたことがあるかと思います。当時は綺麗事に聞こえたかもしれません。しかし、心理学的に見れば、これは「アタッチメントが構築された安定型個体は、社会の中で安全基地を相互に提供しあうことで、個人の探索行動を促進させる」という非常に合理的な社会戦略を教えていたと言えます。</p>
+        <p>また、家庭科で学んだ「乳幼児の発達段階」における愛着形成の知識は、皆さんが将来、自らの家族や職場、コミュニティでリーダーシップを発揮する際の「他者の行動原理」を理解するための極めて強力なリテラシーとなります。</p>
+    </div>
+
+    <!-- STREAMING_CHUNK: 第4章 学習性無力感と環境ミスマッチ -->
+    <section>
+        <h2 class="text-2xl mb-6">4. 重点項目：サバンナの脳と「学習性無力感」</h2>
+        <p>最後に、マーティン・セリグマンが提唱した<strong class="highlight">学習性無力感（Learned helplessness）</strong>について触れます。コントロール不可能なストレスを受け続けると、人間や動物は「何をしても無駄だ」という学習をし、本来逃げ出せる状況になっても、そこから脱出する努力を放棄してしまいます。</p>
+        <div class="visual-illustration">
+            <img src="3.png" alt="学習性無力感のドッグ実験" onerror="this.src='https://placehold.co/800x400/f6f8f6/1a3022?text=Learned+Helplessness+Experiment'">
+            <div class="caption">図3：努力が報われない環境で、脳は「無力」を学習してしまいます。</div>
+        </div>
+        <p>私たちの脳は30万年前のサバンナの環境に適応するように作られています。サバンナでは「努力が報われない」状況は即座に死を意味したため、無力感を感じるのは生存のための防衛反応でした。しかし、現代の複雑な社会システムでは、この「サバンナ用に最適化された脳の反応」が、かえって私たちの意欲を削ぐエラーとなって現れます。自分がどのような「物語（モデル）」を持っており、何に対して無力感を感じやすいのかを客観的に自己理解することは、このエラーを修正し、現代を生き抜くために最も重要な心理学的アプローチです。</p>
+    </section>
+
+    <!-- STREAMING_CHUNK: 確認テスト -->
+    <section class="assignment-section">
+        <h2 class="text-2xl mb-6">確認テスト</h2>
+        <form id="submission-form">
+            <div class="input-group">
+                <label>学籍番号</label>
+                <input type="text" id="student-id" placeholder="例：24A000" required class="text-black">
+            </div>
+            <div class="mb-6 bg-white/10 p-5 rounded-lg">
+                <p class="font-bold mb-3">問1：安定した愛着形成において、探索活動の基盤となり、不安な時に戻ってくる場所のことを何と呼びますか？</p>
+                <label class="block mb-2"><input type="radio" name="q1" value="0"> 1. 冒険基地</label>
+                <label class="block mb-2"><input type="radio" name="q1" value="1"> 2. 安全基地</label>
+            </div>
+            <div class="mb-6 bg-white/10 p-5 rounded-lg">
+                <p class="font-bold mb-3">問2：人間が「どのような行動をとっても結果が変わらない」と学習した結果、努力を放棄してしまう現象を何と呼びますか？</p>
+                <label class="block mb-2"><input type="radio" name="q2" value="0"> 1. 幼児期健忘</label>
+                <label class="block mb-2"><input type="radio" name="q2" value="1"> 2. 学習性無力感</label>
+            </div>
+            <div class="input-group">
+                <label>質問・感想</label>
+                <textarea id="question" rows="3" class="text-black"></textarea>
+            </div>
+            <button type="button" class="submit-btn" onclick="sendMail()">提出する</button>
+        </form>
+    </section>
+</div>
+
+<script>
+    function sendMail() {
+        const studentId = document.getElementById('student-id').value;
+        const q1 = document.querySelector('input[name="q1"]:checked');
+        const q2 = document.querySelector('input[name="q2"]:checked');
+        if (!studentId || !q1 || !q2) { alert('すべて入力してください'); return; }
+        const score = Math.floor((( (q1.value === "1") + (q2.value === "1") ) / 2) * 100);
+        const body = encodeURIComponent(`学籍番号:${studentId}\n得点:${score}点\n\n【質問・感想】\n${document.getElementById('question').value}`);
+        window.location.href = `mailto:yoshinori-shibasaki@shikoku-u.ac.jp?subject=[フォローアップ提出]${studentId}&body=${body}`;
+    }
+</script>
+</body>
+</html>

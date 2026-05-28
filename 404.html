@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404: 講義資料が見つかりません</title>
+    
+    <!-- Google Fonts: ポータルと統一された学術的フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f2f6f3',
+                            100: '#e2e7e4',
+                            800: '#1b2921',
+                        },
+                        terracotta: {
+                            600: '#b34d38',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Noto Serif JP"', 'serif'],
+                        display: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #e2e7e4;
+            background-image: radial-gradient(#1b292105 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl border border-sage-100 overflow-hidden text-center p-8 md:p-10">
+        <!-- 警告マーク -->
+        <div class="w-20 h-20 bg-sage-50 text-terracotta-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-circle-exclamation text-3xl"></i>
+        </div>
+        
+        <span class="font-display italic text-terracotta-600 text-sm tracking-wider block mb-2">404 Page Not Found</span>
+        <h1 class="font-serif font-bold text-2xl text-sage-800 mb-4 leading-snug">講義資料が未公開、または<br>フォローアップ未申請です</h1>
+        
+        <p class="text-gray-500 text-sm font-serif leading-relaxed mb-8">
+            お探しのフォルダはまだ公開されていないか、フォローアップ課題の申請が行われていない回です。<br>恐れ入りますが、トップポータルに戻りご確認をお願いします。
+        </p>
+        
+        <!-- ポータルへ戻るボタン (相対パス、リポジトリ直下のindex.htmlを呼び出す) -->
+        <a href="./index.html" class="inline-flex items-center justify-center gap-2 w-full py-3.5 bg-sage-800 hover:bg-sage-900 text-white font-serif font-bold rounded-xl transition-all shadow-md">
+            <i class="fa-solid fa-house text-xs"></i> 講義ポータル（トップ）に戻る
+        </a>
+    </div>
+
+</body>
+</html>
