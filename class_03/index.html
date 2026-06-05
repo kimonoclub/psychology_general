@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ポータルの全体スキャナーが自動収集・クレンジングするタイトルタグ -->
+    <title>心理学入門：幸せは遺伝だけで決まらない：生物学的制約を超え、自律的な環境設計によって「自分らしさ」を拓く心理学</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- 共通メール送信JSモジュールの読み込み（相対パス・アドレス非表示仕様）[cite: 1] -->
+    <script src="../js/mail-sender.js"></script>
+    <style>
+        /* 学術的気品を表現するハイライト装飾 */
+        .highlight {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        .text-justified {
+            text-align: justify;
+            text-justify: inter-character;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased line-height-relaxed">
+
+    <!-- ヘッダー・ナビゲーション -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
+            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors">講義ポータルへ戻る[cite: 1]</a>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+        
+        <!-- タイトルエリア -->
+        <div class="text-center mb-16">
+            <p class="text-indigo-600 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">第3回 講義資料</p>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                幸せは遺伝だけで決まらない<br class="hidden sm:inline">
+                <span class="text-xl sm:text-2xl text-slate-600 font-normal block mt-2">生物学的制約を超え、自律的な環境設計によって「自分らしさ」を拓く心理学</span>
+            </h1>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto rounded"></div>
+        </div>
+
+        <!-- イントロダクション -->
+        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white">
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-indigo-50 to-slate-50">
+                <h3 class="text-base sm:text-lg font-bold text-indigo-950 mb-3">イントロダクション：あらかじめ決められた枠組みと、私たちの自由</h3>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                    私たちはしばしば、「自分の性格や体質は生まれつきのものであり、変えることはできない」と考えてしまいがちです。「親からの遺伝だから」「お腹の中にいた頃の環境のせいだから」と、自分の不器用さやストレスの弱さを宿命のように受け入れている人も少なくないでしょう。
+                </p>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                    確かに、現代の心理学や行動遺伝学、そして神経科学の研究は、人間の身体的特徴や気質のベースに、遺伝や胎内環境といった「あらかじめ決められた生物学的要素」が深く関与していることを明らかにしています。しかし、それは「人間は遺伝や環境に完全に支配された無力なロボットである」という意味では決してありません。
+                </p>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
+                    本稿では、遺伝的・生物学的な制約のメカニズムを客観的なデータから正しく理解した上で、人間がどのようにしてその制約を乗り越えてきたのかを紐解きます。私たちが目指すのは、「人は生まれ持つた特性や状況に影響を受ける存在であるが、だからこそ、自ら環境を調整（ハック）し、自分らしく豊かに生きる術を身につけることができる」という、主体的な人間観の獲得です。遺伝決定論という思考の檻を飛び越え、自らの手で幸せをデザインしていくための「環境設計の心理学」をここから始めていきましょう。
+                </p>
+            </div>
+        </div>
+
+        <!-- 1. 遺伝的制約の正体と、人類が重ねてきた「工夫」の歴史 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                1. 遺伝的制約の正体と、人類が重ねてきた「工夫」の歴史
+            </h2>
+            
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">乳糖耐性の科学：私たちは遺伝子に支配されているのか</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                具体的な事例から考えてみましょう。学生の皆さんの中には、「牛乳をたくさん飲むと、決まってお腹がゴロゴロしたり痛くなったりする」という人はいませんか。実はこれ、単なる体調不良ではなく、私たちの遺伝子に刻まれた厳格なプログラムの一端なのです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                人間が牛乳などの乳製品を摂取した際、その中に含まれる「乳糖（ラクトース）」を分解するためには、小腸で「ラクターゼ」という酵素をつくる必要があります。このラクターゼの生成を司る遺伝子は、私たちの第2染色体（2q21）に存在する「LCT遺伝子」です。そして、このLCT遺伝子の働き（オン・オフ）をコントロールしているのが、その上流にある別の遺伝子（MCM6遺伝子内のエンハンサー領域）です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                哺乳類である人間は、母乳を飲んで育つ「乳幼児期」には、この遺伝子のスイッチが完全に「オン」になっており、機能的なラクターゼ酵素が活発に分泌されます。しかし、離乳して成長を遂げ、「成人期」に達すると、日本人の多くはこのMCM6内のスイッチが自動的に「オフ」へと切り替わります。その結果、ラクターゼが不足し、大人になると牛乳をうまく分解できなくなる<strong class="highlight">「乳糖不耐症（ラクターゼ不足）」</strong>という身体的状態が生じるのです。大人の身体が牛乳を受け付けなくなるというのは、遺伝子レベルであらかじめ設計された、生物学的な一つの「制約（枠組み）」に他なりません。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">チーズの誕生：制約を乗り越える環境の調整</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                では、遺伝子のスイッチがオフになり、牛乳を飲めなくなった人類は、乳製品の栄養を諦めてそのまま絶望したのでしょうか。歴史が示す事実は全く逆です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                人間の素晴らしいところは、生物学的な制約に直面したとき、自らの身体（遺伝子）が書き換わるのを何万年も待つのではなく、外側の環境や文化を「工夫」によって調整した点にあります。牛乳が飲めないのなら、乳酸菌や酵素の力を借りて乳糖をあらかじめ分解・排出した「チーズ」や「ヨーグルト」という新たな環境の産物を自らの手で作り出せばよい――。人類はこのように環境をハック（調整）することによって、遺伝的な限界を軽々と乗り越え、生活をより豊かなものへと変革させてきたのです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                生物学的に決められていることは確かに存在します。しかし、私たちは与えられた環境にただ受動的に従うだけの存在ではなく、自発的な工夫と知恵によって、その枠組みをいくらでも自分らしくデザインし直すことができる存在なのです。
+            </p>
+        </section>
+
+        <!-- 2. 胎内環境と気質の発達 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                2. 胎内環境と気質の発達：2D:4D比の相関関係から因果関係を峻別する
+            </h2>
+            
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">あなたの人差し指と薬指はどちらが長い？</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                次に、私たちの「性格や行動傾向（気質）」にまつわる、さらにドラスティックな生物学的要因について見ていきましょう。学生の年は、今すぐ自分の手のひらをまっすぐ前にかざして、指の長さを観察してみてください。特に注目してほしいのは、「人差し指（第2指：2D）」と「薬指（第4指：4D）」の長さの比率です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                解剖学および発達可能性の研究において、この人差し指の長さを薬指の長さで割った値は<strong class="highlight">「2D:4D比」</strong>と呼ばれ、人間の初期発達を示す重要なバイオマーカーとして知られています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この比率の個人差は、一体いつ、どこで決まるのでしょうか。それは、皆さんがまだ言葉も持たず、母親の「子宮のなか（胎内環境）」でぷかぷかと浮いていた頃に決定されています。胎児期、特に妊娠初期の特定のデジタルな期間において、母親の胎内でどれほど多くの男性ホルモン（テストステロン）を浴びたか（曝露量）によって、この指の比率が決まるのです。
+            </p>
+
+            <div class="bg-white border border-slate-200 rounded-xl p-6 my-6 shadow-sm space-y-3 text-sm sm:text-base">
+                <p class="text-slate-700"><strong class="text-indigo-900">2D:4D比が低い（人差し指が短い／薬指が長い）：</strong> 胎内でのテストステロン曝露量が多かったことを示します。</p>
+                <p class="text-slate-700"><strong class="text-indigo-900">2D:4D比が高い（人差し指が長い／薬指が短い）：</strong> 胎内でのテストステロン曝露量が比較的少なかったことを示します。</p>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">金融トレーダーの驚くべき統計データ</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この胎内のホルモン曝露量（2D:4D比）が、大人になってからの社会的な成功や行動傾向と結びついていることを示した、極めて衝撃的な先行研究があります。ケンブリッジ大学のジョン・コーツ（John Coates）らが行った、ロンドンのシティで働く高頻度金融トレーダーを対象とした調査です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                一瞬の判断が数億円の莫大な富を左右する過酷な金融市場において、トレーダーたちの2D:4D比と彼らの実際の年収（稼ぎ高）のデータを収集し、統計的な分析を行いました。その結果、以下のような動かしがたい相関関係が弾き出されたのです。
+            </p>
+
+            <div class="bg-slate-100 border-l-4 border-indigo-600 p-4 my-6 rounded-r-lg space-y-2 text-sm sm:text-base">
+                <p><strong class="text-slate-900">2D:4D比が低いトレーダー（胎内テストステロン多）：</strong> 年収の平均値が<strong class="text-indigo-700">「£679,680（約1億円以上）」</strong>と、圧倒的な経済的成功を収めていた。</p>
+                <p><strong class="text-slate-900">2D:4D比が高いトレーダー（胎内テストステロン少）：</strong> 年収の平均値が<strong class="text-amber-700">「£61,320」</strong>と、低比率のトレーダーに比べて著しく低い水準にとどまっていた。</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                このデータに基づき、低比率の個人は、胎内テストステロンの影響によって、空間認知能力や心肺機能（ハンターとしての適応力）が高く、リスクを恐れずに瞬時の決断を下す気質を備えているため、金融市場で高いパフォーマンスを発揮しやすいと解釈されました。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">相関関係は因果関係ではない：真の原因の所在</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                さて、このグラフを見た学生の多くは、「人差し指が短いという『指の長さ』が原因で、高い年収という『結果』が生まれたのだ」という、短絡的な因果関係の罠に陥ってしまいます。しかし、本講義の最重要教訓を思い出してください。<strong class="highlight">「相関関係は因果関係ではない」</strong>のです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                指の長さが物理的に伸縮したからといって、銀行口座のお金が増えるわけではありません。この現象における真の因果関係は、以下のような多層的な構造（第3の変数）を介して成り立っています。
+            </p>
+
+            <div class="bg-slate-900 text-slate-200 p-6 rounded-xl my-6 font-mono text-xs sm:text-sm overflow-x-auto leading-relaxed">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;┌───&gt; 【指の長さ（2D:4D比）】 ─── （観測される相関関係）<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+                【胎内環境（テストステロン曝露量）】<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└───&gt; 【脳の発達・リスク許容の気質】 ───&gt; 【トレーダーとしての成功】
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                真の原因は、あくまでお腹の中の環境（胎内テストステロン曝露量）にあります。それが、末梢器官である「指の骨の成長比率」と、中枢神経である「脳の性格傾向（リスク許容度）」の双方に対して、同時に、かつ独立して影響を与えた結果、あたかも指の長さと年収の間に直接の因果があるかのような「疑似相関」が観測されたにすぎないのです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                しかし、ここで発達心理学者ならびに教育心理学者は、次のような重大な問いを立てます。「私たちの性格やリスク傾向が、生まれる前のお腹の中の環境（胎内ホルモン）で決定されているのだとしたら、私たちはその宿命にただ従い、受け入れるしかないのだろうか？」答えは否です。確かに、初期の気質（脳のハードウェア）はお腹の中で形作られます。しかし、そのハードウェアをどのような「文脈」で駆動させ、どのように「環境を調整（設計）」していくかというソフトウェアの領域において、私たちは圧倒的な主体性と自由を持っているのです。
+            </p>
+        </section>
+
+        <!-- 3. こころとからだの相互作用：痛みの心理学と脳内報酬系 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                3. こころとからだの相互作用：痛みの心理学と脳内報酬系
+            </h2>
+            
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">「推し」の力が痛みを消し去る：ヤンガーらのfMRI実験</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                人間が自らの意志でこころとからだの状態をコントロールし、環境を調整できることを美しく証明した、刺激的な心理学実験をご紹介しましょう。スタンフォード大学のジャレッド・ヤンガー（Jared Younger）らは、恋愛初期の熱烈な幸福感の中にある男女を集め、彼らをfMRI（機能的磁気共鳴画像装置）の円筒の中へと横たわらせました。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                実験の手続きは以下の通りです。被験者の手に熱刺激による「物理的な痛み」を与え続けながら、画面上に様々な視覚刺激を提示し、脳の活動パターンと、主観的な痛みの変化をリアルタイムで測定・比較しました。
+            </p>
+
+            <div class="bg-indigo-900 text-indigo-100 p-5 rounded-xl my-6 font-mono text-sm space-y-1 shadow-md">
+                <p>条件①：「言葉のパズル（気を逸らすタスク）」を行わせる</p>
+                <p>条件②：「ただの友人の写真」を見せる</p>
+                <p>条件③：「大好きな恋人（推し）の写真」を見せる</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                実験の結果、科学者たちも驚く劇的なデータが得られました。ただの友人の写真を見ている時と比べ、<strong class="highlight">「大好きな人の写真」を見ている瞬間は、全く同じ熱刺激を与えられているにもかかわらず、被験者が感じる主観的な痛みが大幅に、劇的に軽減された</strong>のです。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">脳内報酬系回路と天然の鎮痛剤「オピオイド」</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                このとき、被験者の脳内ではどのような神経科学的ダイナミクスが機能していたのでしょうか。fMRIの画像を見ると、大好きな人の写真を見た瞬間に、脳の深部にある「腹側被蓋野（VTA）」と呼ばれる領域が激しく火を噴くように活性化していました。この腹側被蓋野から「側坐核（NAc）」へと至るルートは、人間が強い快楽や楽しさ、愛おしさを感じたときに駆動する、脳内の最重要システム<strong class="highlight">「報酬系回路（ドーパミン系）」</strong>です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                大好きな人の写真というポジティブな刺激によって報酬系が爆発的に活性化すると、脳内からドーパミンが大量に分泌されます。そしてこのドーパミンの放出に連動して、側坐核周辺から「オピオイド（エンドルフィンなど）」という神経伝達物質が放出されます。オピオイドとは、医学的に言えば「天然の鎮痛剤（麻薬性物質）」そのものです。脳内から湧き出たこの聖なる化学物質が、脊髄から上がってくる痛みの信号をシステムレベルでブロック（鎮静化）したため、身体的な痛みが消え去ったのです。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">ストレスが痛みのボリュームを最大にする：腰痛の85％の真実</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この「こころとからだ（脳内報酬系とオピオイド）」の相互作用は、現代社会を生きる私たちの健康や幸福度と直結しています。厚生労働省の統計データを見ても、現代人の身体的疼痛の第1位、第2位は常に「腰痛」と「肩こり」です。そして驚くべきことに、現代の整形外科医学において、慢性的は腰痛の約85％は、レントゲンやMRIを撮っても骨や神経に直接の異常（身体的な原因）が見つからないと言われています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                では、なぜこれほど多くの人が「原因不明の痛み」に苦しみ続けているのでしょうか。その鍵を握るのが「慢性的なストレス」です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                人間が過酷な環境や心理的ストレスに長期間曝され続けると、脳の腹側被蓋野や側坐核（報酬系）の機能が、疲弊によって著しく低下してしまいます。報酬系が働かなくなると、脳内からの天然の鎮痛剤である「オピオイド」の分泌が完全にストップしてしまいます。その結果、本来であれば脳が自動的にカット（無視）してくれるはずの、日常生活の中の「微小な関節のきしみや筋肉の疲労」といったノイズ信号が、ダイレクトに脳へと届くようになり、痛みのボリュームが認的に・神経科学的にMAXへと増大してしまうのです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified font-medium">
+                痛みがからだの異常（原因）で、苦痛が結果なのではありません。ストレスというこころの麻痺が、からだの痛みを爆発させる原因（トリガー）となっている――。これが、現代心理学が解き明かした、心身相関の厳密な論理システムなのです。
+            </p>
+        </section>
+
+        <!-- 4. 結論（コラム的解説と一体化：生態学的システム理論） -->
+        <section class="mb-16 bg-gradient-to-br from-slate-900 to-indigo-950 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl">
+            <h2 class="text-lg sm:text-xl font-bold text-amber-400 border-b border-slate-700 pb-3 mb-6 flex items-center">
+                <span class="mr-2">💡</span> 結論：単一原因論（生物学的宿命論）を超えて、多層的な環境を自ら設計するために
+            </h2>
+            
+            <h3 class="font-bold text-white mb-2 text-base sm:text-lg">状況や資質に反応するだけの存在ではない</h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                ここまでの旅路を、発達心理学者のウリー・ブロンフェンブレンナー（Urie Bronfenbrenner）が提唱した「生態学的システム理論」の視点から振り返ってみましょう。私たちの人生の基礎には、確かに「遺伝子のオン・オフ（マイクロな生物学的制約）」や、「胎内テストステロン曝露量（初期のハードウェア）」といった、あらかじめ与えられた要素が存在します。
+            </p>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                もし私たちが、環境からの一方的な影響（入力）を受け取るだけの受動的な存在（被影響者）であるならば、「遺伝子がこうだから」「お腹の中の環境のせいでリスク特性が決まっているから」と、すべての現象を一つの原因に帰せ合わせる「単一原因論（宿命論）」の檻の中に閉じ込められ、絶望するしかありません。
+            </p>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-6">
+                しかし、発達心理学が提示する人間観の核心は、全く異なります。人は状況や過去の環境の影響を強く受けますが、同時に、人は状況にただ受動的に反応するだけの存在でもありません。私たちは経験から学び、自らの手で<strong class="text-amber-300">「より良い状況（環境）を能動的に設計（ハック）」</strong>し、自分自身の内的システムを内側からアップデートしていくことができる存在なのです。
+            </p>
+
+            <h3 class="font-bold text-white mb-2 text-base sm:text-lg">オピオイドを自分で分泌させる「環境の調整」</h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                脳の報酬系がストレスで麻痺し、オピオイドが出ずに痛みが止まらないのであれば、私たちは自らの意志で、側坐核が喜ぶような「楽しい生活」を外側にデザインし、アプローチをかければよいのです。お気に入りの「推し」の音楽を聴く、大好きな趣味の時間を作る、五感を心地よく刺激する良い香りを部屋に満たす、美味しくて健康的な食事を大切な人と楽しむ、清潔で安心できる美しい住環境を整える――。これらは単なる気晴らしや贅沢ではなく、自律的な「環境の調整（ハッキング）」という名の治療行為なのです。
+            </p>
+
+            <div class="bg-white/5 border border-white/10 p-4 rounded-xl font-mono text-xs sm:text-sm text-slate-300 space-y-1 mb-6">
+                <p>【遺伝・胎内環境という制約】</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;│</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;▼</p>
+                <p>【自発的な環境調整の実行】 ──&gt; 楽しい生活、推し、良い香り、美味しい食事</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;│</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;▼</p>
+                <p>【脳内報酬系の自律的ハック】 ──&gt; ドーパミン・オピオイドの放出（痛みの鎮静・幸せの獲得）</p>
+            </div>
+
+            <h3 class="font-bold text-white mb-2 text-base sm:text-lg">自分らしく生きるという術を身につける</h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                人間は、他者との関わり、教育、そして日々の社会経験や自律的な環境との相互作用を通じて、自らの判断力、共感性、そして環境をコントロールする知恵（知的な防具）を生涯にわたって柔軟に発達させていく存在です。
+            </p>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified">
+                幸せは、遺伝だけで決まる不変の宿命ではありません。環境があなたの心を変えるのであれば、あなたは自らの知性と行動によって、環境そのものを新しく変えることができます。このダイナミックな「個人×環境の相互作用モデル」という最強の武器を携えて、これからの大学生活、そして皆さんが赴く未来の現場において、自らの手で最高の人生の環境設計を探求し続けてみてください。
+            </p>
+        </section>
+
+        <hr class="border-slate-200 my-12">
+
+        <!-- 確認テスト＆感想フォーム（設問2問固定の仕様準拠） -->
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-md p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span class="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md mr-3">確認テスト</span>
+                第3回 理解度確認・感想の提出
+            </h2>
+
+            <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
+                <!-- 学籍番号入力[cite: 1] -->
+                <div>
+                    <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
+                    <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
+                           class="w-full sm:w-64 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800">
+                </div>
+
+                <!-- 問1 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問1】Coatesら（2009）による金融トレーダーの「2D:4D比（指の長さの比率）」と「年収」に関する相関データから、心理学的な因果関係として最も正確に導き出される説明はどれですか。
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 人差し指を物理的に短く引きちぎるような整形手術を施せば、脳のリスク許容度（気質）が後天的に激変し、誰でもトレーダーとして億万長者になれる。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 指の長さ（原因）が直接的に作用して高い年収（結果）を生み出している。したがって、人間の経済的成功のすべては指の骨の長さによって100%決定される。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 指の長さと年収 di 間に直接の因果関係はない。真の原因は「胎内でのテストステロン曝露量」であり、それが末梢の指の骨の成長比率と、中枢の脳の性格傾向の両方に独立して影響を与えたことによる疑似相関である。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 2D:4D比は成人の生活環境や年収の増減によって数ヶ月単位で激しく伸縮を繰り返す、環境依存的な変数である。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問2 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問2】現代心理学における「こころとからだの相互作用」に基づき、慢性的はストレスや疼痛を乗り越えて「自分らしく幸せに生きる」ための環境設計のアプローチとして、最も適切なものはどれですか。
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 生物学的な遺伝や胎内環境は宿命であり書き換え不能であるため、すべての環境調整を諦め、痛みを根性と精神力だけで耐え忍ぶ。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 自分の気質や弱さをすべて「過去の環境のせい」という単一原因論に帰せあわせ、状況に対して受動的に反応するだけのロボットとして生きる。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) ストレスで脳の報酬系が麻痺している状態を放置し、他者との関わりや快の刺激（美味しい食事や美しい環境）を徹底的に排除して孤立する。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 人は状況の影響を強く受けるが反応するだけの存在ではないと自覚し、推しの写真を見る、良い香りや美味しい食事を楽しむなど、脳内の側坐核を刺激してオピオイドを分泌させるような「快の環境」を自発的に設計・調整する。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 感想・質問[cite: 1] -->
+                <div>
+                    <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
+                    <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて考えたことや、自身の専門分野（医療・保育・ビジネス等）の現場にどう活かせるかなど、自由に記述してください。"
+                              class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 text-sm sm:text-base"></textarea>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="pt-2">
+                    <button type="submit" id="submit_btn" 
+                            class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer text-sm sm:text-base">
+                        回答を送信する
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 text-xs border-t border-slate-800 mt-20">
+        <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
+    </footer>
+
+    <!-- ページ個別スクリプト：自動採点と共通モジュールの結合[cite: 1] -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const classNum = "class_03"; // 第3回固定値[cite: 1]
+            const studentId = document.getElementById("student_id").value;
+            const feedback = document.getElementById("student_feedback").value;
+            const btn = document.getElementById("submit_btn");
+
+            // クイズの自動採点
+            let scoreCount = 0;
+            const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+            const q2Answer = document.querySelector('input[name="q2"]:checked').value;
+
+            if (q1Answer === "C") scoreCount++;
+            if (q2Answer === "D") scoreCount++;
+
+            const finalScore = `${scoreCount} / 2`;
+
+            // 共通送信関数を呼び出し（アドレス非公開・非同期通信仕様）[cite: 1]
+            if (window.sendSharedMail) {
+                window.sendSharedMail(classNum, studentId, finalScore, feedback, btn);
+            } else {
+                alert("エラー：共通送信モジュール（mail-sender.js）が読み込まれていません。ファイルの配置状況を確認してください。");
+            }
+        }
+    </script>
+</body>
+</html>
