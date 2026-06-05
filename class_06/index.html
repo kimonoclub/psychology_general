@@ -3,119 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>心理学入門：自分はどう作られるか（ビジュアル副読本）</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <!-- ポータルの全体スキャナーが自動収集・クレンジングするタイトルタグ[cite: 1] -->
+    <title>心理学入門：記憶の科学と脳の可塑性：睡眠、海馬の脆弱性、そして「認知の癖」に気づくための心理学</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- 共通メール送信JSモジュールの読み込み（相対パス・アドレス非表示仕様）[cite: 1] -->
+    <script src="../js/mail-sender.js"></script>
     <style>
-        :root { --primary-color: #1a3022; --accent-color: #af5239; --bg-color: #f6f8f6; --text-color: #2b3530; }
-        body { background-color: #e2e7e4; color: var(--text-color); font-family: 'Noto Serif JP', serif; line-height: 1.9; padding: 40px 20px; }
-        .book-container { background-color: var(--bg-color); max-width: 840px; margin: 0 auto; padding: 80px 90px; box-shadow: 0 15px 45px rgba(27, 41, 33, 0.15); }
-        h1, h2, h3 { color: var(--primary-color); font-family: 'Noto Sans JP', sans-serif; font-weight: 700; }
-        .highlight { border-bottom: 2px solid rgba(175, 82, 57, 0.3); font-weight: 700; color: var(--primary-color); }
-        .visual-illustration { background: #fff; border: 1px solid #d8e0da; margin: 40px 0; padding: 10px; }
-        .caption { font-size: 13px; color: #5c6a61; text-align: center; padding: 10px; border-top: 1px solid #d8e0da; }
-        .definition-box { background: #fff; border-left: 4px solid var(--primary-color); border: 1px solid #d8e0da; padding: 25px; margin: 30px 0; }
-        .linkage-column { background: #f4f7f5; border: 1px solid var(--primary-color); padding: 30px; margin: 40px 0; }
-        .assignment-section { background-color: var(--primary-color); color: #fff; padding: 50px; border-radius: 12px; margin-top: 80px; }
-        .submit-btn { background-color: var(--accent-color); color: #fff; border: none; padding: 16px 40px; border-radius: 30px; cursor: pointer; width: 100%; font-weight: 700; }
+        /* 学術的気品を表現するハイライト装飾 */
+        .highlight {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        .text-justified {
+            text-align: justify;
+            text-justify: inter-character;
+        }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased line-height-relaxed">
 
-<div class="book-container">
-    <header class="text-center mb-16">
-        <h1 class="text-3xl font-bold mb-4">心理学入門 第6回</h1>
-        <p class="text-xl text-accent-color italic">自分はどう作られるか ―アタッチメントと内的ワーキングモデル―</p>
+    <!-- ヘッダー -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
+            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors">講義ポータルへ戻る[cite: 1]</a>
+        </div>
     </header>
 
-    <!-- STREAMING_CHUNK: 第1章 海馬の脆弱性 -->
-    <section>
-        <h2 class="text-2xl mb-6">1. 脳の発達初期と環境の「刻印」</h2>
-        <p>私たちが「自分」という存在を感じ、情動や記憶を司る脳の中枢に<strong class="highlight">海馬（Hippocampus）</strong>があります。近年の神経科学の研究により、この海馬は発達の初期段階において、周囲の環境やストレスに対して極めて脆弱であることが明らかになっています。</p>
-        <div class="visual-illustration">
-            <img src="1.png" alt="海馬の位置と神経新生" onerror="this.src='https://placehold.co/800x400/f6f8f6/1a3022?text=Hippocampus+Brain+Development'">
-            <div class="caption">図1：海馬は幼少期の環境からの影響をダイレクトに受け取る「脳の成長点」です。</div>
+    <!-- メインコンテンツ -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+        
+        <!-- タイトルエリア -->
+        <div class="text-center mb-16">
+            <p class="text-indigo-600 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">第6回 講義資料</p>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                記憶の科学と脳の可塑性<br class="hidden sm:inline">
+                <span class="text-xl sm:text-2xl text-slate-600 font-normal block mt-2">睡眠、海馬の脆弱性、そして「認知の癖」に気づくための心理学</span>
+            </h1>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto rounded"></div>
         </div>
-        <p>ラットを用いた有名な実験では、養育者から引き離された環境で育った個体は、そうでない個体と比較して海馬の神経細胞増殖量（神経新生）が有意に低下していました。これは単に「一時的に元気がなくなる」というレベルではなく、脳の物理的な構造そのものが、過酷な環境に適応しようとして恒久的に変化してしまうことを意味しています。私たちが「自分」をどう作り上げるかという物語は、私たちがまだ言葉を持たない、記憶すら定着していない「幼少期の環境」という名の筆で、脳の深部に静かに描き込まれているのです。</p>
-    </section>
 
-    <!-- STREAMING_CHUNK: 第2章 アタッチメント -->
-    <section>
-        <h2 class="text-2xl mb-6">2. アタッチメント（愛着）という生存戦略</h2>
-        <p>特定の他者（主に養育者）との間に形成される情緒的な絆を<strong class="highlight">アタッチメント（Attachment）</strong>と呼びます。アタッチメントは、ただの「仲良し関係」ではなく、人間の生物学的な生存戦略です。メアリー・エインズワースのストレンジ・シチュエーション法によれば、養育者と分離・再会した時の子供の行動から、その愛着のタイプが分類されます。</p>
-        <div class="visual-illustration">
-            <img src="2.png" alt="愛着の評価実験" onerror="this.src='https://placehold.co/800x400/f6f8f6/1a3022?text=Strange+Situation+Procedure'">
-            <div class="caption">図2：愛着の型（A群：回避型、B群：安定型、C群：抵抗型、D群：無秩序型）。再会時の反応が鍵となります。</div>
+        <!-- イントロダクション -->
+        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white">
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-indigo-50 to-slate-50">
+                <h3 class="text-base sm:text-lg font-bold text-indigo-950 mb-3">イントロダクション：あなたの脳が密かに編み上げている「歪み」</h3>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                    私たちは、自分の目で世界をありのままに眺め、自分の意志で合理的な判断を下していると考えがちです。しかし、心理学や脳科学の最前線が明らかにしたのは、私たちの知覚や行動は、過去の環境や日々の身体状態によって作られた「見えない認知のフィルター」に大きく左右されているという事実です。
+                </p>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                    人間は、睡眠不足や日々のストレスといった環境のなかで、脳の海馬や扁桃体をダイナミックに変化させています。 そして、その生理的な変化に伴い、世界をネガティブに捉えてしまう様々な「認知の癖（物語）」を無意識のうちに脳内に編み上げている存在なのです。
+                </p>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
+                    本稿では、ドイツの心理学者ヘルマン・エビングハウスによる記憶の基礎研究から出発し、睡眠や発達初期のストレスが脳の構造をいかに変容させるのかを客観的なデータから紐解きます。私たちが目指すのは、脳に刻まれた「認知の癖」の存在に自ら気づくことです。それこそが、真の自己理解に達し、自分らしく生きるための「環境設計」を始める最高の第一歩となるのです。
+                </p>
+            </div>
         </div>
-        <p>安定した愛着が形成されると、その養育者は子供にとっての<strong class="highlight">安全基地（Secure base）</strong>として機能します。ここから外の世界へと探索活動を行い、不安を感じればすぐ戻ってこられる場所があるからこそ、人間は自律的な社会性を獲得できるのです。</p>
-    </section>
 
-    <!-- STREAMING_CHUNK: 第3章 内的ワーキングモデル -->
-    <section>
-        <h2 class="text-2xl mb-6">3. 内的ワーキングモデルと無意識の「物語」</h2>
-        <p>幼少期の愛着関係を基盤に、子どもの脳内には<strong class="highlight">内的ワーキングモデル（Internal Working Model: IWM）</strong>という「心の設計図」が構築されます。これは、「自分は他者から大切にされる価値がある存在か」「他者は自分を助けてくれる信頼できる存在か」という、自分と他者に対する無意識の期待です。このモデルは3歳以前の記憶がほとんどない「幼児期健忘」の時期に作られるため、自分では意識できません。しかし、この無意識の「眼鏡」を通して、私たちはその後の人生のあらゆる人間関係を解釈し、行動を選択してしまうのです。</p>
-    </section>
+        <!-- 1. 記憶の基礎と、睡眠不足がもたらす「認知の歪み」 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                1. 記憶の基礎と、睡眠不足がもたらす「認知の歪み」
+            </h2>
+            
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">記憶の定着とエビングハウスの忘却曲線</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                記憶のメカニズムを科学的に探求した最初の人物が、ヘルマン・エビングハウス（Hermann Ebbinghaus）です。彼は自らを被験者とし、「BIT」や「JAT」、「KOF」といった、意味を持たないアルファベット3文字の「無意味綴り」を大量に記憶する過酷な実験を行いました。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                どれだけの時間をかければ正確に暗記できるか、そして時間の経過とともにどれほどの割合を忘却していくのかを測定した結果、有名な「忘却曲線」が導き出されました。人間の脳は、インプットした直後に最も激しく忘却を起こし、時間の経過とともにその忘却のペースが緩やかになっていくという規則性を持っています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                では、この記憶の保持や定着の効率を、日常のなかで劇的に左右する環境変数とは何でしょうか。その答えこそが「睡眠」です。
+            </p>
 
-    <!-- STREAMING_CHUNK: 義務教育の復習コラム -->
-    <div class="linkage-column">
-        <h3 class="text-lg font-bold mb-3"><i class="fa-solid fa-graduation-cap"></i> 学びの繋がり：小学校での「道徳」や高校の「家庭科」の学びを心理学的に再評価する</h3>
-        <p>小学校や高校で「人は支え合って生きるものだ」といった道徳の授業を受けたことがあるかと思います。当時は綺麗事に聞こえたかもしれません。しかし、心理学的に見れば、これは「アタッチメントが構築された安定型個体は、社会の中で安全基地を相互に提供しあうことで、個人の探索行動を促進させる」という非常に合理的な社会戦略を教えていたと言えます。</p>
-        <p>また、家庭科で学んだ「乳幼児の発達段階」における愛着形成の知識は、皆さんが将来、自らの家族や職場、コミュニティでリーダーシップを発揮する際の「他者の行動原理」を理解するための極めて強力なリテラシーとなります。</p>
-    </div>
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">睡眠不足は「悪いことだけ」を脳に記憶させる</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                特に深い眠りである「徐波睡眠（ノンレム睡眠の深いステージ）」が不足すると、海馬での記憶の整理・統合が妨げられ、記憶力の低下を招くことが分かっています。また、慢性的は睡眠不足は、肥満や成人病、社会的な「うつ（抑うつ状態）」と極めて強い統計的相関関係にあります。睡眠時間の不足が、私たちの情動（感情）や記憶のシステムにどれほど深刻な認知の歪みをもたらすのか、興味深いfMRI（機能的磁気共鳴画像装置）の実験データを見てみましょう。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                実験では、十分な睡眠を取った「8時間睡眠グループ」と、睡眠を制限された「5時間睡眠グループ」の被験者を装置内に横たわらせ、脳の活動をリアルタイムで測定しました。被験者の目の前の画面には、人間の様々な感情を表す顔写真、特に「恐怖（ネガティブな表情）」と「喜び（ポジティブな表情）」の画像が交互に提示されました。
+            </p>
 
-    <!-- STREAMING_CHUNK: 第4章 学習性無力感と環境ミスマッチ -->
-    <section>
-        <h2 class="text-2xl mb-6">4. 重点項目：サバンナの脳と「学習性無力感」</h2>
-        <p>最後に、マーティン・セリグマンが提唱した<strong class="highlight">学習性無力感（Learned helplessness）</strong>について触れます。コントロール不可能なストレスを受け続けると、人間や動物は「何をしても無駄だ」という学習をし、本来逃げ出せる状況になっても、そこから脱出する努力を放棄してしまいます。</p>
-        <div class="visual-illustration">
-            <img src="3.png" alt="学習性無力感のドッグ実験" onerror="this.src='https://placehold.co/800x400/f6f8f6/1a3022?text=Learned+Helplessness+Experiment'">
-            <div class="caption">図3：努力が報われない環境で、脳は「無力」を学習してしまいます。</div>
-        </div>
-        <p>私たちの脳は30万年前のサバンナの環境に適応するように作られています。サバンナでは「努力が報われない」状況は即座に死を意味したため、無力感を感じるのは生存のための防衛反応でした。しかし、現代の複雑な社会システムでは、この「サバンナ用に最適化された脳の反応」が、かえって私たちの意欲を削ぐエラーとなって現れます。自分がどのような「物語（モデル）」を持っており、何に対して無力感を感じやすいのかを客観的に自己理解することは、このエラーを修正し、現代を生き抜くために最も重要な心理学的アプローチです。</p>
-    </section>
-
-    <!-- STREAMING_CHUNK: 確認テスト -->
-    <section class="assignment-section">
-        <h2 class="text-2xl mb-6">確認テスト</h2>
-        <form id="submission-form">
-            <div class="input-group">
-                <label>学籍番号</label>
-                <input type="text" id="student-id" placeholder="例：24A000" required class="text-black">
+            <div class="bg-white border border-slate-200 rounded-xl p-6 my-6 shadow-sm space-y-4 text-sm sm:text-base">
+                <p class="text-slate-700"><strong class="text-indigo-900">8時間睡眠グループの脳の反応：</strong> 喜びの表情に対しても、恐怖の表情に対しても、脳の情動ネットワークがバランスよく、適切に活性化しました。</p>
+                <p class="text-slate-700"><strong class="text-rose-900">5時間睡眠グループの脳の反応：</strong> 驚くべきことに、画面に「喜び（ポジティブ）」の画像が映し出されても、脳のシステムはほとんど「無反応」のままでした。しかし、画面に「恐怖（ネガティブ）」の画像が映し出された瞬間、彼らの脳内にある<strong class="highlight">「扁桃体（Amygdala）」</strong>という領域が、火を噴くように激しく、過剰に活性化したのです。</p>
             </div>
-            <div class="mb-6 bg-white/10 p-5 rounded-lg">
-                <p class="font-bold mb-3">問1：安定した愛着形成において、探索活動の基盤となり、不安な時に戻ってくる場所のことを何と呼びますか？</p>
-                <label class="block mb-2"><input type="radio" name="q1" value="0"> 1. 冒険基地</label>
-                <label class="block mb-2"><input type="radio" name="q1" value="1"> 2. 安全基地</label>
-            </div>
-            <div class="mb-6 bg-white/10 p-5 rounded-lg">
-                <p class="font-bold mb-3">問2：人間が「どのような行動をとっても結果が変わらない」と学習した結果、努力を放棄してしまう現象を何と呼びますか？</p>
-                <label class="block mb-2"><input type="radio" name="q2" value="0"> 1. 幼児期健忘</label>
-                <label class="block mb-2"><input type="radio" name="q2" value="1"> 2. 学習性無力感</label>
-            </div>
-            <div class="input-group">
-                <label>質問・感想</label>
-                <textarea id="question" rows="3" class="text-black"></textarea>
-            </div>
-            <button type="button" class="submit-btn" onclick="sendMail()">提出する</button>
-        </form>
-    </section>
-</div>
 
-<script>
-    function sendMail() {
-        const studentId = document.getElementById('student-id').value;
-        const q1 = document.querySelector('input[name="q1"]:checked');
-        const q2 = document.querySelector('input[name="q2"]:checked');
-        if (!studentId || !q1 || !q2) { alert('すべて入力してください'); return; }
-        const score = Math.floor((( (q1.value === "1") + (q2.value === "1") ) / 2) * 100);
-        const body = encodeURIComponent(`学籍番号:${studentId}\n得点:${score}点\n\n【質問・感想】\n${document.getElementById('question').value}`);
-        window.location.href = `mailto:yoshinori-shibasaki@shikoku-u.ac.jp?subject=[フォローアップ提出]${studentId}&body=${body}`;
-    }
-</script>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                扁桃体とは、人間が恐怖、不安、脅威を感じたときにアラームを鳴らす、脳内の「危機管理センター」です。この実験データが物語る恐ろしい真実は、睡眠が不足すると、私たちの脳は<strong class="highlight">「良いことや楽しいこと（喜び）を完全にシャットダウンし、悪いことや危険なこと（恐怖・脅威）だけを過剰にベースラインとして学習し、記憶に刻み込もうとする」</strong>という偏ったモードに変容してしまうという事実です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                私たちが日々の生活で「世界は嫌なことばかりだ」と感じているとき、それは世界の現実ではなく、単に睡眠不足によって扁桃体が暴走し、記憶のバランスが歪んでしまっているだけかもしれません。しっかり眠る環境を整えることで初めて、記憶の司令塔である「海馬」が正常に駆動し、人生の良い面も悪い面も客観的に捉えることができるようになるのです。
+            </p>
+        </section>
+
+        <!-- 2. 発達初期の脆弱性と「海馬」の構造的変容 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                2. 発達初期の脆弱性と「海馬」の構造的変容
+            </h2>
+            
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">早期ストレスが脳の神経新生を抑制する</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                環境が脳に及ぼす影響は、日々の睡眠にとどまりません。私たちが物心を着く前の「発達初期」に置かれていた環境もまた、脳の構造を劇的に変容させることが、神経科学的研究によって実証されています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                脳のなかで短期記憶を長期記憶へと転送する役割を担う<strong class="highlight">「海馬（Hippocampus）」</strong>は、大人になってからでも新しい神経細胞が生まれ続ける（神経新生）という、極めて柔軟でダイナミックな特性（可塑性）を持っています。しかし、この海馬の神経新生は、ストレスに対して極めて脆弱であることが分かっています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ラットを用いた発達初期の環境実験（Mirescuらによる神経内分泌学研究）のデータを見てみましょう。生まれたばかりの子供のラットを、母親から引き離す環境（分離ストレス）に置き、その後の海馬の細胞増殖量を精密に測定・比較しました。
+            </p>
+
+            <div class="bg-slate-100 border-l-4 border-indigo-600 p-4 my-6 rounded-r-lg space-y-2 text-sm sm:text-base">
+                <p><strong class="text-slate-900">条件①：母親との「分離なし」</strong> ➔ 海馬の細胞は極めて活発に増殖する（高い神経新生を維持）。</p>
+                <p><strong class="text-slate-900">条件②：「1日15分」の短い分離</strong> ➔ 細胞の増殖量に大きな低下は見られない。</p>
+                <p><strong class="text-slate-900">条件③：「1日180分（3時間）」の長い分離</strong> ➔ 海馬における新しく生まれた細胞の数が、他のグループに比べて<strong class="text-rose-700">統計的に有意に激減する</strong>（増殖量が極端に少ない状態になる）。</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この動物実験のエビデンスは、過酷な分離ストレスという環境要因が、脳のハードウェアである海馬の成長や新生システムを直接的に抑制し、物理的な変容をもたらしてしまうという事実を雄弁に物語っています。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">単一原因論の否定：うつ病への多層的な発達リスク</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この脳科学的知見は、人間の「うつ（精神的脆弱性）」の発達プロセスを理解する上での重要な視座を与えてくれます。現代心理学において、うつ病の発症リスクは、遺伝的な資質（遺伝的脆弱性）だけで100%決まるものではありません。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                個人の持つ遺伝的資質に対して、周産期の医療環境、乳幼児期の過酷な児童虐待やネグレクトといった「社会環境・自然環境要因」が重層的に絡み合うことによって、海馬の容量や機能の低下が引き起こされます。心理学者や発達科学者は、「すべては遺伝のせいだ」「すべては特定の環境のせいだ」とする極端な単純化（単一原因論）を厳しく退けます。私たちの脳とこころは、様々な環境の変数が多層的に相互作用（Interaction）し合う、ダイナミックな生態学的システムの中で形作られているのです。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">マインドワンダリングからの脱出とマインドフルネス</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                うつ病や強い不安を抱える人の認的に特徴として、現在の目の前の現実に集中できず、注意があちこちへと飛び回り、過去の不快な記憶や未来の不安を反復して思い悩む「マインドワンダリング（心の迷走）」という状態が知られています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この注意の迷走をくい止め、傷ついた脳のハードウェアを自らの手で回復させる実践的な技術が、現代社会において極めて強く求められています。それが、東洋の瞑想の知恵を西洋の医学・心理学と融合させた「マインドフルネス（MBSR：マインドフルネス・ストレス低減法）」です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                厳密な脳画像研究において、コントロール群（何もしないグループ）と、定期的な瞑想プログラムを継続した「MBSR実践グループ」の左海馬の容量（灰白質密度）の変化を測定したところ、実践グループの「左海馬の容量が有意に増加・回復している」という劇的な統計データが得られました。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                私たちの注意力やポジティブな情動、記憶力を上昇させるこの技術は、環境のストレスによって傷ついた脳の認知構造を、自発的なトレーニングによって「再調整（書き換え）」していけるという、人間の素晴らしいレジリエンス（回復可能性）を証明しているのです。
+            </p>
+        </section>
+
+        <!-- 3. コラム（精緻化リハーサル） -->
+        <section class="mb-16 bg-gradient-to-br from-slate-900 to-indigo-950 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl">
+            <h2 class="text-lg sm:text-xl font-bold text-amber-400 border-b border-slate-700 pb-3 mb-6 flex items-center">
+                <span class="mr-2">💡</span> 精緻化リハーサル・コラム：現代のデジタル環境と「集中できる環境の設計」
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                中学校や高校の平日の勉強時間と、定期テストの成績にまつわる統計データについて、皆さんも一度は目にしたことがあるのではないでしょうか。ここで、非常に興味深く、かつ耳の痛いデータをご紹介します。それは「平日の勉強時間」と「平日にスマートフォンや携帯電話を使う時間」が、学生の平均点（成績）にどう相互作用しているかを示したグラフです。
+            </p>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                データを見ると、平日に「4時間以上」熱心に自宅で勉強している生徒であっても、スマホを触る時間が「4時間以上」に達している場合、その平均点は、平日に「30分未満」しか勉強せずスマホも全く触らない生徒の平均点よりも、著しく低くなるという驚くべき反比例の逆転現象が観測されています。
+            </p>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                このデータを前にして、「スマホを触る子は意志が弱い、自制心がない」と人格特性のせいにすることは簡単です。しかし、教育心理学の視点は異なります。スマホから通知が鳴り響く環境のなかに身を置きながら、ワーキングメモリ（脳の集中スペース）を維持することは、人間の認知特性上、不可能なのです。
+            </p>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified">
+                スマホ依存の環境に身を置くことは、せっかくの4時間の猛勉強という「努力の成果をシステムレベルでゼロ以下に破壊する」リスクを持っています。必要なのは、英雄的な強い自制心に期待することではありません。勉強する瞬間はスマホを物理的に遠くの部屋の箱に隠すなど、<strong class="text-amber-300">「集中できる環境をあらかじめ自らの手で設計（ハック）しておくこと」</strong>なのです。これこそが、私たちの認知の弱さを補うための、最も賢明な心理学的防具です。
+            </p>
+        </section>
+
+        <!-- 4. まとめ -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                📌 まとめ：個人×環境の相互作用モデルへ向けて
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                発達心理学の研究では、人は生まれながらに決定された善人でも悪人でもなく、他者との関わりや教育、社会経験を通して生涯にわたり判断力や共感性を自律的に発達させていく存在だと考えられています。 私たちの行動は状況や過去の環境、あるいは日々の身体状態の影響を強く受けます。しかし同時に、私たちは経験から学び、自らを変え、環境を変える力も持っています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                心理学を学ぶ真の意義とは、人間の弱さを暴いて絶望することではなく、睡眠不足やストレス環境によって「あ、今、脳の扁桃体が過剰にアラームを鳴らしているな」と一歩引いてメタ認知（客観視）できるようになることです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                私たちは状況に影響されます。だからこそ重要なのは、英雄的な強い個人になることを期待して耐え忍ぶことではありません。そうではなく、自らの脳の特性や認知の癖（弱さ）を科学的に理解した上で、
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified font-medium text-indigo-950 bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                「自分を最も善く駆動させ、ポジティブな情動や集中力を維持できる環境・システム（適切な睡眠環境、スマホのコントロール、マインドフルネスの習慣）を、日常の中にどう組み込んでいくべきか」
+                という、主体的な環境の設計者（アーキテクト）として実践的な問いを立て、これからの大学生活のなかで探求し続けることなのです。
+            </p>
+        </section>
+
+        <hr class="border-slate-200 my-12">
+
+        <!-- 確認テスト＆感想フォーム（設問2問固定の仕様に準拠） -->
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-md p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span class="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md mr-3">確認テスト</span>
+                第6回 理解度確認・感想の提出
+            </h2>
+
+            <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
+                <!-- 学籍番号入力[cite: 1] -->
+                <div>
+                    <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
+                    <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
+                           class="w-full sm:w-64 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800">
+                </div>
+
+                <!-- 問1 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問1】睡眠時間が不足した被験者の脳に対してfMRIを用いた表情認知実験（恐怖と喜びの画像提示）を行った際、観測された脳内の神経科学的な反応特性として最も適切な説明はどれですか。
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 喜び（ポジティブ）の表情に対して脳の報酬系が爆発的に活性化し、恐怖の表情に対しては海馬の神経新生が完全にストップした。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 喜びの表情に対しては脳の情動システムがほとんど「無反応」である一方、恐怖（ネガティブ）の表情に対しては「扁桃体」が過剰に活性化した。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 睡眠時間の長さに関係なく、人間の脳は恐怖と喜びの双方の視覚刺激に対して、常に100%均等かつ客観的に記憶を処理し続ける。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 5時間睡眠の被験者は、エビングハウスの忘却曲線をすべて完璧に反転させ、脳の可塑性を完全に停止させることに成功した。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問2 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問2】ラットの母親分離実験（Mirescu 2004）やマインドフルネス（MBSR）の研究データから導き出される、海馬の構造的変容に関する発達心理学的・神経科学的な結論として最も適切なものはどれですか。
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 海馬の細胞増殖量は遺伝的資質のみによって100%固定されており、発達初期の分離ストレスや後天的な瞑想トレーニングによって容量が変化することは絶対にない。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 1日180分の長時間分離を経験したラットは海馬の細胞増殖量が増加するため、うつ病の発症リスクを完全にゼロに抑えることができる。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 海馬は環境要因（早期ストレス等）によって物理的な細胞新生が抑制されるという脆弱性を持つが、同時に、マインドフルネスの実践などによってその容量を後天的に回復・再構成できるという高い可塑性（回復可能性）も備えている。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) スマホの利用時間を1日4時間以上に増やし、マインドワンダリングの時間を意図的に長引かせることこそが、左海馬の灰白質密度を最も効率よく増加させるアプローチである。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 感想・質問[cite: 1] -->
+                <div>
+                    <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
+                    <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて考えたことや、自身の専門分野（医療・保育・ビジネス等）の現場にどう活かせるかなど、自由に記述してください。"
+                              class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 text-sm sm:text-base"></textarea>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="pt-2">
+                    <button type="submit" id="submit_btn" 
+                            class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer text-sm sm:text-base">
+                        回答を送信する
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 text-xs border-t border-slate-800 mt-20">
+        <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
+    </footer>
+
+    <!-- ページ個別スクリプト：自動採点と共通モジュールの結合[cite: 1] -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const classNum = "class_06"; // 第6回固定値[cite: 1]
+            const studentId = document.getElementById("student_id").value;
+            const feedback = document.getElementById("student_feedback").value;
+            const btn = document.getElementById("submit_btn");
+
+            // クイズの自動採点
+            let scoreCount = 0;
+            const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+            const q2Answer = document.querySelector('input[name="q2"]:checked').value;
+
+            if (q1Answer === "B") scoreCount++;
+            if (q2Answer === "C") scoreCount++;
+
+            const finalScore = `${scoreCount} / 2`;
+
+            // 共通送信関数を呼び出し（アドレス非公開・非同期通信仕様）[cite: 1]
+            if (window.sendSharedMail) {
+                window.sendSharedMail(classNum, studentId, finalScore, feedback, btn);
+            } else {
+                alert("エラー：共通送信モジュール（mail-sender.js）が読み込まれていません。ファイルの配置状況を確認してください。");
+            }
+        }
+    </script>
 </body>
 </html>
