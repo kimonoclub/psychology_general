@@ -1,7 +1,7 @@
 // js/mail-sender.js
 
 // 【重要】ここにStep 1の最後でコピーした「WebアプリURL」を貼り付けてください
-const GAS_WEB_APP_URL = "https://script.google.com/macros/s/XXXXX.../exec";
+const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzp4XYOKG5x8afRkXZNlLsvFg31ZbY7y_RHKN2pjGVafUH0BQ0cHHk7waThJmZeAHB1/exec";
 
 /**
  * 講義確認テストの結果をGAS経由で非同期送信する共通関数
