@@ -3,399 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ストループ効果 実験ルーム</title>
+    <!-- ポータルの全体スキャナーが自動収集・クレンジングするタイトルタグ -->
+    <title>心理学入門：自動化される心と「選び直し」の心理学</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- 共通メール送信JSモジュールの読み込み（相対パス・アドレス非表示仕様） -->
+    <script src="../js/mail-sender.js"></script>
     <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-main: #2d3436;
-            --border-color: #b2bec3; /* すべてのボタンに共通で使用するグレー */
-            
-            /* 実験刺激用の3色（視認性を確保したカラーコード） */
-            --exp-green: #2ecc71;
-            --exp-yellow: #f1c40f;
-            --exp-red: #e74c3c;
+        /* 学術的気品を表現するハイライト装飾 */
+        .highlight {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            color: #1e3a8a;
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            user-select: none;
-            -webkit-user-select: none;
+        .text-justified {
+            text-align: justify;
+            text-justify: inter-character;
         }
-
-        #app-container {
-            width: 100%;
-            max-width: 600px;
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            padding: 2rem;
-            margin: 15px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .screen { display: none; }
-        .screen.active { display: block; }
-
-        h1 { font-size: 1.4rem; margin-bottom: 1.5rem; color: #000; }
-        p.instruction { text-align: left; line-height: 1.7; font-size: 0.95rem; margin-bottom: 2rem; }
-
-        /* 実験エリア */
-        #stimulus-window {
-            height: 180px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 2rem;
-            background: #fafafa;
-            border-radius: 8px;
-            border: 1px solid #eee;
-        }
-
-        #stimulus {
-            font-weight: bold;
-            transition: transform 0.1s;
-        }
-        
-        /* 統制条件：大きな円（●） */
-        .circle-stimulus {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        
-        /* 十字注視点 */
-        .fixation { font-size: 3rem; color: #7f8c8d; font-weight: normal; }
-
-        /* 回答ボタンのレイアウト要件 */
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .response-btn {
-            flex: 1;
-            padding: 18px 0;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background-color: #ffffff;
-            color: #2d3436;
-            /* 💡 すべてのボタンの枠線を同じグレーに統一（バイアス排除） */
-            border: 3px solid var(--border-color);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.1s, transform 0.05s;
-            outline: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .response-btn:active { transform: scale(0.95); background-color: #f1f2f6; }
-
-        /* フィードバックメッセージ */
-        #feedback {
-            height: 24px;
-            margin-top: 1rem;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .correct { color: var(--exp-green); }
-        .incorrect { color: var(--exp-red); }
-
-        /* メインアクションボタン */
-        .action-btn {
-            width: 100%;
-            max-width: 250px;
-            padding: 14px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: white;
-            background-color: #2d3436;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-        .action-btn:hover { background-color: #000; }
-
-        /* 軽量自作グラフ用CSS */
-        .chart-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            height: 200px;
-            margin: 2rem auto;
-            max-width: 400px;
-            border-bottom: 2px solid var(--text-main);
-            padding-bottom: 10px;
-        }
-        .bar-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 35%;
-        }
-        .bar {
-            width: 100%;
-            background-color: #dfe6e9;
-            border: 2px solid var(--text-main);
-            border-bottom: none;
-            border-radius: 4px 4px 0 0;
-            transition: height 0.5s ease-out;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 5px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            box-sizing: border-box;
-        }
-        .bar-label { margin-top: 8px; font-weight: bold; font-size: 0.9rem; }
-        .summary-text { font-size: 1.1rem; font-weight: bold; margin: 1.5rem 0; line-height: 1.6; color: #c0392b;}
-        .note { font-size: 0.75rem; color: #7f8c8d; text-align: left; line-height: 1.4; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased line-height-relaxed">
 
-<div id="app-container">
-
-    <div id="screen-start" class="screen active">
-        <h1>ストループ効果 実験</h1>
-        <p class="instruction">
-            これから画面中央に「●」または「漢字」が表示されます。<br><br>
-            文字の意味（読み）に惑わされずに、表示された文字や図形の<strong>「視覚的な色（フォントカラー）」</strong>を判断して、下部の対応するボタンをできるだけ早く、正確に押してください。<br><br>
-            最初は4回の練習を行います。（練習中は正誤のフィードバックが表示されます）
-        </p>
-        <button class="action-btn" onclick="nextPhase('practice')">練習を始める</button>
-    </div>
-
-    <div id="screen-experiment" class="screen">
-        <h1 id="block-title">練習ブロック</h1>
-        <div id="stimulus-window">
-            <div id="stimulus"></div>
+    <!-- ヘッダー -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
+            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors">講義ポータルへ戻る</a>
         </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
         
-        <div class="button-container">
-            <button id="btn-green" class="response-btn" onclick="handleResponse('green')">緑</button>
-            <button id="btn-yellow" class="response-btn" onclick="handleResponse('yellow')">黄</button>
-            <button id="btn-red" class="response-btn" onclick="handleResponse('red')">赤</button>
+        <!-- タイトルエリア -->
+        <div class="text-center mb-16">
+            <p class="text-indigo-600 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">講義資料</p>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                自動化される心と「選び直し」の心理学
+            </h1>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto rounded"></div>
         </div>
-        <div id="feedback"></div>
-    </div>
 
-    <div id="screen-intermission" class="screen">
-        <h1>練習終了</h1>
-        <p class="instruction" style="text-align: center;">
-            練習は以上です。次から本番（全20回）が始まります。<br>
-            本番中は「正解・不正解」のフィードバック画面は表示されません。<br><br>
-            準備ができたら、下のボタンを押して本番を開始してください。
-        </p>
-        <button class="action-btn" onclick="nextPhase('actual')">本番を始める</button>
-    </div>
-
-    <div id="screen-result" class="screen">
-        <h1>実験結果サマリー</h1>
-        
-        <div class="chart-container">
-            <div class="bar-wrapper">
-                <div id="bar-control" class="bar" style="height: 0px;">0ms</div>
-                <div class="bar-label">統制条件(●)</div>
-            </div>
-            <div class="bar-wrapper">
-                <div id="bar-stroop" class="bar" style="height: 0px;">0ms</div>
-                <div class="bar-label">実験条件(漢字)</div>
+        <!-- 導入 -->
+        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white">
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-indigo-50 to-slate-50">
+                <h3 class="text-base sm:text-lg font-bold text-indigo-950 mb-3">導入：私たちは本当に「自分の意志」で動いているのか？</h3>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                    授業を休んだ皆さんへ。今回の授業は、私たちが普段どれくらい「自分の意志」で動いているのか、そして「自分で決めて生きる」とは一体どういうことなのかという、認知心理学・社会心理学の核心に迫るテーマについて考えました。このテキストを読んで、授業のディスカッションを追体験してください。
+                </p>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
+                    前回は「集団心理」のメカニズムを学び、人が状況やシステムによって自らの倫理観を手放し得るリスクを確認しました。では、特別な圧力がかかっていない日常空間であれば、私たちは常に「自分の意志」で合理的な判断を下せているのでしょうか。
+                </p>
             </div>
         </div>
 
-        <div id="summary-msg" class="summary-text"></div>
-        
-        <div class="note">
-            ※反転項目や除外ルール：不正解（エラー試行）、および極端な反応時間（150ms未満のフライング、3000ms超の遅延遅着）のデータは、学術的クリーニング規則に則り平均値の計算から自動除外しています。
-        </div>
-        <button class="action-btn" onclick="location.reload()" style="margin-top: 2rem;">もう一度行う</button>
-    </div>
-
-</div>
-
-<script>
-    const colors = ['green', 'yellow', 'red'];
-    const kanjiText = { 'green': '緑', 'yellow': '黄', 'red': '赤' };
-    const colorCodes = { 'green': '#2ecc71', 'yellow': '#f1c40f', 'red': '#e74c3c' };
-
-    let currentPhase = 'start';
-    let trials = [];
-    let currentTrialIndex = 0;
-    let startTime = 0;
-    let isAcceptingInput = false;
-    let resultsData = [];
-
-    function generateTrials(phase) {
-        let list = [];
-        if (phase === 'practice') {
-            for(let i=0; i<2; i++) list.push({ type: 'control' });
-            for(let i=0; i<2; i++) list.push({ type: 'stroop' });
-        } else {
-            for(let i=0; i<10; i++) list.push({ type: 'control' });
-            for(let i=0; i<10; i++) list.push({ type: 'stroop' });
-        }
-        
-        for (let i = list.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [list[i], list[j]] = [list[j], list[i]];
-        }
-
-        list.forEach(t => {
-            const colorTarget = colors[Math.floor(Math.random() * colors.length)];
-            t.correctColor = colorTarget;
+        <!-- 章1：重要キーワード：同調（Conformity）とアッシュの実験 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                🔑 重要キーワード：同調（Conformity）とアッシュの実験
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ここで、社会心理学者ソロモン・アッシュ（Solomon Asch）が1951年に行った有名な「同調実験」を振り返ってみましょう。
+            </p>
             
-            if (t.type === 'control') {
-                t.stimulusHTML = `<span class="circle-stimulus" style="background-color: ${colorCodes[colorTarget]};"></span>`;
-            } else {
-                let wrongKanji;
-                do {
-                    wrongKanji = colors[Math.floor(Math.random() * colors.length)];
-                } while (wrongKanji === colorTarget);
-                t.stimulusHTML = `<span style="color: ${colorCodes[colorTarget]}; font-size: 3.5rem;">${kanjiText[wrongKanji]}</span>`;
-            }
-        });
-        return list;
-    }
+            <div class="bg-white border border-slate-200 rounded-xl p-6 my-6 shadow-sm space-y-3 text-sm sm:text-base">
+                <p class="text-slate-700"><strong class="text-indigo-900">実験の内容：</strong> 1本の「基準の線」と、長さの違う3本の「比較用の線」を提示し、同じ長さの線を選ばせます。正解は誰の目にも明らかです。しかし、被験者以外の参加者（全員サクラ）が、全員一致であえて「間違った線」を正解だと答えていきます。</p>
+                <p class="text-slate-700"><strong class="text-indigo-900">結果：</strong> 被験者の約75%が、少なくとも1回は周囲に合わせて誤答してしまいました。ただし、全試行を平均すると同調率は約37%であり、常に集団に従い続けたわけではありません。</p>
+            </div>
 
-    function nextPhase(phase) {
-        currentPhase = phase;
-        if (phase === 'practice') {
-            document.getElementById('block-title').innerText = "練習ブロック (全4回)";
-            trials = generateTrials('practice');
-            currentTrialIndex = 0;
-            changeScreen('screen-experiment');
-            runTrial();
-        } else if (phase === 'actual') {
-            document.getElementById('block-title').innerText = "本番ブロック (全20回)";
-            trials = generateTrials('actual');
-            currentTrialIndex = 0;
-            changeScreen('screen-experiment');
-            runTrial();
-        }
-    }
+            <p class="text-slate-700 leading-relaxed text-justified">
+                心理学では、他者を正しい情報源とみなして従う「情報的同調」と、仲間外れを避けるために従う「規範的同調」を区別しますが、この実験では主に後者が働いたと考えられています。私たちは「自分で決めて生きている」と思いがちですが、実際には「変だと思うけれど言いにくい」という対人関係への配慮や葛藤から、自らの正しい判断を抑制してしまう傾向を確かに持っているのです。
+            </p>
+        </section>
 
-    function runTrial() {
-        isAcceptingInput = false;
-        document.getElementById('feedback').innerText = "";
-        
-        const stimArea = document.getElementById('stimulus');
-        stimArea.className = "fixation";
-        stimArea.innerText = "＋";
-
-        setTimeout(() => {
-            stimArea.className = "";
-            stimArea.innerHTML = trials[currentTrialIndex].stimulusHTML;
+        <!-- 章2：展開1：脳の「自動操縦」と二つの思考システム -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                展開1：脳の「自動操縦」と二つの思考システム
+            </h2>
             
-            startTime = performance.now();
-            isAcceptingInput = true;
-        }, 500);
-    }
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">🔑 重要キーワード：システム1 と システム2（二重過程理論）</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                なぜ人間にはこのような傾向があるのでしょうか。この謎を解き明かすために、現代の認知心理学が提示する「心の構造」を覗いてみましょう。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ノーベル経済学賞を受賞した心理学者ダニエル・カーネマン（Daniel Kahneman）は、人間の思考を大きく二つのシステムに分けて説明しました。
+            </p>
 
-    function handleResponse(chosenColor) {
-        if (!isAcceptingInput) return;
-        const endTime = performance.now();
-        isAcceptingInput = false;
+            <div class="bg-white border border-slate-200 rounded-xl p-6 my-6 shadow-sm space-y-4 text-sm sm:text-base">
+                <p class="text-slate-700"><strong class="text-indigo-900">システム1（速い思考）：</strong> 直感的、自動的、無意識的に働き、エネルギーをほとんど消費しない（例：迫ってくる車を瞬時に避ける、母国語の看板の文字を勝手に読んでしまう）。</p>
+                <p class="text-slate-700"><strong class="text-indigo-900">システム2（遅い思考）：</strong> 意識的、論理的、分析的に働き、強いエネルギー（認知資源）を消費する（例：複雑な計算をする、初めて行く場所の地図をじっくり読む）。</p>
+                <p class="text-slate-500 text-xs italic border-t border-slate-100 pt-2">
+                    ※なお、システム1とシステム2は脳内に実在する独立した器官を指すわけではなく、人間の認知における「自動的な処理」と「統制的な処理」を理解するための理論的なモデルです。また、熟練したスポーツ選手の動きのように、高度な技能であっても訓練によってシステム1の自動化プロセスに組み込まれることがあります。
+                </p>
+            </div>
 
-        const rt = endTime - startTime;
-        const currentTrial = trials[currentTrialIndex];
-        const isCorrect = (chosenColor === currentTrial.correctColor);
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                人間の知覚や行動の多くは、この「システム1（自動操縦モード）」に支えられています。授業資料の錯視画像において、脳が周囲の影の情報を計算して色を自動的に補正してしまうのもシステム1の働きです。「同じ色だ」と頭（システム2）で分かっていても、自動的な見え方を意志で修正することはできません。
+            </p>
 
-        if (currentPhase === 'actual') {
-            resultsData.push({
-                type: currentTrial.type,
-                rt: rt,
-                isCorrect: isCorrect
-            });
-        }
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">🔑 重要キーワード：ストループ効果 と 実行機能</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この二つのシステムのぶつかり合いを明確に示してくれるのが、J.R.ストループ（John Ridley Stroop）が1935年に報告した<strong class="highlight">「ストループ効果」</strong>です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                緑色のインクで「赤」と書かれた漢字の「インクの色（みどり）」を答える時、反応時間は大きく遅れます。文字の読み取りは、私たちが人生で過学習してきたため、システム1（自動化された処理）として瞬時に活性化します。一方、インクの色を答えるには、注意を向け直し、意図的に反応をコントロールするシステム2（統制的処理）を起動しなければなりません。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                このように、システム1がもたらす衝動を抑え、注意を切り替え、目標に沿って行動を制御する心の働きを、心理学では<strong class="highlight">「実行機能（Executive Function）」</strong>と呼びます。ストループ効果における遅れは、システム1の自動反応に、システム2の実行機能が必死にブレーキをかけて調整している「葛藤の時間」なのです。
+            </p>
+        </section>
 
-        if (currentPhase === 'practice') {
-            const fb = document.getElementById('feedback');
-            if (isCorrect) {
-                fb.className = "correct";
-                fb.innerText = "◯ 正解";
+        <!-- 章3：展開2：行動の「自動化」が持つ光と影 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                展開2：行動の「自動化」が持つ光と影
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                システム1による行動の自動化は、本来、私たちの日常生活の認知的な負担を減らすための重要な仕組みです。歩くことや言葉を話すことが自動化されているからこそ、私たちは余ったエネルギーを別の活動に回すことができます。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                しかし、この自動化が本人の目標や幸福と衝突し、苦痛の原因になることもあります。例えば臨床心理学の領域では、特定の手がかりによって過去の恐怖記憶や強い情動反応が自動的に活性化され、本人の意図とは無関係に苦痛が生じるPTSD（心的外傷後ストレス障害）や、「手を洗わねば」という思考が止まらない強迫症（OCD）などが知られています。また、先述のアッシュの実験で見られた「同調」も、社会生活の中で獲得された「周囲に合わせる」という自動的な傾向と、対人関係への配慮が複雑に組み合わさって生じた結果と言えるでしょう。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">🔑 重要研究：ベンジャミン・リベットと現代の自由意志論</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                では、私たちはシステム1の自動的な傾向に流されるだけの存在なのでしょうか。神経科学者ベンジャミン・リベット（Benjamin Libet）は脳波実験を行い、「人が『指を動かそう』と意識的な決定をする約0.3秒前に、すでに脳は運動の準備（準備電位）を始めている」ことを示しました。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この発見は「意識よりも脳の自動反応が先だ」という大論争を巻き起こしました。現在では、この単純な指の運動実験を複雑な人生の意思決定にそのまま一般化できるかについては議論が続いていますが、リベット自身は一つの重要な可能性を提示しました。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                それは、無意識から湧き上がってきた行動の衝動を、実行される直前に「意識的に止める（拒否する）」という可能性です。これは<strong class="highlight">「Free Won't（自由な不意志 / 止める力）」</strong>とも呼ばれます。ストループ実験で「あか！」と言いそうになる衝動を堪え、「みどり」と言い直すように、私たちには自動的なレールを一時停止し、行動を選び直すプロセス（システム2の介入）が備わっているように見えます。
+            </p>
+        </section>
+
+        <!-- コラム：習慣研究（精緻化リハーサル） -->
+        <section class="mb-16 bg-gradient-to-br from-slate-900 to-indigo-950 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl">
+            <h2 class="text-lg sm:text-xl font-bold text-amber-400 border-b border-slate-700 pb-3 mb-6 flex items-center">
+                <span class="mr-2">💡</span> 🔑 意志力から環境設計へ（現代の習慣研究）
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                ここで一つ、非常に重要な事実をお伝えします。ウェンディ・ウッド（Wendy Wood）らによる現代の習慣研究などが明らかにしてきたのは、システム2を稼働させて「意志の力」だけで行動をコントロールし続けるのには大きな認知的コストが伴い、長続きしないということです。
+            </p>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                ですから、もし行動が続かなくても「自分の意志が弱いからだ」と自己責任論に陥る必要はありません。現代の心理学では、強い意志に頼るよりも、<strong class="text-amber-300">「自動的に良い行動ができるように環境を整える（環境設計）」</strong>ことや、「無理なく続く習慣を作ること」の重要性が強調されています。
+            </p>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified">
+                また、友人や教員、家族、コミュニティといった<strong class="text-amber-300">「社会的支援」</strong>は単なる補助ではなく、私たちが行動を選び直すための自己制御システムの大切な一部として機能します。個人を責めず、システムと環境をハックする視点を忘れないようにしましょう。
+            </p>
+        </section>
+
+        <!-- 結論 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                結論：しんどさは何のサインか？――皆さんへの問いかけ
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                いつも通りのルーティンをこなすること。周囲の空気に流されること。これらはシステム1に乗っている状態であるため、認知的負荷が少なく「楽」です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                逆に、新しい環境で関係を築く時、自分の本当の意見を言う時、これまでの習慣を断ち切る時。私たちはシステム1の強力な自動反応に急ブレーキをかけ、エネルギーを激しく消費するシステム2をフル稼働させなければなりません。自動的な習慣に抗して行動を変えようとする時に、私たちが莫大な精神的エネルギーを消耗するのは当然のことなのです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                もし皆さんが、何かに挑戦する中で「しんどさ」や「葛藤」を覚えたなら。それを単に「自分の能力不足だ」として片付けないでください。その認知的負荷は、あなたが過去のデータや周囲の空気に盲従するのをやめ、<strong class="highlight">「自分自身で行動を泥臭く選び直そうとしている」</strong>大切なサインかもしれません。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                過去の延長線上にある自動操縦に身を任せるのか。それとも、エネルギーを支払って、あるいは他者の助けを借りて、新しい選択肢を手動で選び取るのか。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified font-medium">
+                心理学は、人間がどれほど環境や習慣に影響されるかを示してきました。しかし同時に、人間には環境を選び直し、習慣を作り直し、他者と協力しながら未来を変えていく能力もあるように見えます。この選択の連続を、私たちは「自由意志」と呼ぶべきなのでしょうか。それとも、別の言葉で表現すべきなのでしょうか。皆さん自身は、人間の心の仕組みと、これからの自分の生き方について、どう考えるでしょうか。ぜひじっくりと考えてみてください。
+            </p>
+        </section>
+
+        <hr class="border-slate-200 my-12">
+
+        <!-- 確認テスト＆感想フォーム（設問2問固定の仕様に準拠） -->
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-md p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span class="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md mr-3">確認テスト</span>
+                理解度確認・感想の提出
+            </h2>
+
+            <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
+                <!-- 学籍番号入力[cite: 1] -->
+                <div>
+                    <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
+                    <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
+                           class="w-full sm:w-64 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800">
+                </div>
+
+                <!-- 問1 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問1】アッシュの同調実験（1951）において、誰の目にも正解が明らかな線を選択するタスクであるにもかかわらず、周囲のサクラ全員が誤答した際に被験者が「少なくとも1回は同調して誤答してしまった割合」として正しいものはどれですか。
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 約 1% 未満</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 約 37%（全試行の平均同調率）</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 約 75%</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 100% 全員が最後まで同調し続けた</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問2 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問2】カーネマンの二重過程理論における「システム1」と「システム2」の説明、およびストループ効果の解釈として最も適切なものはどれですか。
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) システム1は論理的・分析的な思考であり、文字の読み取りのような高度な自動化タスクでは起動しない。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 文字の意味を自動で読み取ってしまう「システム1」の高速な衝動に対し、インクの色を答えるために「システム2」の実行機能がブレーキをかけて調整する過程で葛藤（反応の遅れ）が生じる。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 錯視画像で色が補正されて見えるのは、システム2が脳内の独立した器官として合理的に計算し直しているためであり、人間の意志で簡単に制御可能である。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 行動の自動化は常に害をもたらすため、日常生活のルーティンから社会的支援にいたるまで、すべての習慣を徹底的に排除して生きるべきである。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 感想・質問[cite: 1] -->
+                <div>
+                    <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
+                    <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて、「自由意志」や「これからの自分の環境設計」について考えたことを自由に記述してください。"
+                              class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 text-sm sm:text-base"></textarea>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="pt-2">
+                    <button type="submit" id="submit_btn" 
+                            class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer text-sm sm:text-base">
+                        回答を送信する
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 text-xs border-t border-slate-800 mt-20">
+        <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
+    </footer>
+
+    <!-- ページ個別スクリプト：自動採点と共通モジュールの結合[cite: 1] -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            // フォルダ名や回数に合わせて固定値を指定（例: class_10 や class_09 などに調整してください）
+            const classNum = "class_X"; 
+            const studentId = document.getElementById("student_id").value;
+            const feedback = document.getElementById("student_feedback").value;
+            const btn = document.getElementById("submit_btn");
+
+            // クイズの自動採点
+            let scoreCount = 0;
+            const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+            const q2Answer = document.querySelector('input[name="q2"]:checked').value;
+
+            if (q1Answer === "C") scoreCount++;
+            if (q2Answer === "B") scoreCount++;
+
+            const finalScore = `${scoreCount} / 2`;
+
+            // 共通送信関数を呼び出し（アドレス非公開・非同期通信仕様）[cite: 1]
+            if (window.sendSharedMail) {
+                window.sendSharedMail(classNum, studentId, finalScore, feedback, btn);
             } else {
-                fb.className = "incorrect";
-                fb.innerText = "✕ 不正解";
+                alert("エラー：共通送信モジュール（mail-sender.js）が読み込まれていません。ファイルの配置状況を確認してください。");
             }
         }
-
-        setTimeout(() => {
-            document.getElementById('stimulus').innerHTML = "";
-            currentTrialIndex++;
-
-            if (currentTrialIndex < trials.length) {
-                runTrial();
-            } else {
-                if (currentPhase === 'practice') {
-                    changeScreen('screen-intermission');
-                } else {
-                    showResults();
-                }
-            }
-        }, currentPhase === 'practice' ? 600 : 200);
-    }
-
-    function showResults() {
-        changeScreen('screen-result');
-
-        const cleanData = (type) => {
-            return resultsData.filter(d => 
-                d.type === type && 
-                d.isCorrect === true && 
-                d.rt >= 150 &&          
-                d.rt <= 3000            
-            ).map(d => d.rt);
-        };
-
-        const controlRTs = cleanData('control');
-        const stroopRTs = cleanData('stroop');
-
-        const calcMean = (arr) => arr.length === 0 ? 0 : arr.reduce((a, b) => a + b, 0) / arr.length;
-        const meanControl = calcMean(controlRTs);
-        const meanStroop = calcMean(stroopRTs);
-
-        const maxExpectedRT = Math.max(meanControl, meanStroop, 1000);
-        const getBarHeight = (mean) => `${(mean / maxExpectedRT) * 160}px`;
-
-        const barControl = document.getElementById('bar-control');
-        const barStroop = document.getElementById('bar-stroop');
-
-        barControl.style.height = getBarHeight(meanControl);
-        barControl.innerText = `${Math.round(meanControl)}ms`;
-        barStroop.style.height = getBarHeight(meanStroop);
-        barStroop.innerText = `${Math.round(meanStroop)}ms`;
-
-        const difference = Math.round(meanStroop - meanControl);
-        const summaryMsg = document.getElementById('summary-msg');
-        
-        if (difference > 0) {
-            summaryMsg.innerText = `実験条件（漢字）の方が、統制条件（●）より ${difference} ミリ秒遅くなりました。これが自動化による干渉（ストループ効果）です。`;
-        } else {
-            summaryMsg.innerText = `平均反応時間の差は ${difference} ミリ秒でした。講義での解説を聴きながら、脳の干渉メカニズムについて考えてみましょう。`;
-        }
-    }
-
-    function changeScreen(screenId) {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById(screenId).classList.add('active');
-        window.scrollTo(0,0);
-    }
-</script>
-
+    </script>
 </body>
 </html>
