@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ストループ効果 実験ルーム</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --border-color: #b2bec3; /* すべてのボタンに共通で使用するグレー */
+            
+            /* 実験刺激用の3色（視認性を確保したカラーコード） */
+            --exp-green: #2ecc71;
+            --exp-yellow: #f1c40f;
+            --exp-red: #e74c3c;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        #app-container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin: 15px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .screen { display: none; }
+        .screen.active { display: block; }
+
+        h1 { font-size: 1.4rem; margin-bottom: 1.5rem; color: #000; }
+        p.instruction { text-align: left; line-height: 1.7; font-size: 0.95rem; margin-bottom: 2rem; }
+
+        /* 実験エリア */
+        #stimulus-window {
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            background: #fafafa;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        #stimulus {
+            font-weight: bold;
+            transition: transform 0.1s;
+        }
+        
+        /* 統制条件：大きな円（●） */
+        .circle-stimulus {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        /* 十字注視点 */
+        .fixation { font-size: 3rem; color: #7f8c8d; font-weight: normal; }
+
+        /* 回答ボタンのレイアウト要件 */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .response-btn {
+            flex: 1;
+            padding: 18px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: #ffffff;
+            color: #2d3436;
+            /* 💡 すべてのボタンの枠線を同じグレーに統一（バイアス排除） */
+            border: 3px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.1s, transform 0.05s;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .response-btn:active { transform: scale(0.95); background-color: #f1f2f6; }
+
+        /* フィードバックメッセージ */
+        #feedback {
+            height: 24px;
+            margin-top: 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .correct { color: var(--exp-green); }
+        .incorrect { color: var(--exp-red); }
+
+        /* メインアクションボタン */
+        .action-btn {
+            width: 100%;
+            max-width: 250px;
+            padding: 14px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            background-color: #2d3436;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .action-btn:hover { background-color: #000; }
+
+        /* 軽量自作グラフ用CSS */
+        .chart-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 200px;
+            margin: 2rem auto;
+            max-width: 400px;
+            border-bottom: 2px solid var(--text-main);
+            padding-bottom: 10px;
+        }
+        .bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 35%;
+        }
+        .bar {
+            width: 100%;
+            background-color: #dfe6e9;
+            border: 2px solid var(--text-main);
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            transition: height 0.5s ease-out;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 5px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            box-sizing: border-box;
+        }
+        .bar-label { margin-top: 8px; font-weight: bold; font-size: 0.9rem; }
+        .summary-text { font-size: 1.1rem; font-weight: bold; margin: 1.5rem 0; line-height: 1.6; color: #c0392b;}
+        .note { font-size: 0.75rem; color: #7f8c8d; text-align: left; line-height: 1.4; }
+    </style>
+</head>
+<body>
+
+<div id="app-container">
+
+    <div id="screen-start" class="screen active">
+        <h1>ストループ効果 実験</h1>
+        <p class="instruction">
+            これから画面中央に「●」または「漢字」が表示されます。<br><br>
+            文字の意味（読み）に惑わされずに、表示された文字や図形の<strong>「視覚的な色（フォントカラー）」</strong>を判断して、下部の対応するボタンをできるだけ早く、正確に押してください。<br><br>
+            最初は4回の練習を行います。（練習中は正誤のフィードバックが表示されます）
+        </p>
+        <button class="action-btn" onclick="nextPhase('practice')">練習を始める</button>
+    </div>
+
+    <div id="screen-experiment" class="screen">
+        <h1 id="block-title">練習ブロック</h1>
+        <div id="stimulus-window">
+            <div id="stimulus"></div>
+        </div>
+        
+        <div class="button-container">
+            <button id="btn-green" class="response-btn" onclick="handleResponse('green')">緑</button>
+            <button id="btn-yellow" class="response-btn" onclick="handleResponse('yellow')">黄</button>
+            <button id="btn-red" class="response-btn" onclick="handleResponse('red')">赤</button>
+        </div>
+        <div id="feedback"></div>
+    </div>
+
+    <div id="screen-intermission" class="screen">
+        <h1>練習終了</h1>
+        <p class="instruction" style="text-align: center;">
+            練習は以上です。次から本番（全20回）が始まります。<br>
+            本番中は「正解・不正解」のフィードバック画面は表示されません。<br><br>
+            準備ができたら、下のボタンを押して本番を開始してください。
+        </p>
+        <button class="action-btn" onclick="nextPhase('actual')">本番を始める</button>
+    </div>
+
+    <div id="screen-result" class="screen">
+        <h1>実験結果サマリー</h1>
+        
+        <div class="chart-container">
+            <div class="bar-wrapper">
+                <div id="bar-control" class="bar" style="height: 0px;">0ms</div>
+                <div class="bar-label">統制条件(●)</div>
+            </div>
+            <div class="bar-wrapper">
+                <div id="bar-stroop" class="bar" style="height: 0px;">0ms</div>
+                <div class="bar-label">実験条件(漢字)</div>
+            </div>
+        </div>
+
+        <div id="summary-msg" class="summary-text"></div>
+        
+        <div class="note">
+            ※反転項目や除外ルール：不正解（エラー試行）、および極端な反応時間（150ms未満のフライング、3000ms超の遅延遅着）のデータは、学術的クリーニング規則に則り平均値の計算から自動除外しています。
+        </div>
+        <button class="action-btn" onclick="location.reload()" style="margin-top: 2rem;">もう一度行う</button>
+    </div>
+
+</div>
+
+<script>
+    const colors = ['green', 'yellow', 'red'];
+    const kanjiText = { 'green': '緑', 'yellow': '黄', 'red': '赤' };
+    const colorCodes = { 'green': '#2ecc71', 'yellow': '#f1c40f', 'red': '#e74c3c' };
+
+    let currentPhase = 'start';
+    let trials = [];
+    let currentTrialIndex = 0;
+    let startTime = 0;
+    let isAcceptingInput = false;
+    let resultsData = [];
+
+    function generateTrials(phase) {
+        let list = [];
+        if (phase === 'practice') {
+            for(let i=0; i<2; i++) list.push({ type: 'control' });
+            for(let i=0; i<2; i++) list.push({ type: 'stroop' });
+        } else {
+            for(let i=0; i<10; i++) list.push({ type: 'control' });
+            for(let i=0; i<10; i++) list.push({ type: 'stroop' });
+        }
+        
+        for (let i = list.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [list[i], list[j]] = [list[j], list[i]];
+        }
+
+        list.forEach(t => {
+            const colorTarget = colors[Math.floor(Math.random() * colors.length)];
+            t.correctColor = colorTarget;
+            
+            if (t.type === 'control') {
+                t.stimulusHTML = `<span class="circle-stimulus" style="background-color: ${colorCodes[colorTarget]};"></span>`;
+            } else {
+                let wrongKanji;
+                do {
+                    wrongKanji = colors[Math.floor(Math.random() * colors.length)];
+                } while (wrongKanji === colorTarget);
+                t.stimulusHTML = `<span style="color: ${colorCodes[colorTarget]}; font-size: 3.5rem;">${kanjiText[wrongKanji]}</span>`;
+            }
+        });
+        return list;
+    }
+
+    function nextPhase(phase) {
+        currentPhase = phase;
+        if (phase === 'practice') {
+            document.getElementById('block-title').innerText = "練習ブロック (全4回)";
+            trials = generateTrials('practice');
+            currentTrialIndex = 0;
+            changeScreen('screen-experiment');
+            runTrial();
+        } else if (phase === 'actual') {
+            document.getElementById('block-title').innerText = "本番ブロック (全20回)";
+            trials = generateTrials('actual');
+            currentTrialIndex = 0;
+            changeScreen('screen-experiment');
+            runTrial();
+        }
+    }
+
+    function runTrial() {
+        isAcceptingInput = false;
+        document.getElementById('feedback').innerText = "";
+        
+        const stimArea = document.getElementById('stimulus');
+        stimArea.className = "fixation";
+        stimArea.innerText = "＋";
+
+        setTimeout(() => {
+            stimArea.className = "";
+            stimArea.innerHTML = trials[currentTrialIndex].stimulusHTML;
+            
+            startTime = performance.now();
+            isAcceptingInput = true;
+        }, 500);
+    }
+
+    function handleResponse(chosenColor) {
+        if (!isAcceptingInput) return;
+        const endTime = performance.now();
+        isAcceptingInput = false;
+
+        const rt = endTime - startTime;
+        const currentTrial = trials[currentTrialIndex];
+        const isCorrect = (chosenColor === currentTrial.correctColor);
+
+        if (currentPhase === 'actual') {
+            resultsData.push({
+                type: currentTrial.type,
+                rt: rt,
+                isCorrect: isCorrect
+            });
+        }
+
+        if (currentPhase === 'practice') {
+            const fb = document.getElementById('feedback');
+            if (isCorrect) {
+                fb.className = "correct";
+                fb.innerText = "◯ 正解";
+            } else {
+                fb.className = "incorrect";
+                fb.innerText = "✕ 不正解";
+            }
+        }
+
+        setTimeout(() => {
+            document.getElementById('stimulus').innerHTML = "";
+            currentTrialIndex++;
+
+            if (currentTrialIndex < trials.length) {
+                runTrial();
+            } else {
+                if (currentPhase === 'practice') {
+                    changeScreen('screen-intermission');
+                } else {
+                    showResults();
+                }
+            }
+        }, currentPhase === 'practice' ? 600 : 200);
+    }
+
+    function showResults() {
+        changeScreen('screen-result');
+
+        const cleanData = (type) => {
+            return resultsData.filter(d => 
+                d.type === type && 
+                d.isCorrect === true && 
+                d.rt >= 150 &&          
+                d.rt <= 3000            
+            ).map(d => d.rt);
+        };
+
+        const controlRTs = cleanData('control');
+        const stroopRTs = cleanData('stroop');
+
+        const calcMean = (arr) => arr.length === 0 ? 0 : arr.reduce((a, b) => a + b, 0) / arr.length;
+        const meanControl = calcMean(controlRTs);
+        const meanStroop = calcMean(stroopRTs);
+
+        const maxExpectedRT = Math.max(meanControl, meanStroop, 1000);
+        const getBarHeight = (mean) => `${(mean / maxExpectedRT) * 160}px`;
+
+        const barControl = document.getElementById('bar-control');
+        const barStroop = document.getElementById('bar-stroop');
+
+        barControl.style.height = getBarHeight(meanControl);
+        barControl.innerText = `${Math.round(meanControl)}ms`;
+        barStroop.style.height = getBarHeight(meanStroop);
+        barStroop.innerText = `${Math.round(meanStroop)}ms`;
+
+        const difference = Math.round(meanStroop - meanControl);
+        const summaryMsg = document.getElementById('summary-msg');
+        
+        if (difference > 0) {
+            summaryMsg.innerText = `実験条件（漢字）の方が、統制条件（●）より ${difference} ミリ秒遅くなりました。これが自動化による干渉（ストループ効果）です。`;
+        } else {
+            summaryMsg.innerText = `平均反応時間の差は ${difference} ミリ秒でした。講義での解説を聴きながら、脳の干渉メカニズムについて考えてみましょう。`;
+        }
+    }
+
+    function changeScreen(screenId) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(screenId).classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
