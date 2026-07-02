@@ -334,30 +334,64 @@
 
     <!-- ページ個別スクリプト：自動採点と共通モジュールの結合[cite: 1] -->
     <script>
-        function submitForm(event) {
-            event.preventDefault();
-
-            const classNum = "class_03"; // 第3回固定値[cite: 1]
-            const studentId = document.getElementById("student_id").value;
-            const feedback = document.getElementById("student_feedback").value;
-            const btn = document.getElementById("submit_btn");
-
-            // クイズの自動採点
-            let scoreCount = 0;
-            const q1Answer = document.querySelector('input[name="q1"]:checked').value;
-            const q2Answer = document.querySelector('input[name="q2"]:checked').value;
-
-            if (q1Answer === "C") scoreCount++;
-            if (q2Answer === "D") scoreCount++;
-
-            const finalScore = `${scoreCount} / 2`;
-
-            // 共通送信関数を呼び出し（アドレス非公開・非同期通信仕様）[cite: 1]
-            if (window.sendSharedMail) {
-                window.sendSharedMail(classNum, studentId, finalScore, feedback, btn);
-            } else {
-                alert("エラー：共通送信モジュール（mail-sender.js）が読み込まれていません。ファイルの配置状況を確認してください。");
-            }
+            function submitForm(event) {
+                event.preventDefault();
+                
+                const classNum = "class_10"; // 第10回
+                const studentId = document.getElementById("student_id").value;
+                const feedback = document.getElementById("student_feedback").value;
+                const btn = document.getElementById("submit_btn");
+                
+                // クイズの自動採点
+                let scoreCount = 0;
+                const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+                const q2Answer = document.querySelector('input[name="q2"]:checked').value;
+                
+                if (q1Answer === "B") scoreCount++;
+                if (q2Answer === "D") scoreCount++;
+                
+                const scoreRate = (scoreCount / 2) * 100 + "%";
+                const subjectLabel = document.getElementById("subject_label").innerText;
+                const lectureTitle = document.title;
+                
+                // 送信データ整形
+                const payloadData = {
+                    "科目区分": subjectLabel,
+                    "講義回": lectureTitle,
+                    "学籍番号": studentId,
+                    "クイズ得点率": scoreRate,
+                    "学生からの質問・感想": feedback
+                };
+                
+                // ★先生のFormspreeトークンID
+                const FORMSPREE_ID = "xjgqbqnl"; 
+                
+                btn.disabled = true;
+                btn.innerText = "送信中...";
+                
+                // 規格に厳格に準拠したFetch通信（小文字ヘッダー・プレーンテキスト許容モード）
+                fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json" // 大文字・小文字を修正
+                    },
+                    body: JSON.stringify(payloadData)
+            })
+            .then(response => {
+                    if (response.ok) {
+                        alert(`正常に記録されました（あなたのクイズ得点率: ${scoreRate}）。お疲れ様でした。`);
+                        btn.innerText = "送信完了";
+                    } else {
+                        throw new Error("APIエラー");
+                    }
+            })
+            .catch(error => {
+                    console.error("Submission Error:", error);
+                    alert("送信に失敗しました。時間をおいて再度送信ボタンを押してください。");
+                    btn.disabled = false;
+                    btn.innerText = "解答と質問を送信する";
+            });
         }
     </script>
 </body>
