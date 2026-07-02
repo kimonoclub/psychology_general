@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ポータルの全体スキャナーが自動収集・クレンジングするタイトルタグ[cite: 1] -->
-    <title>心理学入門：記憶の科学と脳の可塑性：睡眠、海馬の脆弱性、そして「認知の癖」に気づくための心理学</title>
-    <!-- Tailwind CSS CDN -->
+    <title>心理学入門：発達心理学：動機づけの認知構造から生涯発達におけるアイデンティティ形成まで</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- 共通メール送信JSモジュールの読み込み（相対パス・アドレス非表示仕様）[cite: 1] -->
-    <script src="../js/mail-sender.js"></script>
     <style>
         /* 学術的気品を表現するハイライト装飾 */
         .highlight {
@@ -24,245 +20,307 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased line-height-relaxed">
 
-    <!-- ヘッダー -->
     <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
-            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors">講義ポータルへ戻る[cite: 1]</a>
+            <span id="subject_label" class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
+            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors">講義ポータルへ戻る</a>
         </div>
     </header>
 
-    <!-- メインコンテンツ -->
     <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
         
-        <!-- タイトルエリア -->
         <div class="text-center mb-16">
-            <p class="text-indigo-600 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">第6回 講義資料</p>
+            <p class="text-indigo-600 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">第9回 講義資料</p>
             <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
-                記憶の科学と脳の可塑性<br class="hidden sm:inline">
-                <span class="text-xl sm:text-2xl text-slate-600 font-normal block mt-2">睡眠、海馬の脆弱性、そして「認知の癖」に気づくための心理学</span>
+                発達心理学：動機づけの認知構造から<br class="hidden sm:inline">
+                <span class="text-xl sm:text-2xl text-slate-600 font-normal block mt-2">生涯発達におけるアイデンティティ形成まで</span>
             </h1>
             <div class="w-16 h-1 bg-indigo-600 mx-auto rounded"></div>
         </div>
 
-        <!-- イントロダクション -->
-        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white">
-            <div class="p-6 sm:p-8 bg-gradient-to-br from-indigo-50 to-slate-50">
-                <h3 class="text-base sm:text-lg font-bold text-indigo-950 mb-3">イントロダクション：あなたの脳が密かに編み上げている「歪み」</h3>
-                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mb-4">
-                    私たちは、自分の目で世界をありのままに眺め、自分の意志で合理的な判断を下していると考えがちです。しかし、心理学や脳科学の最前線が明らかにしたのは、私たちの知覚や行動は、過去の環境や日々の身体状態によって作られた「見えない認知のフィルター」に大きく左右されているという事実です。
-                </p>
-                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mb-4">
-                    人間は、睡眠不足や日々のストレスといった環境のなかで、脳の海馬や扁桃体をダイナミックに変化させています。 そして、その生理的な変化に伴い、世界をネガティブに捉えてしまう様々な「認知の癖（物語）」を無意識のうちに脳内に編み上げている存在なのです。
-                </p>
-                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
-                    本稿では、ドイツの心理学者ヘルマン・エビングハウスによる記憶の基礎研究から出発し、睡眠や発達初期のストレスが脳の構造をいかに変容させるのかを客観的なデータから紐解きます。私たちが目指すのは、脳に刻まれた「認知の癖」の存在に自ら気づくことです。それこそが、真の自己理解に達し、自分らしく生きるための「環境設計」を始める最高の第一歩となるのです。
-                </p>
-            </div>
-        </div>
-
-        <!-- 1. 記憶の基礎と、睡眠不足がもたらす「認知の歪み」 -->
         <section class="mb-16">
             <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
-                1. 記憶の基礎と、睡眠不足がもたらす「認知の歪み」
+                1. 導入と問いかけ：学生の常識を揺さぶる「指示の逆説」
             </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                人間が成長し、新たな環境に適応していくプロセスにおいて、「目標」は行動を駆動する強力なエンジンとなります。もしあなたが、部活動の後輩、アルバイトの新人、あるいは将来の教育・保育・心理臨床の現場で出会う子どもたちを励まし、そのモチベーションを引き出そうとするとき、次のどちらの言葉をかけるでしょうか。
+            </p>
             
-            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">記憶の定着とエビングハウスの忘却曲線</h3>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                記憶のメカニズムを科学的に探求した最初の人物が、ヘルマン・エビングハウス（Hermann Ebbinghaus）です。彼は自らを被験者とし、「BIT」や「JAT」、「KOF」といった、意味を持たないアルファベット3文字の「無意味綴り」を大量に記憶する過酷な実験を行いました。
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                どれだけの時間をかければ正確に暗記できるか、そして時間の経過とともにどれほどの割合を忘却していくのかを測定した結果、有名な「忘却曲線」が導き出されました。人間の脳は、インプットした直後に最も激しく忘却を起こし、時間の経過とともにその忘却のペースが緩やかになっていくという規則性を持っています。
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                では、この記憶の保持や定着の効率を、日常のなかで劇的に左右する環境変数とは何でしょうか。その答えこそが「睡眠」です。
-            </p>
-
-            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">睡眠不足は「悪いことだけ」を脳に記憶させる</h3>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                特に深い眠りである「徐波睡眠（ノンレム睡眠の深いステージ）」が不足すると、海馬での記憶の整理・統合が妨げられ、記憶力の低下を招くことが分かっています。また、慢性的は睡眠不足は、肥満や成人病、社会的な「うつ（抑うつ状態）」と極めて強い統計的相関関係にあります。睡眠時間の不足が、私たちの情動（感情）や記憶のシステムにどれほど深刻な認知の歪みをもたらすのか、興味深いfMRI（機能的磁気共鳴画像装置）の実験データを見てみましょう。
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                実験では、十分な睡眠を取った「8時間睡眠グループ」と、睡眠を制限された「5時間睡眠グループ」の被験者を装置内に横たわらせ、脳の活動をリアルタイムで測定しました。被験者の目の前の画面には、人間の様々な感情を表す顔写真、特に「恐怖（ネガティブな表情）」と「喜び（ポジティブな表情）」の画像が交互に提示されました。
-            </p>
-
-            <div class="bg-white border border-slate-200 rounded-xl p-6 my-6 shadow-sm space-y-4 text-sm sm:text-base">
-                <p class="text-slate-700"><strong class="text-indigo-900">8時間睡眠グループの脳の反応：</strong> 喜びの表情に対しても、恐怖の表情に対しても、脳の情動ネットワークがバランスよく、適切に活性化しました。</p>
-                <p class="text-slate-700"><strong class="text-rose-900">5時間睡眠グループの脳の反応：</strong> 驚くべきことに、画面に「喜び（ポジティブ）」の画像が映し出されても、脳のシステムはほとんど「無反応」のままでした。しかし、画面に「恐怖（ネガティブ）」の画像が映し出された瞬間、彼らの脳内にある<strong class="highlight">「扁桃体（Amygdala）」</strong>という領域が、火を噴くように激しく、過剰に活性化したのです。</p>
+            <div class="bg-white border border-slate-200 rounded-xl p-6 my-6 shadow-sm space-y-3 text-sm sm:text-base">
+                <p class="text-slate-700"><strong class="text-indigo-900">A：</strong>「結果は気にしなくていいから、とにかくベストを尽くせ！」</p>
+                <p class="text-slate-700"><strong class="text-indigo-900">B：</strong>「今月中に、この課題の〇〇％達成を具体的な目標にしよう！」</p>
             </div>
 
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                扁桃体とは、人間が恐怖、不安、脅威を感じたときにアラームを鳴らす、脳内の「危機管理センター」です。この実験データが物語る恐ろしい真実は、睡眠が不足すると、私たちの脳は<strong class="highlight">「良いことや楽しいこと（喜び）を完全にシャットダウンし、悪いことや危険なこと（恐怖・脅威）だけを過剰にベースラインとして学習し、記憶に刻み込もうとする」</strong>という偏ったモードに変容してしまうという事実です。
+                日本の教育現場や日常のコミュニケーションにおいて、多くの人が「A」の言葉を選択しがちです。「相手に過度なプレッシャーを与えたくない」「のびのびと力を発揮してほしい」という配慮から、「ベストを尽くせ（Do your best）」というアプローチは一種の美徳として受け入れられています。
             </p>
             <p class="text-slate-700 leading-relaxed text-justified">
-                私たちが日々の生活で「世界は嫌なことばかりだ」と感じているとき、それは世界の現実ではなく、単に睡眠不足によって扁桃体が暴走し、記憶のバランスが歪んでしまっているだけかもしれません。しっかり眠る環境を整えることで初めて、記憶の司令塔である「海馬」が正常に駆動し、人生の良い面も悪い面も客観的に捉えることができるようになるのです。
+                しかし、心理学における厳密な行動実験データは、この直感的な優しさに潜む落とし穴を警告しています。実は、行動を精緻にコントロールし、具体的な成果を生み出すという文脈において、「ベストを尽くせ」という指示は、人間の認知資源の集中を著しく妨げる曖昧な要求になり得るのです。まずは、人間の動機づけと目標の関係性を解き明かす、基礎的な心理学理論から検証していきましょう。
             </p>
         </section>
 
-        <!-- 2. 発達初期の脆弱性と「海馬」の構造的変容 -->
         <section class="mb-16">
             <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
-                2. 発達初期の脆弱性と「海馬」の構造的変容
+                2. なぜ発達心理学で「目標」を扱うのか：発達段階における目標の質的変容
             </h2>
-            
-            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">早期ストレスが脳の神経新生を抑制する</h3>
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                環境が脳に及ぼす影響は、日々の睡眠にとどまりません。私たちが物心を着く前の「発達初期」に置かれていた環境もまた、脳の構造を劇的に変容させることが、神経科学的研究によって実証されています。
+                ここで、受講生の皆さんに、本講義の最も根源的な前提を提示しておかなければなりません。これから紹介する様々な実験データを聴くうちに、皆さんは「今日の講義は、どうすれば人をやる気にさせられるかという『教育心理学』の話なのだろうか」と思うかもしれません。しかし、それは違います。発達心理学とは、「どうすれば効率よく目標を達成できるか」という技術を研究する学学問ではありません。むしろ、「人生の各段階において、人は何を目標（価値）とするのか」、そして「年齢とともに目標の意味そのものがどのように質的に変化していくのか」という『発達のメカニズム』を説明する学問なのです。
             </p>
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                脳のなかで短期記憶を長期記憶へと転送する役割を担う<strong class="highlight">「海馬（Hippocampus）」</strong>は、大人になってからでも新しい神経細胞が生まれ続ける（神経新生）という、極めて柔軟でダイナミックな特性（可塑性）を持っています。しかし、この海馬の神経新生は、ストレスに対して極めて脆弱であることが分かっています。
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                ラットを用いた発達初期の環境実験（Mirescuらによる神経内分泌学研究）のデータを見てみましょう。生まれたばかりの子供のラットを、母親から引き離す環境（分離ストレス）に置き、その後の海馬の細胞増殖量を精密に測定・比較しました。
-            </p>
-
-            <div class="bg-slate-100 border-l-4 border-indigo-600 p-4 my-6 rounded-r-lg space-y-2 text-sm sm:text-base">
-                <p><strong class="text-slate-900">条件①：母親との「分離なし」</strong> ➔ 海馬の細胞は極めて活発に増殖する（高い神経新生を維持）。</p>
-                <p><strong class="text-slate-900">条件②：「1日15分」の短い分離</strong> ➔ 細胞の増殖量に大きな低下は見られない。</p>
-                <p><strong class="text-slate-900">条件③：「1日180分（3時間）」の長い分離</strong> ➔ 海馬における新しく生まれた細胞の数が、他のグループに比べて<strong class="text-rose-700">統計的に有意に激減する</strong>（増殖量が極端に少ない状態になる）。</p>
-            </div>
-
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                この動物実験のエビデンスは、過酷な分離ストレスという環境要因が、脳のハードウェアである海馬の成長や新生システムを直接的に抑制し、物理的な変容をもたらしてしまうという事実を雄弁に物語っています。
-            </p>
-
-            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">単一原因論の否定：うつ病への多層的な発達リスク</h3>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                この脳科学的知見は、人間の「うつ（精神的脆弱性）」の発達プロセスを理解する上での重要な視座を与えてくれます。現代心理学において、うつ病の発症リスクは、遺伝的な資質（遺伝的脆弱性）だけで100%決まるものではありません。
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                個人の持つ遺伝的資質に対して、周産期の医療環境、乳幼児期の過酷な児童虐待やネグレクトといった「社会環境・自然環境要因」が重層的に絡み合うことによって、海馬の容量や機能の低下が引き起こされます。心理学者や発達科学者は、「すべては遺伝のせいだ」「すべては特定の環境のせいだ」とする極端な単純化（単一原因論）を厳しく退けます。私たちの脳とこころは、様々な環境の変数が多層的に相互作用（Interaction）し合う、ダイナミックな生態学的システムの中で形作られているのです。
-            </p>
-
-            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">マインドワンダリングからの脱出とマインドフルネス</h3>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                うつ病や強い不安を抱える人の認的に特徴として、現在の目の前の現実に集中できず、注意があちこちへと飛び回り、過去の不快な記憶や未来の不安を反復して思い悩む「マインドワンダリング（心の迷走）」という状態が知られています。
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                この注意の迷走をくい止め、傷ついた脳のハードウェアを自らの手で回復させる実践的な技術が、現代社会において極めて強く求められています。それが、東洋の瞑想の知恵を西洋の医学・心理学と融合させた「マインドフルネス（MBSR：マインドフルネス・ストレス低減法）」です。
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                厳密な脳画像研究において、コントロール群（何もしないグループ）と、定期的な瞑想プログラムを継続した「MBSR実践グループ」の左海馬の容量（灰白質密度）の変化を測定したところ、実践グループの「左海馬の容量が有意に増加・回復している」という劇的な統計データが得られました。
+                同じ「目標」という言葉を使っていても、私たちが生涯にわたって直面する発達段階（ライフステージ）によって、その内実と心理学的意味はダイナミックに変容し続けます。
             </p>
             <p class="text-slate-700 leading-relaxed text-justified">
-                私たちの注意力やポジティブな情動、記憶力を上昇させるこの技術は、環境のストレスによって傷ついた脳の認知構造を、自発的なトレーニングによって「再調整（書き換え）」していけるという、人間の素晴らしいレジリエンス（回復可能性）を証明しているのです。
+                乳幼児期には親との間に「愛着（安全基地）」を確立し、世界を信頼して歩き出すことがテーマとなりますが、児童期（学童期）に達すると、環境に働きかけて自らの有能感を確認する「できるようになること」が重要になります。これはエリクソンのいう「勤勉性（Industry）」の獲得そのものです。この時期に培われた自信を足がかりに、青年期（大学生の皆さん）に達すると、単に技術を習得することを超えて、「自分は一体、何を目指して生きるのか」という自律的な価値の探索（アイデンティティ）がテーマとなります。さらに成人期以降は、「その目標を、次の世代や他者のためにどう使うか」という利他的な適応（ジェネラティビティ）が問われるようになります。つまり、発達とは目標を達成する技術の習得ではなく、人生の各段階で「何に価値を見出すか」を問い直し、環境との動的な相互作用の中で自らを変容させていく過程なのです。
             </p>
         </section>
 
-        <!-- 3. コラム（精緻化リハーサル） -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                3. 目標設定理論の威力と、その限定条件（ロックとレイサム）
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                心理学者のエドウィン・ロック（Edwin Locke）とゲイリー・レイサム（Gary Latham）は、人間のモチベーションとパフォーマンスの関係性を定式化し、「目標設定理論（Goal-Setting Theory）」を確立しました。彼らが行った、トラックの木材積載量をめぐる有名なフィールド実験のデータは、その効果を雄弁に物語っています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                運送効率の悪さに悩まされていた木材輸送会社において、ドライバーたちに「とにかくベストを尽くして、できるだけ多くの木材を積んでくれ」と指示していた期間、積載量は一向に改善されませんでした。しかし、ロックらが介入し、「法律で許されている最大積載量の『94%』を的確に狙って積んでくれ」という、具体的かつ困難な目標（難易度の高い数値）を提示した瞬間、ドライバーたちのパフォーマンスは統計的に有意に跳ね上がり、長年達成されなかった積載率が維持されるようになったのです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                なぜ「ベストを尽くせ」は失敗するのでしょうか。それは、評価基準やゴールが曖昧なため、人間の脳内で努力の方向づけや自己モニタリング（現在の進行状況の把握）が困難になるからです。しかし、「94%」という明度の高い数値は、脳のワーキングメモリ（認知資源）をその課題に一点集中させ、注意配分と努力量を最適化させます。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                ただし、この目標設定理論の威力には、大学の学術講義として見落としてはならない「重要な限定条件」が存在します。この実験の被験者であるドライバーたちは、木材を積む技術も運転スキルもすでに完璧に習得している「熟達した大人」です。つまり、ここでの課題は「新しい能力の獲得（学習・発達）」ではなく、「手持ちの力をどれだけ出力するか（努力量の問題）」に限定されています。この前提を無視して、未経験の学習・発達課題に対してむやみに目標設定理論をそのまま適用することは、逆に人間の発達を阻害する危険性があるのです。
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                4. 学術的峻別：学習目標と「接近・回避」のダイナミクス
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                では、新しい能力をゼロから獲得していく「学習・発達の局面」において、目標はどのように作用するのでしょうか。ここで私たちは、現代の動機づけ研究において極めて重要な、キャロル・ドゥエック（Carol Dweck）らの研究から発展した目標の学術的峻別を導入する必要があります。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                心理学において、目標はその性質によって「学習目標（習得目標）」と「パフォーマンス目標（遂行目標）」に大別されますが、現代の理論ではさらに、それらをどのように追い求めるかという「方向性」によって、以下の3つの流派に精緻化して分類・研究されています。
+            </p>
+
+            <div class="space-y-3 my-6 text-sm sm:text-base">
+                <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                    <p class="font-bold text-indigo-900 mb-1">学習目標（Mastery Goal）：</p>
+                    <p class="text-slate-600">「新しい知識を身につけ、自分の能力を拡張したい」という、自己の変容やスキルの習得そのものを目指す、最も適応的な目標。</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                    <p class="font-bold text-indigo-900 mb-1">遂行接近目標（Performance-Approach Goal）：</p>
+                    <p class="text-slate-600">「他者よりも良い成績を取り、自分の優秀さを周囲に証明したい」という、肯定的な評価の獲得へと向かう目標。</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
+                    <p class="font-bold text-rose-900 mb-1">遂行回避目標（Performance-Avoidance Goal）：</p>
+                    <p class="text-slate-600">「失敗して無能だと思われるのを避けたい」「恥をかきたくない」という、否定的な評価の回避へと向かう目標。</p>
+                </div>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                かつての心理学では、「他者との比較」を基準とするパフォーマンス目標（②および③）は一律に有害であると単純化されがちでした。しかし、近年の発達・教育心理学のエビデンスによれば、「他者に勝ちたい・良い成績を取りたい」という能動的な『遂行接近目標』は、個人の高いパフォーマンスや成長を支える上で、必ずしも悪くない（むしろポジティブに作用するケースもある）ことが分かっています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                真に発達上の重大な問題（リスク）となるのは、「失敗して無能だと思われたくない」という恐怖に駆動された『遂行回避目標』です。未熟達な段階にある人間に対して、結果の固定性や評価のみを過剰に押し付けると、脳はこの遂行回避のモードへと強制的に切り替わり、失敗を恐れて新しい挑戦を拒絶する「失敗回避的な認知パターン（学習性無力感）」を引き起こしてしまうのです。
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                5. 児童期における近接的目標と「自己効力感」の社会的・認知的本質
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                能力の習得途上にある「児童期の学習」において、子どもを失敗回避の罠から守り、学習目標を効果的に駆動させるための具体的な設計図を示したのが、アルバート・バンデューラ（Albert Bandura）とデール・シャンク（Dale Schunk）による算数ドリルを用いた発達実験（1981）です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                算数に強い苦手意識を持つ児童を対象に、全42ページのドリルを解かせる際、子どもたちを以下の2つの条件にランダムに割り振りました。
+            </p>
+
+            <div class="bg-slate-100 border-l-4 border-indigo-600 p-4 my-6 rounded-r-lg text-sm sm:text-base space-y-1">
+                <p><strong class="text-slate-950">遠隔的目標条件：</strong> 「7日間のセッション全体で、42ページ全部を終わらせよう」という、遠く高い目標。</p>
+                <p><strong class="text-slate-950">近接的目標条件：</strong> 「全体は見なくていい。1回のセッション（毎日）ごとに、まずは『6ページずつ』終わらせよう」という、目の前の小さなステップ（近接的目標）。</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                実験の結果、毎日「6ページ」という近接的目標（スモールステップ）を与えられた子どもたちは、学習速度が飛躍的に向上しただけでなく、算数そのものへの内発的興味（学習目標へのコミットメント）を強く発達させました。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                さらにバンデューラは、このプロセスを通じて、子どもたちの心の中に「自分は学習を遂行できる人間だ」という強力な認知構造――<strong class="highlight">「自己効力感（Self-Efficacy）」</strong>が定着したことを報告しています。バンデューラによれば、自己効力感を構成する重要な源泉には以下の4つの多層的な要素が存在します。
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6 text-sm sm:text-base">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="font-bold text-slate-900 mb-1">① 遂行行動達成（達成経験）</p>
+                    <p class="text-slate-600">自ら行動し、小さなステップを「できた」という直接的な成功体験。</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="font-bold text-slate-900 mb-1">② 代理経験（モデリング）</p>
+                    <p class="text-slate-600">自分と似たような仲間が、課題をクリアしていく姿を観察すること。</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="font-bold text-slate-900 mb-1">③ 言語的説得</p>
+                    <p class="text-slate-600">信頼できる他者から「あなたならプロセスを乗り越えられる」と、論理的に励まされること。</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="font-bold text-slate-900 mb-1">④ 生理的情動状態</p>
+                    <p class="text-slate-600">課題に向き合う際、過度な不安や心拍数の暴走がなく、身体がリラックスしていること。</p>
+                </div>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ここで私たちが押さえるべき本質は、自己効力感とは、単なる表面的な「自信」や「ポジティブ・シンキング」といった根拠のない精神論ではないという点です。それは、個人の直接的な経験（①）、他者との比較や観察（②）、周囲からの社会的支援（③）、確かな身体状態（④）が脳内で統合されることによって形作られる、社会的・認知的（構造的）な構成物に他なりません。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                児童期における発達とは、この自己効力感を土台として、自らの意志で行動を制御する「自律性」や、課題をやり抜く「勤勉性」を培っていく動的なプロセスです。大人が適切な近接的目標（環境）を提示する真の意義とは、脳のアラームシステム（④）を落ち着かせつつ、これら4つの源泉を多層的に満たし、自律的な発達の基盤を育むことなのです。
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                6. 青年期の発達課題：生態学的システムにおける「価値の探索」
+            </h2>
+            
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">生態学的システム理論から見る「目標喪失」の背景</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                教室にいる皆さんの多くは、今、「そもそも自分には明確な人生の目標（やりたいこと）自体が存在しない。将来何を目指せばいいのか分からない」という深い霧の中にいるかもしれません。しかし、発達心理学者として強調しておきたいのは、大学生が目標を見失う理由は、決して個人の怠惰や能力不足といった内面の問題だけではないという事実です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ブロンフェンブレンナー（Bronfenbrenner）の生態学的システム理論が示すように、青年期にある個人は、以下のような複数の環境システムの動的な相互作用から強い影響を受けています。
+            </p>
+
+            <div class="bg-white border border-slate-200 rounded-xl p-5 my-6 shadow-sm space-y-2 text-sm sm:text-base">
+                <p><strong class="text-indigo-900">マイクロシステム（直接的環境）：</strong> 家族の期待、友人関係、大学の講義やゼミの環境。</p>
+                <p><strong class="text-indigo-900">メゾシステム（環境間のつながり）：</strong> 「大学での学び」と「友人や家族との対話」がどう連動しているか。</p>
+                <p><strong class="text-indigo-900">エクソシステム（間接的環境）：</strong> 景気の動向、労働市場のルール、就職活動のシステム。</p>
+                <p><strong class="text-indigo-900">マクロシステム（文化的環境）：</strong> SNSの普及による過度な他者比較、タイパ（タイムパフォーマンス）を重視する現代の文化的価値観。</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mb-8">
+                このように、溢れる情報や多様な環境システムの影響を重層的に受けているからこそ、青年期は「自分はどこへ向かうべきか」という進路の選択において、認知的パニックを起こしやすいのです。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">モラトリアムの探索とコミットメントの限定条件</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                発達心理学者エリク・エリクソン（Erik Erikson）は、この青年期における最大の心理社会的危機を「アイデンティティ（自己同一性）の確立 ── 対 ── アイデンティティ拡散（Identity Diffusion）」として定式化しました。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                エリクソンの理論をさらに精緻化させたジェームズ・マルシア（James Marcia）のアイデンティティ・ステイタス研究によれば、アイデンティティの確立には、「危機の経験（探索）」（自分は何に価値を置くのかを能動的に悩み、試行錯誤するプロセス）と、「コミットメントの形成（傾倒）」（探索の末に、特定の価値観や役割を自らの意志で選択し、責任を引き受けるプロセス）の2つが不可欠です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ジャクリン・エクルズ（Jacqueline Eccles）の「期待価値理論（Expectancy-Value Theory）」が示すように、人間が能動的に動くには、その行為に対する自己効力感（期待）だけでなく、その行為を自分にとって意味がある・面白いとみなす「価値（タスク価値）」の双方が必要です（動機づけ ＝ 期待 × 価値）。児童期における課題が「できるかどうか（期待）」の獲得であったのに対し、青年期の最大の課題は、その目標を「自分にとって価値あるものと感じられるかどうか（タスク価値の発見）」という点に移行します。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified font-medium text-slate-900">
+                しかし、ここで発達心理学としての「極めて重要な限定条件（赤ペン）」を付け加えなければなりません。目標がないモラトリアムの期間は、価値探索のための貴重な猶予ですが、この探索が永続するだけではアイデンティティの形成には至りません。マルシアが指摘したように、危機の探索がただ長期化し、何にもコミットできないまま「アイデンティティ拡散」の不活性な状態に固定されることは、成人期への適応における重大な発達的リスク（心理社会的停滞）を伴うのです。探索のステップを踏むことは大いに肯定されますが、私たちはどこかの段階で、自らの意志で何かを選び取り、責任を引き受ける「コミットメントの形成」へと、歩みを進めなければならないのです。
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                7. 最新の行動科学知見：タイニー・ハビットと進捗の法則の学術的評価
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                アイデンティティの確立（コミットメント）に向けて、私たちは「動けない自分」という無力感の罠をどう突破すればよいのでしょうか。ここで、近年の行動科学において効果量が注目されている2つのアプローチを、学術的な限定条件とともに紹介します。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                一つは、スタンフォード大学のB.J. フォッグ（B.J. Fogg）が提唱した「タイニー・ハビット（Tiny Habits）理論」です。フォッグは、人間の行動変容を <strong class="highlight">行動 ＝ モチベーション × アビリティ（実行の容易さ） × トリガー</strong> という動的モデルで説明しました。人間の気まぐれな「やる気（モチベーション）」に頼って行動を起こそうとするから、人間は動けなくなるのです。したがって、行動を確実に生じさせるためには、モチベーションがゼロの日でも実行できるよう、アビリティの負荷を極限まで下げる（例：「教科書を1ページだけ開く」「1行だけ書く」）という環境の調整が有効となります。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                もう一つは、テレサ・アマビール（Teresa Amabile）らが組織心理学の研究の中で発見した「進捗の法則（The Progress Principle）」です。膨大な日誌データの分析（質的・量的混合研究法）により、人間の内発的動機づけとポジティブな感情を最も強力にドライブする変数は、給与や賞賛ではなく、「どんなに小さくても、今日、自分が前に進んだ（進捗した）という実感を本人が得られたこと」であると突き止められました。これらが教えてくれる本質は、「目標ややる気があるから行動が生まれる」という直感因果の誤りであり、<strong class="highlight">「極小の行動によって得られた『できた』という小さな進捗が、後から脳の報酬系を駆動させ、効力感を高め、アイデンティティの形成を支える」という認知的因果の逆転現象</strong>なのです。
+            </p>
+        </section>
+
         <section class="mb-16 bg-gradient-to-br from-slate-900 to-indigo-950 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl">
             <h2 class="text-lg sm:text-xl font-bold text-amber-400 border-b border-slate-700 pb-3 mb-6 flex items-center">
-                <span class="mr-2">💡</span> 精緻化リハーサル・コラム：現代のデジタル環境と「集中できる環境の設計」
+                <span class="mr-2">💡</span> 8. 大団円：生涯発達観における「SOC理論（獲得と喪失のダイナミクス）」
             </h2>
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
-                中学校や高校の平日の勉強時間と、定期テストの成績にまつわる統計データについて、皆さんも一度は目にしたことがあるのではないでしょうか。ここで、非常に興味深く、かつ耳の痛いデータをご紹介します。それは「平日の勉強時間」と「平日にスマートフォンや携帯電話を使う時間」が、学生の平均点（成績）にどう相互作用しているかを示したグラフです。
+                本講義の締めくくりとして、私たちが学んできた「目標と動機づけの心理学」を、人間の「生涯発達（Lifespan Development）」という壮大なキャンバスの上で、もう一段抽象化して総括しましょう。
             </p>
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
-                データを見ると、平日に「4時間以上」熱心に自宅で勉強している生徒であっても、スマホを触る時間が「4時間以上」に達している場合、その平均点は、平日に「30分未満」しか勉強せずスマホも全く触らない生徒の平均点よりも、著しく低くなるという驚くべき反比例の逆転現象が観測されています。
+                ポール・バルテス（Paul Baltes）が唱えた「生涯発達観」によれば、人間の発達とは、生涯のあらゆる段階において、何かを『獲得』すれば同時に何かを『喪失』するという、獲得と喪失が常に背中合わせで進行する「動的な適応の過程」と考えられています。バルテスはこのメカニズムとして、「SOC理論（選択・最適化・補償モデル）」を提唱しました。
             </p>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
-                このデータを前にして、「スマホを触る子は意志が弱い、自制心がない」と人格特性のせいにすることは簡単です。しかし、教育心理学の視点は異なります。スマホから通知が鳴り響く環境のなかに身を置きながら、ワーキングメモリ（脳の集中スペース）を維持することは、人間の認知特性上、不可能なのです。
-            </p>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified">
-                スマホ依存の環境に身を置くことは、せっかくの4時間の猛勉強という「努力の成果をシステムレベルでゼロ以下に破壊する」リスクを持っています。必要なのは、英雄的な強い自制心に期待することではありません。勉強する瞬間はスマホを物理的に遠くの部屋の箱に隠すなど、<strong class="text-amber-300">「集中できる環境をあらかじめ自らの手で設計（ハック）しておくこと」</strong>なのです。これこそが、私たちの認知の弱さを補うための、最も賢明な心理学的防具です。
-            </p>
-        </section>
 
-        <!-- 4. まとめ -->
-        <section class="mb-16">
-            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
-                📌 まとめ：個人×環境の相互作用モデルへ向けて
-            </h2>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                発達心理学の研究では、人は生まれながらに決定された善人でも悪人でもなく、他者との関わりや教育、社会経験を通して生涯にわたり判断力や共感性を自律的に発達させていく存在だと考えられています。 私たちの行動は状況や過去の環境、あるいは日々の身体状態の影響を強く受けます。しかし同時に、私たちは経験から学び、自らを変え、環境を変える力も持っています。
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                心理学を学ぶ真の意義とは、人間の弱さを暴いて絶望することではなく、睡眠不足やストレス環境によって「あ、今、脳の扁桃体が過剰にアラームを鳴らしているな」と一歩引いてメタ認知（客観視）できるようになることです。
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                私たちは状況に影響されます。だからこそ重要なのは、英雄的な強い個人になることを期待して耐え忍ぶことではありません。そうではなく、自らの脳の特性や認知の癖（弱さ）を科学的に理解した上で、
-            </p>
-            <p class="text-slate-700 leading-relaxed text-justified font-medium text-indigo-950 bg-indigo-50 p-4 rounded-xl border border-indigo-100">
-                「自分を最も善く駆動させ、ポジティブな情動や集中力を維持できる環境・システム（適切な睡眠環境、スマホのコントロール、マインドフルネスの習慣）を、日常の中にどう組み込んでいくべきか」
-                という、主体的な環境の設計者（アーキテクト）として実践的な問いを立て、これからの大学生活のなかで探求し続けることなのです。
+            <div class="space-y-4 text-sm sm:text-base my-6 text-slate-200 pl-2">
+                <p><strong class="text-amber-300">S：選択（Selection）：</strong> 高校生の頃は「何にでもなれる」という万能感（万能の可能性）を持っていたかもしれません。しかし、青年期（大学生）になり、社会人へと進むプロセスとは、自らの限られた時間と資源を認識し、無限の可能性の中から「これを選ぶ」と特定の領域にターゲットを絞り、選ばなかった他の可能性を『手放す（喪失を受け入れる）』という自律的な選択の過程に他なりません。</p>
+                <p><strong class="text-amber-300">O：最適化（Optimization）：</strong> 選択した特定の目標に対して、自らの手持ちのエネルギーや認知資源、あるいは「タイニー・ハビット」のような具体的な技術を集中して投資し、その能力を最大限に高めようとするプロセスです。</p>
+                <p><strong class="text-amber-300">C：補償（Compensation）：</strong> 加齢や環境の激変によって、これまでの手段が使えなくなった（資源を『喪失』した）際、他者の助けを借りたり、代替の知恵を用いたりして、目的の機能を補い、適応を維持するプロセスです。</p>
+            </div>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified font-medium">
+                本講義のタイトルは『目標がない君のための発達心理学』でした。心理学のデータが教える最終的な真実とは、青年期の課題は、正しい目標を早く見つけることではなく、自分にとって何が価値あるものなのかを、試行錯誤しながら泥臭く『探索』することにあります。大学生の皆さん、今日、この教室を後にするとき、立派な未来の目標なんて持っていなくて構いません。目標の達成に囚われるのではなく、モチベーションが完全にゼロであっても実行できる、今日の「極小の選択（S）」を行い、1ページを開くという「最適化（O）」を試みてください。
             </p>
         </section>
 
         <hr class="border-slate-200 my-12">
 
-        <!-- 確認テスト＆感想フォーム（設問2問固定の仕様に準拠） -->
         <section class="bg-white border border-slate-200 rounded-2xl shadow-md p-6 sm:p-8">
             <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
                 <span class="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md mr-3">確認テスト</span>
-                第6回 理解度確認・感想の提出
+                第9回 理解度確認・感想の提出
             </h2>
 
             <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
-                <!-- 学籍番号入力[cite: 1] -->
                 <div>
                     <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
                     <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
                            class="w-full sm:w-64 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800">
                 </div>
 
-                <!-- 問1 -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
                     <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
-                        【問1】睡眠時間が不足した被験者の脳に対してfMRIを用いた表情認知実験（恐怖と喜びの画像提示）を行った際、観測された脳内の神経科学的な反応特性として最も適切な説明はどれですか。
+                        【問1】キャロル・ドゥエック（Carol Dweck）らの目標理論における「遂行接近目標」と「遂行回避目標」に関する記述として、現代の発達・教育心理学の見地から最も適切な説明はどれですか。
                     </p>
                     <div class="space-y-3 text-sm sm:text-base">
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q1" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-slate-700">A) 喜び（ポジティブ）の表情に対して脳の報酬系が爆発的に活性化し、恐怖の表情に対しては海馬の神経新生が完全にストップした。</span>
+                            <span class="text-slate-700">A) 他者との比較において「優秀でありたい」と切磋琢磨する能動的な『遂行接近目標』は、児童期の自己効力感を100%崩壊させるため、いかなる発達段階であっても完全に排斥されなければならない。</span>
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q1" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-slate-700">B) 喜びの表情に対しては脳の情動システムがほとんど「無反応」である一方、恐怖（ネガティブ）の表情に対しては「扁桃体」が過剰に活性化した。</span>
+                            <span class="text-slate-700">B) 「他者に勝ちたい・良い成績を取りたい」という遂行接近目標は必ずしも悪くない。真に発達上のリスクとなるのは、「失敗して無能だと思われたくない」という恐怖に駆動された『遂行回避目標』であり、これが失敗回避的な認知パターンを引き起こす。</span>
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q1" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-slate-700">C) 睡眠時間の長さに関係なく、人間の脳は恐怖と喜びの双方の視覚刺激に対して、常に100%均等かつ客観的に記憶を処理し続ける。</span>
+                            <span class="text-slate-700">C) 遂行回避目標とは、エドウィン・ロックの実験に登場する大人のドライバーたちが、努力量や注意配分を最適化するために、最大積載量「94%」を自律的にクリアした際に機能した学習目標のことである。</span>
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q1" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-slate-700">D) 5時間睡眠の被験者は、エビングハウスの忘却曲線をすべて完璧に反転させ、脳の可塑性を完全に停止させることに成功した。</span>
+                            <span class="text-slate-700">D) どのような困難な発達課題であっても、「ベストを尽くせ」という曖昧な指示を与えることによって、脳内に自動的に形成される最高段階（慣習後水準）の道徳的目標である。</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- 問2 -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
                     <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
-                        【問2】ラットの母親分離実験（Mirescu 2004）やマインドフルネス（MBSR）の研究データから導き出される、海馬の構造的変容に関する発達心理学的・神経科学的な結論として最も適切なものはどれですか。
+                        【問2】ポール・バルテス（Paul Baltes）の「生涯発達観」および「SOC理論（選択・最適化・補償モデル）」に基づき、人間の発達と目標の関係性について正しく説明しているものはどれですか。
                     </p>
                     <div class="space-y-3 text-sm sm:text-base">
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q2" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-slate-700">A) 海馬の細胞増殖量は遺伝的資質のみによって100%固定されており、発達初期の分離ストレスや後天的な瞑想トレーニングによって容量が変化することは絶対にない。</span>
+                            <span class="text-slate-700">A) 人間の発達とは、成人期に達するまで一切の「喪失」を伴うことなく、能力が右肩上がりに直線的に成長し続けることだけを指す。</span>
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q2" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-slate-700">B) 1日180分の長時間分離を経験したラットは海馬の細胞増殖量が増加するため、うつ病の発症リスクを完全にゼロに抑えることができる。</span>
+                            <span class="text-slate-700">B) 青年期に目標が見つからないアイデンティティ拡散の状態は単なる怠惰であり、マルシアのいう「コミットメント」を形成するためには、危機の経験（探索）のプロセスを完全に排除しなければならない。</span>
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q2" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-slate-700">C) 海馬は環境要因（早期ストレス等）によって物理的な細胞新生が抑制されるという脆弱性を持つが、同時に、マインドフルネスの実践などによってその容量を後天的に回復・再構成できるという高い可塑性（回復可能性）も備えている。</span>
+                            <span class="text-slate-700">C) 発達とはすべてを手に入れ続けることではなく、生涯の各段階において、限られた資源のなかで「何を選び（Selection）、その領域をどう高め（Optimization）、失われた手段を新たな知恵でどう補うか（Compensation）」を学び、適応していく動的なプロセスである。</span>
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q2" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-slate-700">D) スマホの利用時間を1日4時間以上に増やし、マインドワンダリングの時間を意図的に長引かせることこそが、左海馬の灰白質密度を最も効率よく増加させるアプローチである。</span>
+                            <span class="text-slate-700">D) マルシアのいうアイデンティティの確立とは、ブロンフェンブレンナーのマクロシステム（SNSなどの文化的環境）からの影響を完全にシャットダウンし、児童期の全能感に留まり続けることである。</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- 感想・質問[cite: 1] -->
                 <div>
                     <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
-                    <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて考えたことや、自身の専門分野（医療・保育・ビジネス等）の現場にどう活かせるかなど、自由に記述してください。"
+                    <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて考えたことなどを自由に記述してください。"
                               class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 text-sm sm:text-base"></textarea>
                 </div>
 
-                <!-- 送信ボタン -->
                 <div class="pt-2">
                     <button type="submit" id="submit_btn" 
                             class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer text-sm sm:text-base">
@@ -274,22 +332,19 @@
 
     </main>
 
-    <!-- フッター -->
     <footer class="bg-slate-900 text-slate-400 text-center py-8 text-xs border-t border-slate-800 mt-20">
         <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
     </footer>
 
-    <!-- ページ個別スクリプト：自動採点と共通モジュールの結合[cite: 1] -->
     <script>
         function submitForm(event) {
             event.preventDefault();
 
-            const classNum = "class_06"; // 第6回固定値[cite: 1]
             const studentId = document.getElementById("student_id").value;
             const feedback = document.getElementById("student_feedback").value;
             const btn = document.getElementById("submit_btn");
 
-            // クイズの自動採点
+            // 1. クイズの自動採点
             let scoreCount = 0;
             const q1Answer = document.querySelector('input[name="q1"]:checked').value;
             const q2Answer = document.querySelector('input[name="q2"]:checked').value;
@@ -297,14 +352,50 @@
             if (q1Answer === "B") scoreCount++;
             if (q2Answer === "C") scoreCount++;
 
-            const finalScore = `${scoreCount} / 2`;
+            const scoreRate = (scoreCount / 2) * 100 + "%";
 
-            // 共通送信関数を呼び出し（アドレス非公開・非同期通信仕様）[cite: 1]
-            if (window.sendSharedMail) {
-                window.sendSharedMail(classNum, studentId, finalScore, feedback, btn);
-            } else {
-                alert("エラー：共通送信モジュール（mail-sender.js）が読み込まれていません。ファイルの配置状況を確認してください。");
-            }
+            // 2. 外部送信用のデータ構造整形
+            const subjectLabel = document.getElementById("subject_label").innerText;
+            const lectureTitle = document.title;
+
+            const payloadData = {
+                "科目区分": subjectLabel,
+                "講義回": lectureTitle,
+                "学籍番号": studentId,
+                "クイズ得点率": scoreRate,
+                "学生からの質問・感想": feedback
+            };
+
+            // ★決定済みのFormspree トークンIDをセット
+            const FORMSPREE_ID = "xjgqbqnl"; 
+
+            // ボタン表示の制御（連打防止）
+            btn.disabled = true;
+            btn.innerText = "送信中...";
+
+            // Formspreeの規格に最適化した非同期POST通信
+            fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payloadData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert(`正常に記録されました（あなたのクイズ得点率: ${scoreRate}）。お疲れ様でした。`);
+                    btn.innerText = "送信完了";
+                } else {
+                    throw new Error("APIエラー");
+                }
+            })
+            .catch(error => {
+                console.error("Transmission Error:", error);
+                alert("送信に失敗しました。時間をおいて再度送信ボタンを押してください。");
+                btn.disabled = false;
+                btn.innerText = "解答と質問を送信する";
+            });
         }
     </script>
 </body>
