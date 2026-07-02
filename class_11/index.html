@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ポータルの自動スキャナーが自動収集するタイトルタグ[cite: 1] -->
+    <title>心理学入門：第11回 「できないことをしない」心理学：情動のコントロールから、没頭（遊び・祈り）の神経科学、および「居場所」の発達心理学まで</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- ★数式を確実に自動レンダリングさせるための MathJax 設定と CDN -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            chtml: {
+                matchFontHeight: false
+            },
+            startup: {
+                pageReady: () => {
+                    return MathJax.startup.defaultPageReady().then(() => {
+                        console.log('MathJax initial typesetting complete');
+                    });
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style>
+        /* 学術的気品を表現するハイライト装飾 */
+        .highlight {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        .text-justified {
+            text-align: justify;
+            text-justify: inter-character;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased line-height-relaxed">
+
+    <!-- 講義ヘッダー -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <p id="subject_label" class="text-xs font-bold text-blue-300 uppercase tracking-wider">心理学入門</p>
+                <h1 id="lecture_title" class="text-sm sm:text-base font-bold text-white mt-0.5">第11回：「できないことをしない」心理学</h1>
+            </div>
+            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap">科目ポータルへ戻る[cite: 1]</a>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+        
+        <!-- タイトルエリア -->
+        <div class="text-center mb-16">
+            <p class="text-indigo-600 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">第11回 講義資料・副読本</p>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                「できないことをしない」心理学<br>
+                <span class="text-xl sm:text-2xl text-slate-600 font-normal block mt-2">情動のコントロールから、没頭（遊び・祈り）の神経科学、そして「居場所」の発達心理学まで</span>
+            </h1>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto rounded"></div>
+        </div>
+
+        <!-- 第1章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第1章：【導入と復習】システム1の自動操縦とアテンション・エコノミーの罠
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                講義の冒頭では、これまでに学んできた「環境と条件づけの相互作用」について、学生への問いかけを交えながら重要な復習を行います。
+            </p>
+
+            <div class="bg-amber-50 border border-amber-200 p-5 rounded-xl my-6 text-sm sm:text-base">
+                <p class="font-bold text-amber-950 mb-2">🤔 講義内クエスチョン</p>
+                <p class="text-slate-800 text-justified">
+                    ネズミが最初に数回レバーを押して報酬を得る「部分強化」を経験すると、その後、報酬が一切出なくなってもレバーを押し続ける（消去抵抗の増大）。これと同様の行動は、人間の社会においてどのような場面で見られるでしょうか。
+                </p>
+                <p class="text-indigo-950 font-medium mt-3 border-t border-amber-200 pt-2 text-justified">
+                    ➔ その答えが、ボートレース（約1/120）、パチンコ（約1/319）、競馬（約1/4,896）といったギャンブルの不確実な確率（変動比率スケジュール）です。長期的に見ればプレイヤー側が必ず損失を被るような極めて低い確率設定であるにもかかわらず、私たちは「次こそは当たるかもしれない」という部分強化の罠によって強迫的な行動を引き起こされてしまうのです。
+                </p>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">アテンション・エコノミー（関心経済）のハッキング</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                現代のデジタル経済は、人々の滞在時間やエンゲージメントを最大化することで企業の広告利益を最大化するシステムで動いています。スマートフォンのタイムラインやショート動画を次から次へと指先で弾くあの反復行動は、オペラント条件づけのレベルにおいて、スロットマシンのレバーを弾く動きと極めて高い類似性を持っています。フォロワー数を競い合うSNSの本質も、生物が本来の適応対象を超えて人工的・誇張された刺激に過剰反応してしまう「超正常刺激」の考え方から説明ができます。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">「ふたりの自分」の不均衡</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ダニエル・カーネマンらのモデルが示すように、私たちの知覚や行動の多くは、直感的、自動的、無意識的に働き、エネルギーをほとんど消費しない「システム1（自動操縦モード）」に支えられています。一方で、意識的、論理的、分析的に働き、強いエネルギー（認知資源）を消費する「システム2（象使い）」は非常に疲れやすい特性を持っています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                私たちは、この行動が起きる仕組み（条件づけの科学的メカニズム）を正しく客観的に知ることで初めて、システムにただ操られるのではない<strong class="highlight">「自律的なコントロール」の足場</strong>を手に入れることができるのです。
+            </p>
+        </section>
+
+        <!-- 第2章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第2章：【情動の脳科学】「できないことをしない」――思考の皮肉なリバウンド効果
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                では、私たちは暴走するシステム1や、湧き上がる不安・焦りといった「情動」をどのようにコントロールすればよいのでしょうか。ここで、脳科学の冷徹なエビデンスが提示されます。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">脳の構造と情動</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                脳の奥深くにある「扁桃体」は不安や恐怖といった情動を司り、「海馬」は記憶を司っています。激しい不安やストレスに直面したとき、扁桃体の活動が過剰に活発になると、理性を司る「前頭前野」の活動が著しく低下してしまうことが分かっています。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">思考や感情は「押さえつけよう」とすると悪化する</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                心理学において、何かを「考えないでおこう」「抑え込もう」とすればするほど、かえってその思考が脳内に鮮明に浮かんできてしまう現象を<strong class="highlight">「皮肉なリバウンド効果（皮肉な加工過程）」</strong>と呼びます。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ウイリアールー大学（2010）やウィスコンシン大学の研究が示すように、不安な気持ちを無理に抑え込もうとしたり、うつ状態のときに「ポジティブに考えなければならない」と情動を無理やり理性でコントロールしようとすると、扁桃体の活動は低下するどころか、かえって増加してしまうのです。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">不安は「言葉」が作り出す（予言の自己成就）</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                私たちは「どうせ自分なんて」「失敗するかもしれない」という言葉によって、自ら不安を増幅させていきます。これは「そう考えると、行動や認知がその通りに変容し、本当にその結果を引き寄せてしまう」という<strong class="highlight">「予言の自己成就現象（Self-fulfilling prophecy）」</strong>の罠です。
+            </p>
+            <p class="text-slate-600 text-xs italic bg-slate-100 p-4 rounded-xl mb-4 text-justified">
+                ※講義内では、倫理的な葛藤状況における理性的判断と情動の衝突を検討する材料として、高名な「トロッコ課題」を提示し、学生の皆さんに「直感的判断（システム1）と論理的推論（システム2）の葛藤」を擬似体験してもらいました。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified font-medium text-indigo-950 bg-blue-50 p-4 rounded-xl border border-blue-100">
+                心理学が導き出す最初のポイントは、「できないことをしない」、すなわち「情動を力任せに押さえつけることは、脳の構造上不可能である」という受容から始まるのです。
+            </p>
+        </section>
+
+        <!-- 第3章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第3章：【没頭と祈りの科学】カルメル会実験が明かす「自己意識の減退」
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                情動を力任せに「抑え込む」ことができないのなら、私たちはどうすれば救われるのでしょうか。オランダの大学で行われた算数実験では、被験者が難しい算数課題に「没頭」しているとき、扁桃体の活動が有意に抑制されることが確認されました。すなわち、「何かに没頭して努力しているとき、人間は不安や悲しみを忘れることができる」のです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この「没頭」の極致として講義で紹介されるのが、<strong class="highlight">「カルメル会（修道女）を対象とした祈りと瞑想の脳科学実験」</strong>です。
+            </p>
+
+            <div class="bg-white border border-slate-200 rounded-xl p-5 my-6 shadow-sm space-y-3 text-sm sm:text-base">
+                <p class="text-slate-700"><strong class="text-indigo-900">■ 実験デザイン：</strong> 修道女たちが「神とのつながり（深く祈り、没頭している状態）」を感じている神秘的条件と、単なる「人とのつながり」を思い出している対照条件において、脳の活動（fMRI）を比較・測定します。</p>
+                <p class="text-slate-700"><strong class="text-indigo-900">■ 脳画像データが示した真実：</strong> 神への祈りに深く没頭している「神秘的条件」において、彼女たちの脳の「右頭頂葉下部（特に上頭頂小葉および下頭頂小葉）」の活動が著しく低下（沈静化）していることが突き止められました。</p>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">自己意識の消去</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                頭頂葉のこの領域は、脳内で「自分と外部の世界との境界線」を認識するためのシステムです。この領域の活動が低下するということは、「自分自身という過剰な意識（自意識の檻、エゴ、不安に悩む自分）が一時的に消去され、世界や大いなるものと完全に一体化している」という主観的状態を裏付けています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                ヴィクトール・フランクルが『夜と霧』で精神的極限状態における人間の内面的な高まり（祈りや内省）を記述したように、人間は「何かに深く没頭する（祈る、あるいは目の前の課題に集中する）」という環境を自ら選択することによって、暴走する扁桃体（情動）や自意識の苦しみから自らを解放し、静けさを取り戻すことができるのです。
+            </p>
+        </section>
+
+        <!-- 第4章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第4章：【子ども時代の発達心理学】「遊び」という最高の没頭と前頭前野の育成
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                では、人生の初期段階において、人間が「何かに激しく没頭する」という最大の基礎体験はどこで培われるのでしょうか。それが、幼児期における<strong class="highlight">「遊び（Play）」</strong>です。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">エリクソンの人格発達理論における位置づけ</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                エリク・エリクソン（Erik Erikson）の心理社会的発達段階によれば、幼児期（第Ⅲ段階）の課題は「積極性（Initiative） ── 対 ── 罪責感（Guilt）」であり、この時期の子供にとっての重要な他者は基本家族です。この時期、子供は「遊び」という自発的な没頭の経験を通じて、自らの意志で目的（Purpose）を持ち、環境に能動的に働きかける力を獲得していきます。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">ハリー・ハローの隔離実験（猿のデータ）</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                子どもの時代に十分な「遊び（仲間との相互作用）」を経験させず、隔離して育てられた猿は、大人時代に達したとき、激しい不安、激しい攻撃性、そして致命的な社会性のなさ（コミュニティへの適応不全）を示すようになり、正常な成長が著しく損なわれてしまうことが実証されています。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">前頭前野の発達と自発的行動</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                幼児期における「遊び」は、まだ未発達段階にある前頭前野（人間らしい脳、論理や計画、衝動制御を司る領域）の神経回路を刺激し、健康的に発育させるための必要不可欠な栄養素です。自発的な遊び（没頭）を奪うことは、脳の正常な成長を損なう決定的なリスクとなります。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">現代社会における「遊びの消失」データ</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                しかし、現代社会のシステムは、子どもたちからこの貴重な「没頭の空間」を奪いつつあります。青少年文化研究会（1996）の小学5年生対象データによれば、「昨日、友達と外で遊んだか」という問いに対し、なんと<strong class="highlight">男子の62.7%、女子の69.0%が「遊んでいない」と回答</strong>しているのです。
+            </p>
+            <p class="text-slate-500 text-xs italic border-t border-slate-100 pt-2 text-justified">
+                ※さらに講義内では、神奈川県藤沢市教育文化センターによる35年間に及ぶ中学3年生の学習意欲の追跡調査などを提示し、子どもたちを取り巻く直接的・マクロ的環境の激変と、それによる自発性の低下というシリアスな現状を客観的なデータで検証しました。
+            </p>
+        </section>
+
+        <!-- 第5章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第5章：【結び】人間らしく生きるための防具：基本的信頼と「居場所」の心理学
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                講義の最終章では、「私たちは、傷つき、過剰使用や不安の渦にある自分自身を、どこから救い出し、いかにして一歩前に進めることができるのか」という、最も切実な環境の条件について総括を行います。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">基本的信頼と反社会性の抑制</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                長期的な追跡調査（縦断研究）によれば、幼児期に「質の高い保育所（環境）」で適切なケアを受けて生活した子供は、14歳時点における反社会的行動（攻撃性や非行）が有意に抑制されることが分かっています。反社会的行動や情動の暴走には遺伝的な要因も大きく関与しているが、それらのリスクは、幼少期における「安心できる居場所」や「基本的信頼（安全基地）」がしっかりと存在することによって、劇的に低減（コントロール）させることができるのです。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">居場所があることで、人間は人間らしく生きられる</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-6">
+                人間は、進化の歴史のなかで集団（群れ）を作って生き抜いてきた極めて「社会的（集団従属的）な動物」です。仲間から承認され、ありのままの自分を受け入れてもらえる「確かな居場所」が確保されているとき、私たちの脳（扁桃体）のアラームシステムは初めて本当の沈静化を迎え、理性的で人間らしい前頭前野をのびのびと働かせることができるようになるのです。
+            </p>
+
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white rounded-2xl p-6 shadow-md text-center">
+                <p class="text-xs tracking-widest text-blue-300 font-bold uppercase mb-1">第11回の最終結論（ポイント4）</p>
+                <p class="text-xl sm:text-2xl font-extrabold text-amber-400">居場所があると生きやすくなる</p>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mt-8 font-medium">
+                心理学を学ぶ真の意義とは、自分の意志の弱さを責めることでも、情動を力任せに抑え込もうと無駄なエネルギーを消費することでもありません。「できないことをしない」と自らの脳の限界を認め、何かに「没頭」する時間を選択（S）し、そして何よりも自分自身の人生のなかに、あるいは周囲の大切な人のために<strong class="highlight">「安らかな居場所（基本的信頼）」という環境を再設計（O・C）していくこと</strong>。その確かな足場（居場所）があるからこそ、人間は初めて過剰な情報社会の罠や、過去のトラップから自由になり、健やか（ヘルシー）に未来へと歩き出すことができるのです。
+            </p>
+        </section>
+
+        <hr class="border-slate-200 my-12">
+
+        <!-- 確認テスト＆感想フォーム -->
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-md p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span class="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md mr-3">確認テスト</span>
+                第11回 理解度確認・感想の提出
+            </h2>
+
+            <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
+                <!-- 学籍番号入力[cite: 1] -->
+                <div>
+                    <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
+                    <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
+                           class="w-full sm:w-64 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800">
+                </div>
+
+                <!-- 問1 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問1】本講義で紹介された「カルメル会修道女の祈りに関する脳科学実験」において、神とのつながりに深く没頭している（神秘的条件）最中に、活動が顕著に低下（沈静化）し、自意識の減退（世界との一体感）を引き起こしたとされる脳の領域として、正しいものはどれですか。
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 扁桃体：過剰な怒りや暴力的な衝動を24時間ノンストップで直接的に発生させ続ける領域。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 右頭頂葉下部（上頭頂小葉および下頭頂小葉）：自己と外部の世界との境界線を認識している領域。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 海馬：ギャンブルにおける部分強化（変動比率スケジュール）の当選確率のみを一時的に記憶する領域。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 前頭前野：飲酒によって長期的・短期的にその活動が100%バーストし、算数の計算能力を爆発的に高める領域。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問2 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問2】エリクソンの発達理論やハローの隔離実験（猿のデータ）の見地から、幼児期における「自発的な遊び（何かに没頭する活動）」の発達的意味について、最も適切な説明をしているものはどれですか。
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 遊びは前頭前野の発達を著しく阻害し、大人時代における激しい不安や攻撃性、社会性のなさを引き起こす最大の系統誤差（ノイズ）である。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 現代の小学5年生の9割以上が毎日友達と外で活発に遊んでいるため、遊びの消失について心理学的な対策を環境設計に盛り込む必要性は完全にゼロである。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 遊びという自発的な没頭の経験は、前頭前野の発達や能動性を育む上で不可欠であり、これらが奪われて「安心できる居場所（基本的信頼）」が崩壊することは、将来の適応における重大なリスクを伴う。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 幼児期に質の高い保育所で生活することは、14歳時点における反社会的行動の遺伝率を強制的に100%まで高めてしまうため、発達心理学的には一律に禁止されなければならない。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 感想・質問[cite: 1] -->
+                <div>
+                    <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
+                    <textarea id="student_feedback" rows="4" required placeholder="今回の講義や副読本を通じて考えたこと、「没頭」や「安心できる居場所」について感じたことなどを自由に記述してください。"
+                              class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 text-sm sm:text-base"></textarea>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="pt-2">
+                    <button type="submit" id="submit_btn" 
+                            class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer text-sm sm:text-base">
+                        解答と質問を送信する
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 text-xs border-t border-slate-800 mt-20">
+        <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
+    </footer>
+
+    <!-- ページ個別スクリプト：自動採点と隠蔽送信API（Formspree）の結合[cite: 1] -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const classNum = "class_11"; // 第11回固定値
+            const studentId = document.getElementById("student_id").value;
+            const feedback = document.getElementById("student_feedback").value;
+            const btn = document.getElementById("submit_btn");
+
+            // 1. クイズの自動採点
+            let scoreCount = 0;
+            const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+            const q2Answer = document.querySelector('input[name="q2"]:checked').value;
+
+            if (q1Answer === "B") scoreCount++;
+            if (q2Answer === "C") scoreCount++;
+
+            const finalScore = `${scoreCount} / 2`;
+            const scoreRate = (scoreCount / 2) * 100 + "%";
+
+            // 2. 外部送信用のデータ構造整形
+            const subjectLabel = document.getElementById("subject_label").innerText;
+            const lectureTitle = document.title;
+
+            const payloadData = {
+                "科目区分": subjectLabel,
+                "講義回": lectureTitle,
+                "学籍番号": studentId,
+                "クイズ得点率": scoreRate,
+                "学生からの質問・感想": feedback
+            };
+
+            // ★決定済みのFormspree トークンIDを自動セット
+            const FORMSPREE_ID = "xjgqbqnl"; 
+
+            btn.disabled = true;
+            btn.innerText = "送信中...";
+
+            // Formspreeの暗号化エンドポイントへ非同期POST通信[cite: 1]
+            fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(payloadData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert(`正常に記録されました（あなたのクイズ得点率: ${scoreRate}）。お疲れ様でした。`);
+                    btn.innerText = "送信完了";
+                } else {
+                    throw new Error("API通信エラー");
+                }
+            })
+            .catch(error => {
+                console.error("Submission Error:", error);
+                alert("送信に失敗しました。時間をおいて再度送信ボタンを押してください。");
+                btn.disabled = false;
+                btn.innerText = "解答と質問を送信する";
+            });
+        }
+    </script>
+</body>
+</html>
