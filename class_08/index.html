@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>心理学入門：思考の檻から脱出する心理学：私たちが「空気」と「権威」に向き合うとき</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         /* 学術的気品を表現するハイライト装飾 */
@@ -22,11 +23,8 @@
 
     <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-                <p id="subject_label" class="text-xs font-bold text-blue-300 uppercase tracking-wider">心理学入門</p>
-                <h1 id="lecture_title" class="text-sm sm:text-base font-bold text-white mt-0.5">第8回：思考の檻から脱出する心理学</h1>
-            </div>
-            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap">総合ポータルへ戻る</a>
+            <span id="subject_label" class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
+            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors">講義ポータルへ戻る</a>
         </div>
     </header>
 
@@ -72,7 +70,7 @@
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
                 ヒトラーが熱狂的に支持された背景には、単純な心理的因果関係だけではなく、極めて複合的な社会構造がありました。ナチスは、ベルサイユ条約の破棄を訴えて傷ついた国民の民族的な自尊心を刺激しただけでなく、アウトバーン（高速道路）の建設に代表される公共事業や再軍備政策によって、失業率の低下を国民に強く印象づけるという現実的な経済実績を提示しました。
             </p>
-            <p class="text-slate-700 leading-relaxed text-justified">
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
                 さらに、当時のドイツ国内で高まっていた共産主義への恐怖や、既存の保守政治エリート層との政治的妥協、ヴァイマル体制自体の脆弱さなど、複数の歴史的要因が重なった結果、彼らは政権を掌握したのです。その過程で、複雑な社会不安のすべての責任をユダヤ人に押し付ける<strong class="highlight">「スケープゴート（身代わり）」</strong>の戦略が、人々の不満の捌け口として機能していくことになります。
             </p>
         </section>
@@ -100,8 +98,11 @@
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
                 この様子を傍聴した哲学者ハンナ・アーレントは、彼を異常者ではなく、思考することを放棄し、ただシステムに従順であり続けただけの人間として描き、これを<strong class="highlight">「悪の凡庸さ（Banality of Evil）」</strong>と呼びました。
             </p>
-            <p class="text-slate-700 leading-relaxed text-justified">
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
                 このアイヒマンの人物像をめぐっては、現在も歴史学者の間で多角的な議論が続いています。ベッティーナ・シュタングネトらの近年の研究では、アイヒマンが裁判で見せた姿は罪を逃れるためのパフォーマンスであり、実際には熱烈な反ユダヤ主義思想を抱き、能動的に動いていた記録が指摘されています。一方で、「特定の思想（イデオロギー）を強く信奉していたこと」と、「目の前の官僚的な実務に没頭して大局的な思考停止に陥っていたこと」は矛盾せず、その両方が同居していたからこそ恐ろしいのだという解釈もなされています。単なる命令の歯車か、それとも確信犯的な悪人かという二者択一を超えた、複雑な人間像の解明が進められています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この「人は状況やシステムによって、自らの行為の倫理性を手放し得るのか」という問いを、実験室という統制された空間で検証しようとしたのが、心理学の歴史を揺るがしたミルグラムの「服従実験」です。
             </p>
         </section>
 
@@ -139,7 +140,7 @@
 
             <div class="bg-indigo-900 text-indigo-100 p-6 rounded-xl my-6 shadow-md text-sm sm:text-base space-y-2 font-mono">
                 <p>1. 「続けてください」</p>
-                <p>2. 「実験の性質上、あなたに続けてもらう必要があります」</p>
+                <p>2. 「実験の性質上、あなたに続けてもらう必要があります</p>
                 <p>3. 「あなたに続行してもらうことが絶対に不可欠です」</p>
                 <p>4. 「あなたに選択の余地はありません。続けるべきです」</p>
             </div>
@@ -148,4 +149,242 @@
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
                 実験の前、ミルグラムは高名な精神科医や心理学者たちに「どれくらいの人が、最高の450ボルトまで押し続けると思うか」と予測を立てさせました。専門家たちは「最大電圧まで達するのは全体の1%未満、サディスト（異常な残酷さを持つ人）だけだろう」と答えました。
             </p>
-            <p class="text-slate-700 leading-relaxed
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                しかし、実際の実験結果は、専門家たちの予測を完璧に裏切るものでした。別室からの叫び声が途絶え、相手が最悪の事態に陥ったかもしれないという恐怖のなかでも、<strong class="highlight">参加者の実に65%（約3人に2人）が、実験者に促されるまま最大電圧である450ボルトにまで到達した</strong>のです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ただし、ここで極めて重要な注意点があります。この「65%」という数字は、人間一般が持つ普遍的な服従の割合を意味するものではありません。これは「1961年のアメリカ」「イェール大学という強烈な権威」「男性のみの被験者」といった、極めて特定の条件下で観察された結果です。事実、ミルグラム自身がその後行った様々なバリエーション実験や、後世の追試（Burger, 2009など）では、周囲に味方がいるか、実験者との距離がどれくらいかといった環境の変化によって、服従率は大きく変動することが確かめられています。
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                4. なぜ人間は従うのか：現代社会心理学による再解釈
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-6">
+                ミルグラムはこの衝撃的な結果を説明するためにいくつかの心理的プロセスを提案しました。また、現代の社会心理学においては、これらのプロセスをさらに多角的に再解釈する動きが続いています。
+            </p>
+
+            <div class="space-y-8">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">① ミルグラムによる仮説：エージェンティック・ステート（代理状態）</h3>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
+                        ミルグラム自身は、強い権威者の管理下に置かれた人間の心理状態を「代理状態」という概念で説明しました。人間には、自分は「権威者の意志を実行するための単なる身代わり（道具）」にすぎないと考え、行動の責任は命令を下した権威にあると錯覚するモードがあるという仮説です。この状態に入ると「私は指示された仕事を全うしているだけだ」という認知の歪みが生じ、個人の良心のブレーキが麻痺しやすくなるとミルグラムは考えました。ただし、現代の社会心理学において、この代理状態は確立された事実というよりは、一つの解釈の枠組みとして慎重に扱われています。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">② 有力な再解釈の一つ：社会的アイデンティティ理論</h3>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
+                        近年、ハスラム（Haslam）やライヒャー（Reicher）らの心理学者による実験データの再分析によって、有力な再解釈の一つが提示されています。それは、参加者たちは「盲目的に服従していた」のではなく、むしろ「科学の進歩という大義名分（ゴール）に自発的に同一化（コミット）していた」という見方です。
+                    </p>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mt-2">
+                        参加者は、苦しむ生徒役への同情と、実験者への共感の板挟みになっていました。そして実験者が「実験のためにあなたが必要です」と科学の大義名分を強調したとき、参加者は「科学のため」という集団目標を選択し、能動的にボタンを押してしまったという解釈です。これは現代の私たちにとってより深い教訓を含んでいます。つまり、<strong class="highlight">人間が過ちを犯すのは、「思考停止して命令に従っているとき」だけでなく、「自分たちは正しい目的（正義や組織の目標）のために貢献しているのだと信じ込んでいるとき」でもある</strong>という点です。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">③ 段階的コミットメント（滑り坂現象）の側面</h3>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
+                        この実験のもう一つの特徴は、「安全で痛みのない15ボルト」からスタートした点です。15ボルトを押した人は、次の30ボルトを拒否する明確な境界線を見失います。「さっき押したのだから、次も同じだろう」という心理が働き、小さな要求への同意（コミットメント）を積み重ねていくうちに、いつの間にか引き返せない領域へと足を滑らせてしまうプロセスのことです。ただし、現代の社会心理学では、服従のすべてがこの「滑り坂現象（Slippery Slope）」だけで説明できるとは考えられておらず、服従を「促進させた要因の一つ」として理解するのが一般的です。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">④ 心理的・物理的距離と、認認知傾向の側面</h3>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
+                        ミルグラムの実験では、教師役と生徒役の間に壁があり、相手の苦痛に歪む顔を直接確認できない構造になっていました。相手の姿が見えるようになるほど、服従率は低下します。人間は、他者の苦痛を直接目で見たり肌で感じたりできないとき、つまり心理的・物理的な距離が遠ざかるほど、他者への共感性を失い、非情な決定を下しやすくなるという「認知的傾向」を持っています。
+                    </p>
+                    <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mt-2">
+                        一見、人間の「欠陥」のように思えるかもしれません。しかし見方を変えれば、医療現場での冷静な執刀や、司法における客観的な判断など、普段は社会生活を支えるための適応的な認知特性が、特殊な状況下でネガティブに作用してしまった結果とも言えるのです。同じように、権威への信頼という傾向も、教育や医療などの社会システムを円滑に成立させるために本来不可欠な性質です。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16 bg-gradient-to-br from-slate-900 to-indigo-950 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl">
+            <h2 class="text-lg sm:text-xl font-bold text-amber-400 border-b border-slate-700 pb-3 mb-6 flex items-center">
+                <span class="mr-2">💡</span> 義務教育での学びと「服従の心理学」とのバランス
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-6">
+                私たちが中学校までの義務教育のなかで学んできた社会性やルールは、実は今回学んだ集団心理や服従のメカニズムと、非常に深い表裏一体の関連性を持っています。教育の持つ多面的な役割を、バランスの取れた視点から見つめ直してみましょう。
+            </p>
+
+            <div class="space-y-6 text-sm sm:text-base">
+                <div>
+                    <h3 class="font-bold text-white mb-1">1. 「役割」の遂行と、批判的思考のバランス</h3>
+                    <p class="text-slate-300 text-justified leading-relaxed">
+                        学校生活において、私たちは「日直」や「部活動の役割」など、様々な役割を与えられ、それを責任持って全うすることを推奨されます。これは社会の一員としての責任感を養う上で不可欠な教育です。しかし、その美徳が度を越して盲目的になったとき、「組織の役割を完璧にこなそうとする真面目さ」が、時に個人の批判的思考（クリティカル・シンキング）を曇らせてしまうことがあります。義務教育は集団行動を教えると同時に、本来は「お互いの意見を戦わせる民主的な討議の場」や「他者を尊重しながら異議を唱えること」の大切さも同時に育んでおり、私たちはその両方のバランスを社会に出てからも保ち続けなければなりません。
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-white mb-1">2. 「法の支配」と、ルールの正当性を問う視点</h3>
+                    <p class="text-slate-300 text-justified leading-relaxed">
+                        中学校の公民の授業では、社会の秩序を維持するために「法の支配」や「手続きの正当性」を学びます。私たちはルールに従うことの重要性を身につけます。しかし、歴史が示すように、書かれたルールや提示された専門性（白衣のシンボル）そのものが、時に誤った方向へ暴走することがあります。大切なのは、ルールを守ることの意義を深く理解した上で、同時に「そのルールや命令は、人道的に、倫理的に本当に正しいのか」を、自立した個人として常に問い続ける姿勢を忘れないことです。
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-white mb-1">3. 情報教育におけるSNSのリテラシーと、心理的距離</h3>
+                    <p class="text-slate-300 text-justified leading-relaxed">
+                        近年の義務教育では、情報モラル教育を通じて「画面の向こうには生身の人間がいることを意識しよう」と繰り返し教えられます。これは、先ほど紹介した「心理的・物理的距離」がもたらす共感の減少という罠に対して、非常に親和性の高い教育内容です。デジタル空間は「絶対的な権威の命令」が存在しない場合が多く、代わりに「周囲の群集の規範（空気）」が強く影響するという点でミルグラム実験とは異なりますが、「見えない相手への想像力をどう保つか」という本質において、重要な防具と言えます。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                6. まとめ：単一原因論を超えて、多層的な視点を持つために
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                なお、ここで重要な注意点があります。ミルグラム実験は、「ホロコーストという歴史的惨劇がなぜ起きたか」を直接かつ完全に説明するものではありません。国家規模の虐殺という巨大な歴史現象には、政治、経済、文化、国家的なイデオロギー、官僚制、制度、精度、そして長年の反ユダヤ主義の歴史など、無数の要因が複雑に関与しています。ミルグラムの研究は、その巨大な歴史現象を支えた一要素としての「人間の状況依存性」を理解する手掛かりの一つにすぎません。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                本講義で紹介したいくつかの心理学理論や歴史的解釈は、互いにどれか一つだけが正しいというように競合するものではなく、それぞれが異なるレベルの説明（個人の認知、集団への同一化、組織構造、社会制度、歴史的背景）を与えています。これらすべての要因は、現実の社会のなかで複雑に相互作用しています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                したがって、私たちが社会問題や人間の行動を理解する際には、「すべて権威への服従のせいだ」「すべて特定のイデオロギーのせいだ」といった単一原因論を避け、常に多層的な視点を維持することが極めて重要です。世の中の複雑な現象に対して、過度に変に単純化された分かりやすい答えに飛びつかず、グラデーションのある現実を多面的に見つめ続けること。それこそが、皆さんがこれからの多様な社会において、自分自身と、目の前の生身の人間を守るための、最も強固な<strong class="highlight">「知的な防具」</strong>となるはずです。
+            </p>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                7. 最終的な問い：私たちは「状況」のなかにどう環境を設計するか
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                最後に、皆さんにもう一つの重要な事実を伝えて、この講義を締めくくりたいと思います。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ミルグラム実験の「最大電圧に達した人がいた」という衝撃的なデータの影で、特定の条件下（例えば、身近に実験を拒否する味方がもう一人いる状況など）では、驚くほど多くの参加者が途中で明確に命令を拒絶し、実験を拒否したことも分かっています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                歴史のなかでも同様です。ホロコーストという圧倒的な国家的圧力の渦中にあっても、自らの判断でユダヤ人にビザを発行し続けた官僚、自宅にユダヤ人を匿い続けた一般市民、建前上厳格な組織のなかで加担拒否を選択した人々が存在しました。彼らの多くが、巷で想像されているような「即座の死刑や過酷な処罰」を実は受けておらず、組織のなかで「拒否可能な余地（選択肢）」が残されていた事例が明らかになっています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                これらから得られる真の教訓は、「命令に逆らった人々が、神のような英雄的勇気を持つ特別な強い個人だった」ということではありません。そうではなく、<strong class="highlight">「人間は良くも悪くも状況の影響を受ける存在だからこそ、私たちの必要なのは、英雄的な個人に期待することではなく、個人が異議を申し立てやすい環境や制度をあらかじめ社会の中に設計しておくことだ」</strong>という事実です。
+            </p>
+
+            <div class="bg-indigo-50 border border-indigo-100 p-6 rounded-xl my-6">
+                <p class="font-bold text-indigo-950 mb-3 text-sm sm:text-base">■ 組織の暴走を防ぐための具体的な環境要因</p>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 text-sm sm:text-base pl-2">
+                    <li>偏った情報や一方的な大義名分に流されないための「批判的思考（クリティカル・シンキング）」</li>
+                    <li>特定の組織内で孤立することを防ぐ、「異なる意見を持つ友人や、組織外の人間関係（オープンなネットワーク）」</li>
+                    <li>組織の中で何か違和感を覚えたときに、「それはおかしいのではないか」と誰もが安心して発言できる<strong class="highlight">「心理的安全性（サイコロジカル・セーフティ）」</strong>のある文化</li>
+                </ul>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                状況が人間の行動を変えるのであれば、私たちは状況そのものを変えることができます。心理学は、人間の弱さを暴く学問ではありません。人間がより善く振る舞える条件を発見し、それを社会の中に実装していくための学問です。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified font-medium">
+                「なぜ人は命令に従ってしまうのか」という問いを超えて、皆さんはぜひ、これから自分自身が赴く医療や保育、あるいはビジネスの現場を想像しながら考えてみてください。この「環境の設計」という実践的な問いに対する答えを、自らの手で探究し続けてみてください。
+            </p>
+        </section>
+
+        <hr class="border-slate-200 my-12">
+
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-md p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span class="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md mr-3">確認テスト</span>
+                第8回 理解度確認・感想の提出
+            </h2>
+
+            <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
+                <div>
+                    <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
+                    <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
+                           class="w-full sm:w-64 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800">
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問1】ミルグラムの服従実験において、別室からの叫び声が途絶えた後も、実験者に促されるまま最高の450ボルトまで電気ショックのレバーを押し続けた参加者は、全体の約何％でしたか？
+                    </p>
+                    <div class="space-y-2 text-sm sm:text-base">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="A" required class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A. 1% 未満</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B. 約 35%</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C. 約 65%</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問2】ハンナ・アーレントが、システムに従順であり続け思考を放棄したアイヒマンの姿を評して用いた言葉はどれですか？
+                    </p>
+                    <div class="space-y-2 text-sm sm:text-base">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="A" required class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A. 代理状態（エージェンティック・ステート）</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B. 悪の凡庸さ（Banality of Evil）</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C. 社会的アイデンティティ</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
+                    <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて考えたことや、自身の専門分野（医療・保育・ビジネス等）の現場にどう活かせるかなど、自由に記述してください。"
+                              class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 text-sm sm:text-base"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" id="submit_btn" 
+                            class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer text-sm sm:text-base">
+                        回答を送信する
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 text-xs border-t border-slate-800 mt-20">
+        <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const classNum = "class_08"; 
+            const studentId = document.getElementById("student_id").value;
+            const feedback = document.getElementById("student_feedback").value;
+            const btn = document.getElementById("submit_btn");
+
+            // 2問クイズの自動採点
+            let scoreCount = 0;
+            const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+            const q2Answer = document.querySelector('input[name="q2"]:checked').value;
+
+            if (q1Answer === "C") scoreCount++;
+            if (q2Answer === "B") scoreCount++;
+
+            const finalScore = `${scoreCount} / 2`;
+
+            // Step 2で定義した、アドレスが隠蔽された共通関数を呼び出し
+            if (window.sendSharedMail) {
+                window.sendSharedMail(classNum, studentId, finalScore, feedback, btn);
+            } else {
+                alert("エラー：共通送信モジュール（mail-sender.js）が読み込まれていません。");
+            }
+        }
+    </script>
+</body>
+</html>
