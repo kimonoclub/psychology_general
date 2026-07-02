@@ -7,8 +7,6 @@
     <title>心理学入門：幸せは遺伝だけで決まらない：生物学的制約を超え、自律的な環境設計によって「自分らしさ」を拓く心理学</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- 共通メール送信JSモジュールの読み込み（相対パス・アドレス非表示仕様）[cite: 1] -->
-    <script src="../js/mail-sender.js"></script>
     <style>
         /* 学術的気品を表現するハイライト装飾 */
         .highlight {
@@ -27,8 +25,8 @@
     <!-- ヘッダー・ナビゲーション -->
     <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
-            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors">講義ポータルへ戻る[cite: 1]</a>
+            <span id="subject_label" class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
+            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors">講義ポータルへ戻る</a>
         </div>
     </header>
 
@@ -56,12 +54,12 @@
                     確かに、現代の心理学や行動遺伝学、そして神経科学の研究は、人間の身体的特徴や気質のベースに、遺伝や胎内環境といった「あらかじめ決められた生物学的要素」が深く関与していることを明らかにしています。しかし、それは「人間は遺伝や環境に完全に支配された無力なロボットである」という意味では決してありません。
                 </p>
                 <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
-                    本稿では、遺伝的・生物学的な制約のメカニズムを客観的なデータから正しく理解した上で、人間がどのようにしてその制約を乗り越えてきたのかを紐解きます。私たちが目指すのは、「人は生まれ持つた特性や状況に影響を受ける存在であるが、だからこそ、自ら環境を調整（ハック）し、自分らしく豊かに生きる術を身につけることができる」という、主体的な人間観の獲得です。遺伝決定論という思考の檻を飛び越え、自らの手で幸せをデザインしていくための「環境設計の心理学」をここから始めていきましょう。
+                    本稿では、遺伝的・生物学的な制約のメカニズムを客観的なデータから正しく理解した上で、人間がどのようにしてその制約を乗り越えてきたのかを紐解きます。私たちが目指すのは、「人は生まれ持った特性や状況に影響を受ける存在であるが、だからこそ、自ら環境を調整（ハック）し、自分らしく豊かに生きる術を身につけることができる」という、主体的な人間観の獲得です。遺伝決定論という思考 of 檻を飛び越え、自らの手で幸せをデザインしていくための「環境設計の心理学」をここから始めていきましょう。
                 </p>
             </div>
         </div>
 
-        <!-- 1. 遺伝的制約の正体と、人類が重ねてきた「工夫」の歴史 -->
+        <!-- 1. 遺伝的制約の正体 -->
         <section class="mb-16">
             <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
                 1. 遺伝的制約の正体と、人類が重ねてきた「工夫」の歴史
@@ -72,7 +70,7 @@
                 具体的な事例から考えてみましょう。学生の皆さんの中には、「牛乳をたくさん飲むと、決まってお腹がゴロゴロしたり痛くなったりする」という人はいませんか。実はこれ、単なる体調不良ではなく、私たちの遺伝子に刻まれた厳格なプログラムの一端なのです。
             </p>
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                人間が牛乳などの乳製品を摂取した際、その中に含まれる「乳糖（ラクトース）」を分解するためには、小腸で「ラクターゼ」という酵素をつくる必要があります。このラクターゼの生成を司る遺伝子は、私たちの第2染色体（2q21）に存在する「LCT遺伝子」です。そして、このLCT遺伝子の働き（オン・オフ）をコントロールしているのが、その上流にある別の遺伝子（MCM6遺伝子内のエンハンサー領域）です。
+                人間が牛乳などの乳製品を摂取した際、その中に含まれる「乳糖（ラクトース）」を分解するためには、小腸で「ラクターゼ」という酵素をつくる必要があります。このラクターゼの生成を司る遺伝子は、私たちの第2染色体（2q21）に存在する「LCT遺伝子」です。放置そして、このLCT遺伝子の働き（オン・オフ）をコントロールしているのが、その上流にある別の遺伝子（MCM6遺伝子内のエンハンサー領域）です。
             </p>
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
                 哺乳類である人間は、母乳を飲んで育つ「乳幼児期」には、この遺伝子のスイッチが完全に「オン」になっており、機能的なラクターゼ酵素が活発に分泌されます。しかし、離乳して成長を遂げ、「成人期」に達すると、日本人の多くはこのMCM6内のスイッチが自動的に「オフ」へと切り替わります。その結果、ラクターゼが不足し、大人になると牛乳をうまく分解できなくなる<strong class="highlight">「乳糖不耐症（ラクターゼ不足）」</strong>という身体的状態が生じるのです。大人の身体が牛乳を受け付けなくなるというのは、遺伝子レベルであらかじめ設計された、生物学的な一つの「制約（枠組み）」に他なりません。
@@ -98,7 +96,7 @@
             
             <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">あなたの人差し指と薬指はどちらが長い？</h3>
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                次に、私たちの「性格や行動傾向（気質）」にまつわる、さらにドラスティックな生物学的要因について見ていきましょう。学生の年は、今すぐ自分の手のひらをまっすぐ前にかざして、指の長さを観察してみてください。特に注目してほしいのは、「人差し指（第2指：2D）」と「薬指（第4指：4D）」の長さの比率です。
+                次に、私たちの「性格や行動傾向（気質）」にまつわる、さらにドラスティックな生物学的要因について見ていきましょう。学生の皆さんは、今すぐ自分の手のひらをまっすぐ前にかざして、指の長さを観察してみてください。特に注目してほしいのは、「人差し指（第2指：2D）」と「薬指（第4指：4D）」の長さの比率です。
             </p>
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
                 解剖学および発達可能性の研究において、この人差し指の長さを薬指の長さで割った値は<strong class="highlight">「2D:4D比」</strong>と呼ばれ、人間の初期発達を示す重要なバイオマーカーとして知られています。
@@ -117,7 +115,7 @@
                 この胎内のホルモン曝露量（2D:4D比）が、大人になってからの社会的な成功や行動傾向と結びついていることを示した、極めて衝撃的な先行研究があります。ケンブリッジ大学のジョン・コーツ（John Coates）らが行った、ロンドンのシティで働く高頻度金融トレーダーを対象とした調査です。
             </p>
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                一瞬の判断が数億円の莫大な富を左右する過酷な金融市場において、トレーダーたちの2D:4D比と彼らの実際の年収（稼ぎ高）のデータを収集し、統計的な分析を行いました。その結果、以下のような動かしがたい相関関係が弾き出されたのです。
+                運送効率の悪さに悩まされていた木材輸送会社において、ドライバーたちに「とにかくベストを尽くして、できるだけ多くの木材を積んでくれ」と指示していた期間、積載量は一向に改善されませんでした。しかし、ロックらが介入し、「法律で許されている最大積載量の『94%』を的確に狙って積んでくれ」という、具体的かつ困難な目標（難易度の高い数値）を提示した瞬間、ドライバーたちのパフォーマンスは統計的に有意に跳ね上がり、長年達成されなかった積載率が維持されるようになったのです。
             </p>
 
             <div class="bg-slate-100 border-l-4 border-indigo-600 p-4 my-6 rounded-r-lg space-y-2 text-sm sm:text-base">
@@ -125,16 +123,12 @@
                 <p><strong class="text-slate-900">2D:4D比が高いトレーダー（胎内テストステロン少）：</strong> 年収の平均値が<strong class="text-amber-700">「£61,320」</strong>と、低比率のトレーダーに比べて著しく低い水準にとどまっていた。</p>
             </div>
 
-            <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                このデータに基づき、低比率の個人は、胎内テストステロンの影響によって、空間認知能力や心肺機能（ハンターとしての適応力）が高く、リスクを恐れずに瞬時の決断を下す気質を備えているため、金融市場で高いパフォーマンスを発揮しやすいと解釈されました。
-            </p>
-
             <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">相関関係は因果関係ではない：真の原因の所在</h3>
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
                 さて、このグラフを見た学生の多くは、「人差し指が短いという『指の長さ』が原因で、高い年収という『結果』が生まれたのだ」という、短絡的な因果関係の罠に陥ってしまいます。しかし、本講義の最重要教訓を思い出してください。<strong class="highlight">「相関関係は因果関係ではない」</strong>のです。
             </p>
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                指の長さが物理的に伸縮したからといって、銀行口座のお金が増えるわけではありません。この現象における真の因果関係は、以下のような多層的な構造（第3の変数）を介して成り立っています。
+                指 of 長さが物理的に伸縮したからといって、銀行口座のお金が増えるわけではありません。この現象における真の因果関係は、以下のような多層的な構造（第3の変数）を介して成り立っています。
             </p>
 
             <div class="bg-slate-900 text-slate-200 p-6 rounded-xl my-6 font-mono text-xs sm:text-sm overflow-x-auto leading-relaxed">
@@ -146,14 +140,14 @@
             </div>
 
             <p class="text-slate-700 leading-relaxed text-justified mb-4">
-                真の原因は、あくまでお腹の中の環境（胎内テストステロン曝露量）にあります。それが、末梢器官である「指の骨の成長比率」と、中枢神経である「脳の性格傾向（リスク許容度）」の双方に対して、同時に、かつ独立して影響を与えた結果、あたかも指の長さと年収の間に直接の因果があるかのような「疑似相関」が観測されたにすぎないのです。
+                真の原因は、あくまでお腹の中の環境（胎内テストステロン曝露量）にあります。それが、末梢器官である「指の骨の成長比率」と、中枢神経である「脳の性格傾向（リスク許容度）」の fringe に対して、同時に、かつ独立して影響を与えた結果、あたかも指の長さと年収の間に直接の因果があるかのような「疑似相関」が観測されたにすぎないのです。
             </p>
             <p class="text-slate-700 leading-relaxed text-justified">
                 しかし、ここで発達心理学者ならびに教育心理学者は、次のような重大な問いを立てます。「私たちの性格やリスク傾向が、生まれる前のお腹の中の環境（胎内ホルモン）で決定されているのだとしたら、私たちはその宿命にただ従い、受け入れるしかないのだろうか？」答えは否です。確かに、初期の気質（脳のハードウェア）はお腹の中で形作られます。しかし、そのハードウェアをどのような「文脈」で駆動させ、どのように「環境を調整（設計）」していくかというソフトウェアの領域において、私たちは圧倒的な主体性と自由を持っているのです。
             </p>
         </section>
 
-        <!-- 3. こころとからだの相互作用：痛みの心理学と脳内報酬系 -->
+        <!-- 3. こころとからだの相互作用 -->
         <section class="mb-16">
             <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
                 3. こころとからだの相互作用：痛みの心理学と脳内報酬系
@@ -200,7 +194,7 @@
             </p>
         </section>
 
-        <!-- 4. 結論（コラム的解説と一体化：生態学的システム理論） -->
+        <!-- 4. 結論 -->
         <section class="mb-16 bg-gradient-to-br from-slate-900 to-indigo-950 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl">
             <h2 class="text-lg sm:text-xl font-bold text-amber-400 border-b border-slate-700 pb-3 mb-6 flex items-center">
                 <span class="mr-2">💡</span> 結論：単一原因論（生物学的宿命論）を超えて、多層的な環境を自ら設計するために
@@ -251,7 +245,7 @@
             </h2>
 
             <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
-                <!-- 学籍番号入力[cite: 1] -->
+                <!-- 学籍番号入力 -->
                 <div>
                     <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
                     <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
@@ -274,7 +268,7 @@
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q1" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
-                            <span class="text-slate-700">C) 指の長さと年収 di 間に直接の因果関係はない。真の原因は「胎内でのテストステロン曝露量」であり、それが末梢の指の骨の成長比率と、中枢の脳の性格傾向の両方に独立して影響を与えたことによる疑似相関である。</span>
+                            <span class="text-slate-700">C) 指の長さと年収の間に直接の因果関係はない。真の原因は「胎内でのテストステロン曝露量」であり、それが末梢の指の骨の成長比率と、中枢の脳の性格傾向の両方に独立して影響を与えたことによる疑似相関である。</span>
                         </label>
                         <label class="flex items-start space-x-3 cursor-pointer">
                             <input type="radio" name="q1" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
@@ -308,7 +302,7 @@
                     </div>
                 </div>
 
-                <!-- 感想・質問[cite: 1] -->
+                <!-- 感想・質問 -->
                 <div>
                     <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
                     <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて考えたことや、自身の専門分野（医療・保育・ビジネス等）の現場にどう活かせるかなど、自由に記述してください。"
@@ -332,22 +326,22 @@
         <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
     </footer>
 
-    <!-- ページ個別スクリプト：自動採点と共通モジュールの結合[cite: 1] -->
+    <!-- ページ個別スクリプト：自動採点と中継API（Formspree）の結合 -->
     <script>
             function submitForm(event) {
                 event.preventDefault();
                 
-                const classNum = "class_10"; // 第10回
+                const classNum = "class_03"; // 第3回固定値に修正
                 const studentId = document.getElementById("student_id").value;
                 const feedback = document.getElementById("student_feedback").value;
                 const btn = document.getElementById("submit_btn");
                 
-                // クイズの自動採点
+                // クイズの自動採点（問1: C, 問2: D）
                 let scoreCount = 0;
                 const q1Answer = document.querySelector('input[name="q1"]:checked').value;
                 const q2Answer = document.querySelector('input[name="q2"]:checked').value;
                 
-                if (q1Answer === "B") scoreCount++;
+                if (q1Answer === "C") scoreCount++;
                 if (q2Answer === "D") scoreCount++;
                 
                 const scoreRate = (scoreCount / 2) * 100 + "%";
@@ -363,18 +357,18 @@
                     "学生からの質問・感想": feedback
                 };
                 
-                // ★先生のFormspreeトークンID
+                // 先生のFormspreeトークンID
                 const FORMSPREE_ID = "xjgqbqnl"; 
                 
                 btn.disabled = true;
                 btn.innerText = "送信中...";
                 
-                // 規格に厳格に準拠したFetch通信（小文字ヘッダー・プレーンテキスト許容モード）
+                // 規格に厳格に準拠したFetch通信
                 fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
                     method: "POST",
                     headers: {
                         "Accept": "application/json",
-                        "Content-Type": "application/json" // 大文字・小文字を修正
+                        "Content-Type": "application/json"
                     },
                     body: JSON.stringify(payloadData)
             })
