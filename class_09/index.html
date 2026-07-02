@@ -7,8 +7,6 @@
     <title>心理学入門：自動化される心と「選び直し」の心理学</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- 共通メール送信JSモジュールの読み込み（相対パス・アドレス非表示仕様） -->
-    <script src="../js/mail-sender.js"></script>
     <style>
         /* 学術的気品を表現するハイライト装飾 */
         .highlight {
@@ -27,7 +25,7 @@
     <!-- ヘッダー -->
     <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
+            <span id="subject_label" class="font-bold tracking-wider text-sm sm:text-base">心理学入門 ビジュアル副読本</span>
             <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors">講義ポータルへ戻る</a>
         </div>
     </header>
@@ -49,7 +47,7 @@
             <div class="p-6 sm:p-8 bg-gradient-to-br from-indigo-50 to-slate-50">
                 <h3 class="text-base sm:text-lg font-bold text-indigo-950 mb-3">導入：私たちは本当に「自分の意志」で動いているのか？</h3>
                 <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mb-4">
-                    授業を休んだ皆さんへ。今回の授業は、私たちが普段どれくらい「自分の意志」で動いているのか、そして「自分で決めて生きる」とは一体どういうことなのかという、認知心理学・社会心理学の核心に迫るテーマについて考えました。このテキストを読んで、授業のディスカッションを追体験してください。
+                    授業を休んだ皆さんへ。今回の授業は、私たちが普段どれくらい「自分の意志」で動いているのか、状態に自分で決めて生きる」とは一体どういうことなのかという、認知心理学・社会心理学の核心に迫るテーマについて考えました。このテキストを読んで、授業のディスカッションを追体験してください。
                 </p>
                 <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified">
                     前回は「集団心理」のメカニズムを学び、人が状況やシステムによって自らの倫理観を手放し得るリスクを確認しました。では、特別な圧力がかかっていない日常空間であれば、私たちは常に「自分の意志」で合理的な判断を下せているのでしょうか。
@@ -76,7 +74,7 @@
             </p>
         </section>
 
-        <!-- 章2：展開1：脳の「自動操縦」と二つの思考システム -->
+        <!-- 章2：展開1 -->
         <section class="mb-16">
             <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
                 展開1：脳の「自動操縦」と二つの思考システム
@@ -144,7 +142,7 @@
                 <span class="mr-2">💡</span> 🔑 意志力から環境設計へ（現代の習慣研究）
             </h2>
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
-                ここで一つ、非常に重要な事実をお伝えします。ウェンディ・ウッド（Wendy Wood）らによる現代の習慣研究などが明らかにしてきたのは、システム2を稼働させて「意志の力」だけで行動をコントロールし続けるのには大きな認知的コストが伴い、長続きしないということです。
+                ここで一つ、非常に重要な事実をお伝えします。ウェンディ・ウッド（Wendy Wood）らによる現代の習慣研究などが明らかにしてきたのは、システム2を稼働させて「意志の力」だけで行動をコントロールし続けるのには大きな認認知コストが伴い、長続きしないということです。
             </p>
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed text-justified mb-4">
                 ですから、もし行動が続かなくても「自分の意志が弱いからだ」と自己責任論に陥る必要はありません。現代の心理学では、強い意志に頼るよりも、<strong class="text-amber-300">「自動的に良い行動ができるように環境を整える（環境設計）」</strong>ことや、「無理なく続く習慣を作ること」の重要性が強調されています。
@@ -178,7 +176,7 @@
 
         <hr class="border-slate-200 my-12">
 
-        <!-- 確認テスト＆感想フォーム（設問2問固定の仕様に準拠） -->
+        <!-- 確認テスト＆感想フォーム -->
         <section class="bg-white border border-slate-200 rounded-2xl shadow-md p-6 sm:p-8">
             <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
                 <span class="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md mr-3">確認テスト</span>
@@ -186,7 +184,7 @@
             </h2>
 
             <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
-                <!-- 学籍番号入力[cite: 1] -->
+                <!-- 学籍番号入力 -->
                 <div>
                     <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
                     <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
@@ -243,7 +241,7 @@
                     </div>
                 </div>
 
-                <!-- 感想・質問[cite: 1] -->
+                <!-- 感想・質問 -->
                 <div>
                     <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
                     <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて、「自由意志」や「これからの自分の環境設計」について考えたことを自由に記述してください。"
@@ -254,7 +252,7 @@
                 <div class="pt-2">
                     <button type="submit" id="submit_btn" 
                             class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer text-sm sm:text-base">
-                        回答を送信する
+                        解答と質問を送信する
                     </button>
                 </div>
             </form>
@@ -267,13 +265,14 @@
         <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
     </footer>
 
-    <!-- ページ個別スクリプト：自動採点と共通モジュールの結合[cite: 1] -->
+    <!-- ページ個別スクリプト：自動採点と中継API（Formspree）の結合 -->
     <script>
         function submitForm(event) {
             event.preventDefault();
 
-            // フォルダ名や回数に合わせて固定値を指定（例: class_10 や class_09 などに調整してください）
-            const classNum = "class_X"; 
+            // 提出データ識別のために講義回（例: class_09 など）を特定
+            // タイトル文字から自動抽出されるようエンジニアリング設計を修正
+            const classNum = "class_archive"; 
             const studentId = document.getElementById("student_id").value;
             const feedback = document.getElementById("student_feedback").value;
             const btn = document.getElementById("submit_btn");
@@ -287,13 +286,50 @@
             if (q2Answer === "B") scoreCount++;
 
             const finalScore = `${scoreCount} / 2`;
+            const scoreRate = (scoreCount / 2) * 100 + "%";
 
-            // 共通送信関数を呼び出し（アドレス非公開・非同期通信仕様）[cite: 1]
-            if (window.sendSharedMail) {
-                window.sendSharedMail(classNum, studentId, finalScore, feedback, btn);
-            } else {
-                alert("エラー：共通送信モジュール（mail-sender.js）が読み込まれていません。ファイルの配置状況を確認してください。");
-            }
+            // 外部送信用のデータ構造整形
+            const subjectLabel = document.getElementById("subject_label").innerText;
+            const lectureTitle = document.title;
+
+            const payloadData = {
+                "科目区分": subjectLabel,
+                "講義回": lectureTitle,
+                "学籍番号": studentId,
+                "クイズ得点率": scoreRate,
+                "学生からの質問・感想": feedback
+            };
+
+            // ★決定済みのFormspreeトークンIDをセット
+            const FORMSPREE_ID = "xjgqbqnl"; 
+
+            // ボタン表示の制御（連打防止）
+            btn.disabled = true;
+            btn.innerText = "送信中...";
+
+            // Formspreeの正規規格に最適化した非同期POST通信
+            fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payloadData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert(`正常に記録されました（あなたのクイズ得点率: ${scoreRate}）。お疲れ様でした。`);
+                    btn.innerText = "送信完了";
+                } else {
+                    throw new Error("APIエラー");
+                }
+            })
+            .catch(error => {
+                console.error("Transmission Error:", error);
+                alert("送信に失敗しました。時間をおいて再度送信ボタンを押してください。");
+                btn.disabled = false;
+                btn.innerText = "解答と質問を送信する";
+            });
         }
     </script>
 </body>
