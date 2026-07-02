@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>心理学入門：記憶・運動・睡眠の進化論的アプローチ（ビジュアル副読本）</title>
     
-    <!-- Google Fonts: 格調高い日本語明朝体と洗練された英字セリフ体の組み合わせ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
     <style>
         /* ==========================================
@@ -24,10 +24,6 @@
             --text-color: #2b3530;       /* 鉄紺・墨黒 */
             --light-card: #ffffff;       /* 白色 */
             --border-color: #d8e0da;     /* 薄灰緑 */
-        }
-
-        * {
-            box-sizing: border-box;
         }
 
         body {
@@ -479,14 +475,11 @@
             box-shadow: 0 6px 20px rgba(175, 82, 57, 0.4);
         }
 
-        /* ==========================================
-           6. PRINT OPTIMIZATION (PDF化・印刷用)
-           ========================================== */
         @media print {
             body {
                 background-color: #ffffff;
                 color: #000000;
-                font-size: 14pt; /* A4書籍サイズに最適化 */
+                font-size: 14pt;
                 line-height: 1.8;
                 padding: 0;
             }
@@ -499,7 +492,7 @@
             }
 
             .cover-page {
-                height: 280mm; /* A4用紙の縦長にフィッティング */
+                height: 280mm;
                 margin-bottom: 0;
                 page-break-after: always;
                 break-after: page;
@@ -522,7 +515,7 @@
             }
 
             .assignment-section {
-                display: none; /* 提出セクションは印刷しない */
+                display: none;
             }
 
             .definition-box {
@@ -540,17 +533,14 @@
 
 <div class="book-container">
 
-    <!-- ==========================================
-         COVER PAGE (表紙)
-         ========================================== -->
     <div class="cover-page">
         <div class="cover-header">
-            <span class="subject">Psychology General &amp; Evolutionary Science</span>
+            <span id="subject_label" class="subject">Psychology General &amp; Evolutionary Science</span>
             <hr>
         </div>
         
         <div class="cover-title">
-            <h1>心理学入門</h1>
+            <h1 id="lecture_title">心理学入門</h1>
             <div class="subtitle">記憶・運動・睡眠の進化論的アプローチ</div>
         </div>
         
@@ -564,9 +554,6 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         CHAPTER 1 (記憶のメカニズムと系列位置効果)
-         ========================================== -->
     <div class="chapter" id="chap1">
         <div class="chapter-num">01</div>
         <h2 class="chapter-title">記憶のメカニズムと系列位置効果</h2>
@@ -580,7 +567,7 @@
             <span class="en-title">Serial Position Effect</span>
         </div>
 
-        <p>しかし、提示されるすべての情報が、まったく均等に忘れ去られるわけではありません。心理学の実験では、いくつかの単語リストを順番に提示して暗記してもらうと、その単語がリストの中の「どの順番（位置）で提示されたか」によって、明らかに覚えやすさが異なることが分かっています。この現象を<strong class="highlight">「系列位置効果（Serial position effect）」</strong>といいます。この効果を詳細に分析すると、対照的な2つの心理学的メカニズムが見えてきます。</p>
+        <p>しかし、提示されるすべての情報が、まったく均等に忘れ去られるわけではありません。心理学の実験では、いくつかの単語リストを順番に提示して暗記してもらうと、その単語がリストの中の「どの順番（位置）で提示されたか」によって、明らかに覚えやすさが異なることが分かっています。この現象を<strong class="highlight">「系列位置効果（Serial position effect）」</strong>といいます。この効果を詳細に分析すると、対照的な2つの心理学的メカニズム見えてきます。</p>
 
         <div class="definition-box">
             <h4>初頭効果（Primacy effect）</h4>
@@ -599,7 +586,6 @@
 
         <p>この系列位置効果をグラフに表すと、最初と最後の正答率が高く、中盤の正答率が大きく落ち込む「U字型」の美しい曲線（系列位置曲線）を描くことになります。これを私たちの身近な大学の講義に当てはめて考えてみましょう。90分間の講義の冒頭で説明された重要な定義（初頭効果）や、最後にまとめとして語られた結論（新近効果）は、私たちの記憶に比較的残りやすいと言えます。しかし、講義の中だるみが生じやすい「中盤の具体的な解説や事例」は、最も脳から抜け落ちやすい弱点エリアなのです。したがって、効率よく自習やテスト勉強を進めるためには、あえて中盤に語られた内容を意識的にピックアップして復習する工夫が必要になります。</p>
 
-        <!-- 義務教育からの復習コラム -->
         <div class="linkage-column">
             <h4><i class="fa-solid fa-graduation-cap"></i> 学びの繋がり：小学校での「九九の暗記」を心理学で読み解く</h4>
             <p>皆さんは小学校2年生の算数の時間、必死になって「九九（くく）」を暗唱した経験があるはずです。あの時、何度も声に出して「ににんがし、にさんがろく……」と繰り返した行為は、心理学における典型的な<strong class="bold-text">「維持リハーサル」</strong>に他なりません。当時の私たちは、九九の数字の意味を深く考える（精緻化する）余裕はなく、ただひたすら音として繰り返すことで、短期貯蔵庫からなんとか長期貯蔵庫へと記憶を転送しようとしていたのです。</p>
@@ -612,14 +598,11 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         CHAPTER 2 (身体運動と脳の認知機能・BDNF)
-         ========================================== -->
     <div class="chapter" id="chap2">
         <div class="chapter-num">02</div>
         <h2 class="chapter-title">身体運動と脳の認知機能</h2>
         
-        <p>近年の認知心理学や認知神経科学における最もエキサイティングな発見の一つは、私たちの身体活動（運動）が、脳の記憶力や学習の効率に対して決定的な影響を及ぼしているという客観的事実です。これまで、「勉強中に体を動かすのは集中していない証拠だ」と考えられたり、テスト前に部活動を全面的に休止して机にしがみつくことばかりが推奨されたりしてきました。しかし最新の脳科学は、それがむしろ学習効率を下げている可能性を指摘しています。</p>
+        <p>近年の認知心理学や認知神経科学における最もエキサイティングな発見の一つは、私たちの身体活動（運動）が、脳の記憶力や学習の効率に対して決定的な影響を及ぼしているという客観的事実です。これまで、「勉強中に体を動かすのは集中していない証拠だ」と考えられたり、テスト前に部活動を全面的に休止して机にしがみつくことばかりが推奨されたりしてきました。しかし最新 of 脳科学は、それがむしろ学習効率を下げている可能性を指摘しています。</p>
 
         <p>私たちが、息が軽く上がる程度の適度な有酸素運動（例えば早歩きのウォーキングや軽いジョギング、階段の上り下りなど）を行うと、脳の記憶の中枢である「海馬（かいば）」において、<strong class="highlight">「BDNF（脳由来神経栄養因子：Brain-Derived Neurotrophic Factor）」</strong>というタンパク質の一種が劇的に増加することが実証されています。</p>
 
@@ -635,7 +618,6 @@
             <div class="caption">図2：適度な運動をすることによって、脳の深部でBDNFが分泌され、神経細胞が活性化して新たなシナプス結合が次々と形成されるイメージ図。</div>
         </div>
 
-        <!-- 義務教育からの復習コラム -->
         <div class="linkage-column">
             <h4><i class="fa-solid fa-running"></i> 学びの繋がり：中学校・高校の部活動と「保健体育」での睡眠・運動の学び</h4>
             <p>中学校や高校の「保健体育」の授業で、「適度な運動はストレスを解消し、心身の健康的な発達を促す」と学んだ記憶があると思います。当時の皆さんは「そんなの当たり前だ」「ただ健康に良いだけだろう」と聞き流していたかもしれません。しかし、その身体的な発散が、脳科学的にはまさに脳内のBDNFを活性化させ、皆さんの勉強を大いに助けていたのです。</p>
@@ -648,9 +630,6 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         CHAPTER 3 (睡眠の機能とレミニセンス現象)
-         ========================================== -->
     <div class="chapter" id="chap3">
         <div class="chapter-num">03</div>
         <h2 class="chapter-title">睡眠の機能とレミニセンス現象</h2>
@@ -672,11 +651,10 @@
             <p>もし皆さんが徹夜で勉強を続けたらどうなるでしょうか。睡眠不足に陥ると、脳の感情や恐怖を司る<strong class="bold-text">「扁桃体（へんとうたい）」</strong>という部位の働きが過剰になり、コントロールを失って暴走し始めます。これによって、脳は「嫌な出来事や、不快な記憶、失敗への恐怖」ばかりを異常なほど強く頭に焼き付け、逆に楽しかったことやポジティブな情報を一切思い出せなくなる、最悪の偏り（<strong class="bold-text">「ネガティブバイアス」</strong>）が作動してしまいます。徹夜明けに気分が暗くなったり、些細なことでひどく落ち込んだりするのは、この脳のブレーキが壊れているためなのです。慢性的な睡眠不足は、単に学習効率を下げるだけでなく、うつ病や深刻な意欲の低下を直接引き起こします。</p>
         </div>
 
-        <!-- 義務教育からの復習コラム -->
         <div class="linkage-column">
             <h4><i class="fa-solid fa-bed"></i> 学びの繋がり：高校での「生物」や「家庭科」で学んだ睡眠習慣を科学する</h4>
             <p>高校の生物で自律神経や脳の仕組みを学んだり、家庭科の「生活習慣と健康」の単元で「睡眠は成長ホルモンを分泌させ、心身を回復させるために重要である」と教えられたりしたことを覚えているでしょうか。当時の教科書的な知識は、今、私たちの「学習効率」というダイレクトな利益として深く繋がってきます。</p>
-            <p>皆さんが高校の定期テストや大学入試、英検の勉強などをしていたとき、「寝る直前に暗記した単語や歴史の年号が、翌朝起きたらなぜかスラスラ言えた」という不思議な体験はなかったでしょうか。まさに高校の保健や生物で学んだレム睡眠・ノンレム睡眠のサイクル（図3参照）が脳内で忠実に回転し、皆さんの知らないところで脳が「記憶の定着（レミニセンス現象）」を勝手に終わらせてくれていたからなのです。テスト前の徹夜がどれほど「百害あって一利なし」であるか、科学的な知識として再確認できます。</p>
+            <p>皆さんが高校の定期テストや大学入試、英検の勉強などをしていたとき、「寝る直前に暗記した単語や歴史の年号が、翌朝起きたらなぜかスラスラ言えた」という不思議な体験はなかったでしょうか。まさに高校の保健や生物で学んだレム睡眠・ノンレム睡眠のサイクルが脳内で忠実に回転し、皆さんの知らないところで脳が「記憶の定着（レミニセンス現象）」を勝手に終わらせてくれていたからなのです。テスト前の徹夜がどれほど「百害あって一利なし」であるか、科学的な知識として再確認できます。</p>
         </div>
 
         <div class="book-footer">
@@ -685,14 +663,11 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         CHAPTER 4 (重点項目：サバンナの脳と現代社会)
-         ========================================== -->
     <div class="chapter" id="chap4">
         <div class="chapter-num">04</div>
         <h2 class="chapter-title">重点項目：サバンナの脳と現代社会の不適合</h2>
         
-        <p>私たちはここまで、記憶を良くする系列位置効果、運動の効果（BDNF）、そして睡眠の力（レミニセンス現象）を個別に学んできました。しかし、なぜ私たちの脳はこのような一見風変わりなシステム（動かなければ頭が悪くなり、眠らなければ不快なことばかり覚えてしまうシステム）を持っているのでしょうか。その謎を解き明かすために、進化心理学の視点に立ち、<strong class="highlight">「私たちの心と体は、本来、過酷な大自然の環境を生き抜くために作られている」</strong>という生物学的大前提から見つめ直す必要があります。</p>
+        <p>私たちはここまで、記憶を良くする系列位置効果、運動の効果（BDNF）、...を個別に学んできました。しかし、なぜ私たちの脳はこのような一見風変わりなシステム（動かなければ頭が悪くなり、眠らなければ不快なことばかり覚えてしまうシステム）を持っているのでしょうか。その謎を解き明かすために、進化心理学の視点に立ち、<strong class="highlight">「私たちの心と体は、本来、過酷な大自然の環境を生き抜くために作られている」</strong>という生物学的大前提から見つめ直す必要があります。</p>
 
         <p>ホモ・サピエンス（現生人類）の遺伝子や、私たちの脳の神経系プラットフォームは、その歴史の大半（約30万年間）を過ごした、広大で過酷な<strong class="bold-text">「アフリカの東部のサバンナ環境」</strong>を生き残るために精巧にチューニングされてきました。サバンナで生きるということは、毎日が猛獣の脅威、突然の天候の崩壊、飢餓による全滅の危機との戦いでした。群れからほんの少しはぐれるだけで、野生動物の餌食になり死を迎える過酷な世界です。</p>
 
@@ -732,7 +707,7 @@
             </tbody>
         </table>
 
-        <p>人間は、本来的に「動くようにできている」し、「規則正しく眠るようにできている」生物です。コロンビア大学のヤコフ・スターン（Yakov Stern）教授らの高名な研究によると、若いうちから好奇心を持って新しいことや未知の体験に主体的に「挑戦」し、身体をアクティブに駆動させる習慣（これを<strong class="bold-text">「認知的予備能（Cognitive Reserve）」</strong>と呼びます）を培っている人ほど、老後において認知症や記憶力低下といった脳の機能低下を劇的に遅らせ、発症リスクを大幅（約35%）に低下させることが分かっています。つまり、私たちの脳は「使わない、動かさない、変化がない」環境に置かれると、まるで不要な筋肉が落ちていくかのように、ものすごいスピードで衰えていってしまうシステムなのです。</p>
+        <p>人間は、本来的に「動くようにできている」し、「規則正しく眠るようにできている」生物です。コロンビア大学のヤコフ・スターン（Yakov Stern）教授らの高名な研究によると、若いうちから好奇心を持って新しいことや未知の体験に主体的に「挑戦」し、身体をアクティブに駆動させる習慣（これを<strong class="bold-text">「認認知的な予備能（Cognitive Reserve）」</strong>と呼びます）を培っている人ほど、老後において認知症や記憶力低下といった脳の機能低下を劇的に遅らせ、発症リスクを大幅（約35%）に低下させることが分かっています。つまり、私たちの脳は「使わない、動かさない、変化がない」環境に置かれると、まるで不要な筋肉が落ちていくかのように、ものすごいスピードで衰えていってしまうシステムなのです。</p>
 
         <p>私たちが、自分自身の精巧な脳と体が「本来どのような環境（サバンナ）を想定して設計されたのか」という科学的な事実を知り、その事実を羅針盤として「日々の生活習慣（早起き、定期的な運動、十分な睡眠、SNSの遮断）」を見直すことは、単に健康になるためだけでなく、過酷な現代情報社会の中で自分自身の心と脳を守り、最も効率的に能力を発揮して元気に生き抜くための、最も本質的で唯一の心理学的アプローチなのです。</p>
 
@@ -742,126 +717,131 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         INTERACTIVE ASSIGNMENT SECTION (提出)
-         ========================================== -->
     <section class="assignment-section" id="assignment">
         <h2><i class="fa-solid fa-pen-to-square"></i> フォローアップ課題提出フォーム</h2>
         <p style="color: #d8e0da; font-size: 14px; margin-bottom: 30px;">
             この副読本で学習した内容を振り返るための、確認テストです。
-            回答を完了し、「回答を採点して提出する」ボタンをクリックすると、お使いのメールソフトが起動します。そのまま送信することで、出席および課題提出となります。
+            回答を完了し、「回答を採点して提出する」ボタンをクリックすると、データが送信されます。
         </p>
         
-        <form id="submission-form">
+        <form id="submission_form" onsubmit="submitForm(event)">
             <div class="input-group">
-                <label for="student-id"><i class="fa-solid fa-id-card"></i> 学籍番号</label>
-                <input type="text" id="student-id" placeholder="例：24A000" required>
+                <label for="student_id"><i class="fa-solid fa-id-card"></i> 学籍番号</label>
+                <input type="text" id="student_id" placeholder="例：13（半角数字）" required>
             </div>
 
-            <!-- 第1問 -->
             <div class="quiz-item">
                 <p>問1：リストの「最初の方」の単語をよく覚えている現象（初頭効果）が起こる、心理学的な理由として適切なものはどれですか？</p>
                 <div class="quiz-options">
                     <label>
-                        <input type="radio" name="q1" value="0"> 
-                        <span>1. まだ短期貯蔵庫にそのままフレッシュに記憶が残っているため</span>
+                        <input type="radio" name="q1" value="A" required> 
+                        <span>A) まだ短期貯蔵庫にそのままフレッシュに記憶が残っているため</span>
                     </label>
                     <label>
-                        <input type="radio" name="q1" value="1"> 
-                        <span>2. 脳内で「リハーサル」を行うことで、記憶が「長期貯蔵庫」へ移動しやすくなるため</span>
+                        <input type="radio" name="q1" value="B"> 
+                        <span>B) 脳内で「リハーサル」を行うことで、記憶が「長期貯蔵庫」へ移動しやすくなるため</span>
                     </label>
                     <label>
-                        <input type="radio" name="q1" value="0"> 
-                        <span>3. 運動することによって脳由来神経栄養因子（BDNF）が一時的に急増したため</span>
+                        <input type="radio" name="q1" value="C"> 
+                        <span>C) 運動することによって脳由来神経栄養因子（BDNF）が一時的に急増したため</span>
                     </label>
                 </div>
             </div>
 
-            <!-- 第2問 -->
             <div class="quiz-item">
                 <p>問2：進化心理学における「進化の不適合（環境ミスマッチ）」の説明として、正しいものはどれですか？</p>
                 <div class="quiz-options">
                     <label>
-                        <input type="radio" name="q2" value="0"> 
-                        <span>1. 現代人の脳がデジタル環境に完全に適応し、野生の能力を全て失ってしまったこと</span>
+                        <input type="radio" name="q2" value="A" required> 
+                        <span>A) 現代人の脳がデジタル環境に完全に適応し、野生の能力を全て失ってしまったこと</span>
                     </label>
                     <label>
-                        <input type="radio" name="q2" value="1"> 
-                        <span>2. 30万年前のサバンナ用に設計された「脳の仕組み」と「現代の生活環境」との間に大きなズレが生じていること</span>
+                        <input type="radio" name="q2" value="B"> 
+                        <span>B) 30万年前のサバンナ用に設計された「脳の仕組み」と「現代の生活環境」との間に大きなズレが生じていること</span>
                     </label>
                     <label>
-                        <input type="radio" name="q2" value="0"> 
-                        <span>3. 人間が元来持っていた「ネガティブバイアス」を完全に忘却してしまい、危機を回避できなくなったこと</span>
+                        <input type="radio" name="q2" value="C"> 
+                        <span>C) 人間が元来持っていた「ネガティブバイアス」を完全に忘却してしまい、危機を回避できなくなったこと</span>
                     </label>
                 </div>
             </div>
 
             <div class="input-group">
-                <label for="question"><i class="fa-solid fa-comment-dots"></i> 講義への質問・感想（任意）</label>
-                <textarea id="question" rows="4" placeholder="今回の副読本や講義について、不明な点や深く興味を持った点があれば、自由に入力してください。"></textarea>
+                <label for="student_feedback"><i class="fa-solid fa-comment-dots"></i> 講義への質問・感想（任意）</label>
+                <textarea id="student_feedback" rows="4" placeholder="今回の副読本や講義について、不明な点や深く興味を持った点があれば、自由に入力してください。"></textarea>
             </div>
 
-            <button type="button" class="submit-btn" onclick="sendMail()">
-                <i class="fa-solid fa-paper-plane"></i> 回答を採点してメールで提出する
+            <button type="submit" id="submit_btn" class="submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> 回答を採点してオンライン提出する
             </button>
         </form>
     </section>
 
-    <!-- フッター -->
     <footer style="margin-top: 80px; text-align: center; font-size: 12px; color: #707b73; border-top: 1px solid var(--border-color); padding-top: 20px;">
         © 2026 心理学入門 副読本 • 四国大学
     </footer>
 
 </div>
 
-<!-- 自動採点およびmailto送信機能のJavaScript -->
 <script>
-    function sendMail() {
-        // 学籍番号のバリデーション
-        const studentId = document.getElementById('student-id').value.trim();
-        if (!studentId) {
-            alert('学籍番号を正しく入力してください。');
-            return;
-        }
+    function submitForm(event) {
+        event.preventDefault();
 
-        // 採点
-        let correctCount = 0;
-        const q1 = document.querySelector('input[name="q1"]:checked');
-        const q2 = document.querySelector('input[name="q2"]:checked');
+        const studentId = document.getElementById('student_id').value.trim();
+        const feedback = document.getElementById('student_feedback').value.trim() || "特になし";
+        const btn = document.getElementById('submit_btn');
 
-        if (!q1 || !q2) {
-            alert('すべての問題に回答してください。');
-            return;
-        }
+        // クイズの自動採点
+        let scoreCount = 0;
+        const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+        const q2Answer = document.querySelector('input[name="q2"]:checked').value;
 
-        if (q1.value === "1") correctCount++;
-        if (q2.value === "1") correctCount++;
+        if (q1Answer === "B") scoreCount++;
+        if (q2Answer === "B") scoreCount++;
 
-        // 得点計算（正解率 * 100）
-        const score = Math.floor((correctCount / 2) * 100);
+        const scoreRate = (scoreCount / 2) * 100 + "%";
 
-        // 質問・感想の取得
-        const question = document.getElementById('question').value.trim() || "特になし";
+        // 送信用データ構造の整形
+        const subjectLabel = document.getElementById('subject_label').innerText;
+        const lectureTitle = document.title;
 
-        // メールの各設定
-        const email = "yoshinori-shibasaki@shikoku-u.ac.jp";
-        const subject = encodeURIComponent(`[フォローアップ提出]${studentId}`);
-        const bodyText = `学籍番号: ${studentId}
-得点: ${score}点 (正解数: ${correctCount}/2)
+        const payloadData = {
+            "科目区分": subjectLabel,
+            "講義回": lectureTitle,
+            "学籍番号": studentId,
+            "クイズ得点率": scoreRate,
+            "学生からの質問・感想": feedback
+        };
 
-【問1回答】: ${q1.value === "1" ? "正解" : "不正解"}
-【問2回答】: ${q2.value === "1" ? "正解" : "不正解"}
+        // ★先生のFormspree トークンIDを設定
+        const FORMSPREE_ID = "xjgqbqnl"; 
 
-【質問事項・感想】
-${question}`;
+        btn.disabled = true;
+        btn.innerText = "送信中...";
 
-        const body = encodeURIComponent(bodyText);
-
-        // mailtoの起動
-        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-
-        // メッセージボックス
-        alert(`採点が完了しました。\nあなたの得点は 【 ${score} 点 】 です。\n\nOKを押すとメールソフトが起動しますので、内容を書き換えずに「送信」ボタンを押して課題を提出してください。`);
+        // Formspreeの正規API規格に最適化した非同期POST通信
+        fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payloadData)
+        })
+        .then(response => {
+            if (response.ok) {
+                alert(`正常に記録されました（あなたのクイズ得点率: ${scoreRate}）。お疲れ様でした。`);
+                btn.innerText = "送信完了";
+            } else {
+                throw new Error("APIエラー");
+            }
+        })
+        .catch(error => {
+            console.error("Transmission Error:", error);
+            alert("送信に失敗しました。時間をおいて再度送信ボタンを押してください。");
+            btn.disabled = false;
+            btn.innerText = "解答と質問を送信する";
+        });
     }
 </script>
 
