@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ポータルの全体スキャナーが自動収集・クレンジングするタイトルタグ[cite: 1] -->
+    <title>心理学入門：第7回 記憶のメカニズム、学習の転移、および生涯にわたる心身の健康：睡眠のダイナミズム、知能の生涯変化、動機づけを阻む罠</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- ★数式を確実に自動レンダリングさせるための MathJax 設定と CDN -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            chtml: {
+                matchFontHeight: false
+            },
+            startup: {
+                pageReady: () => {
+                    return MathJax.startup.defaultPageReady().then(() => {
+                        console.log('MathJax initial typesetting complete');
+                    });
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style>
+        /* 学術的気品を表現するハイライト装飾 */
+        .highlight {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        .text-justified {
+            text-align: justify;
+            text-justify: inter-character;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased line-height-relaxed">
+
+    <!-- 講義ヘッダー -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <p id="subject_label" class="text-xs font-bold text-blue-300 uppercase tracking-wider">心理学入門</p>
+                <h1 id="lecture_title" class="text-sm sm:text-base font-bold text-white mt-0.5">第7回：記憶のメカニズム、学習の転移、および生涯にわたる心身の健康</h1>
+            </div>
+            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap">講義ポータルへ戻る</a>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+        
+        <!-- タイトルエリア -->
+        <div class="text-center mb-16">
+            <p class="text-indigo-600 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">第7回 講義要約テキスト</p>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                記憶のメカニズム、学習の転移、<br class="hidden sm:inline">そして生涯にわたる心身の健康
+            </h1>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto rounded"></div>
+        </div>
+
+        <!-- 重要なお知らせアナウンス -->
+        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border-2 border-amber-200 bg-white">
+            <div class="p-6 sm:p-8 bg-gradient-to-br from-amber-50 to-orange-50/30">
+                <h2 class="text-lg font-bold text-amber-950 flex items-center mb-4">
+                    <span class="bg-amber-600 text-white text-xs px-2 py-0.5 rounded mr-2 uppercase tracking-wide">重要</span>
+                    出席の確認と課題の提出、および協力依頼
+                </h2>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed text-justified mb-4">
+                    本講義の出席確認は、授業時間中にこのページの下部から提出された課題（確認テスト）のみが対象となります。各自、ポータルサイト（講義資料アーカイブポータル）にて、これまでのフォローアップ申請状況や副読本の公開状況（例：第5回「記憶・運動・睡眠の進化論的アプローチ」、第6回「自分はどう作られるか」など）を定期的に確認してください。
+                </p>
+                <div class="border-t border-amber-200 pt-4 mt-2">
+                    <p class="text-amber-950 font-bold text-sm sm:text-base mb-1">📢 卒業研究への協力依頼</p>
+                    <p class="text-slate-700 text-sm leading-relaxed text-justified">
+                        スライド冒頭にあるQRコードは、先輩（西岡さん）の卒業研究に関する協力依頼です。非常に有意義な研究テーマとなっておりますので、受講生の皆さんはぜひ積極的にアクセスし、回答へのご協力をお願いします。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第1章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第1章：睡眠と記憶のダイナミズム ―なぜ私たちは眠るのか―
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-6">
+                私たちは日常的に「忘れること」を経験しますが、効果的な記憶の定着には<strong class="highlight">「睡眠」</strong>と<strong class="highlight">「出力（使うこと）」</strong>が深く関わっています。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">1. 現代人の睡眠の推移</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                総務省統計局の「社会生活基本調査」によると、15歳以上の日本人の平均睡眠時間は1976年から2011年にかけて減少傾向にあります。属性別に見ると、仕事を持つ「有業者」の睡眠時間が著しく減少している一方で、仕事を持たない「無業者」の睡眠時間はほぼ横ばいから微増傾向を示しています。全体として現代社会は、睡眠時間が削られやすい環境にあるといえます。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">2. 睡眠による記憶定着の実験</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                睡眠が記憶に与える影響を調べるため、大学生を対象とした「単語ペア記憶テスト」が行われました。「自転車―クジラ」のような、一見つながりのない単語のペア46組を学習する課題です。
+            </p>
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-sm sm:text-base my-4 text-justified space-y-2">
+                <p><strong class="text-indigo-900">【手続き】：</strong> 最初に単語ペアを学習し、直後の「テスト1」で正答率60%以上を達成した単語（平均37個）を確認します。その後、適切な睡眠を挟んで、時間を置いた「テスト2」を実施します。</p>
+                <p><strong class="text-indigo-900">【結果】：</strong> テスト1で37個だった記憶数が、睡眠を経たテスト2では<strong class="highlight">41個へと向上</strong>しました。</p>
+            </div>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                睡眠をとることで、記憶の定着率が維持されるだけでなく、むしろ向上する現象がみられます。睡眠中、脳は単に休んでいるのではなく、レム睡眠（REM）やノンレム睡眠（段階Ⅰ〜Ⅳ）といった睡眠段階を繰り返しながら、日中に得た情報を整理・統合し、長期記憶として定着させるためのネットワークの再編を行っていると考えられています。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">3. レミニセンス現象</h3>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                このように、学習した直後よりも、一定の休息や睡眠を挟んだ後の方が、記憶がより鮮明に思い出せるようになる現象を<strong class="highlight">「レミニセンス現象」</strong>と呼びます。記憶は「思い出す（出力する）とき」「使おうとするとき」に神経回路が強められる性質があります。問題を解く、あるいは人に説明するといった「使う学習」を取り入れることで、記憶の定着がより確かなものになる可能性が示唆されています。
+            </p>
+        </section>
+
+        <!-- 第2章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第2章：生涯発達と知能の変化、そして認知症
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-6">
+                「年齢を重ねると頭が衰える」という一面的な捉え方は、心理学のデータによって修正されています。知能や認知機能の生涯変化は、低下するものと維持されるものの二面性を持っています。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">1. 知能の生涯変化：結晶性知能と流動性知能</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                心理学では、人間の知能を大きく2つに分類して捉えます。
+            </p>
+            <div class="space-y-4 text-sm sm:text-base">
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="font-bold text-indigo-950 mb-1">■ 流動性知能（Fluid intelligence）</p>
+                    <p class="text-slate-700 text-justified">
+                        いわゆる「頭の回転」や処理の速さを指します。新しい情報を素早く処理する、計算を素早く行うといった能力で、20代をピークに年齢とともに低下していく傾向がみられます。記憶の作業容量を測る「Digit span（数字の順唱・逆唱）テスト」のデータでも、年齢とともに保持できる数字の長さが緩やかに低下していくことが示されています。
+                    </p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="font-bold text-indigo-950 mb-1">■ 結晶性知能（Crystallized intelligence）</p>
+                    <p class="text-slate-700 text-justified">
+                        長年の経験や学習、人生の積み重ねによって得られる「知恵」や知識を指します。例えば「人間関係のいざこざの解決方法」などがこれに該当します。この知能は、年齢を重ねても低下しにくく、<strong class="highlight">60代頃まで維持・向上し続ける</strong>ことがグラフから読み取れます。
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">2. 認知症の実態と脳の経過</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                高齢化に伴い、認知症の有病率は社会的な関心事となっています。福岡県久山町の長期追跡研究（久山町研究）のデータによると、各年齢層の認知症有病率が一定であると仮定した場合でも、高齢者人口の増加により患者数は増え続けます。さらに、糖尿病などの生活習慣病の増加に伴って各年齢層の有病率自体が上昇すると仮定した場合、2060年には高齢者の認知症有病率が**約34.3%**に達するという深刻な予測モデルも示されています。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                認知症の初期の兆しとして、共通して現れやすいのが「近時記憶障害」（ついさっきの出来事を忘れること）です。ただし、脳の疾患によってその低下のプロセスは異なります。
+            </p>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-sm sm:text-base space-y-3">
+                <p class="text-slate-700 text-justified"><strong class="text-slate-900">・アルツハイマー病：</strong> 緩やかに一定のペースで進行し、近時記憶障害から時の失見当識（今がいつか分からなくなる）、構成障害、重度の記憶障害へと進みます。</p>
+                <p class="text-slate-700 text-justified"><strong class="text-slate-900">・脳血管性認知症：</strong> 脳梗塞などをきっかけに、歩行障害や意欲低下、構音障害などが「階段状」に段階的に進行します。</p>
+                <p class="text-slate-700 text-justified"><strong class="text-slate-900">・慢性硬膜下血腫：</strong> 軽度の状態が長く続いた後、発動性の低下や歩行障害、傾眠傾向が比較的急速に現れます。</p>
+            </div>
+        </section>
+
+        <!-- 第3章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第3章：頭の使い方と「転移」の科学
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                年齢に伴う流動性知能の低下は、防ぐことができない運命なのでしょうか。これに対する重要な示唆を与える高齢期への介入研究があります。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">1. 高齢者への学習介入研究</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                高齢者を2つのグループに分け、長期的な変化を測定しました。
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm sm:text-base my-4">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="font-bold text-indigo-900 mb-1">■ 訓練群（T群）</p>
+                    <p class="text-slate-600 text-justified">
+                        週に2回大学に集まり、みんなで一緒に勉強します。課題として、1桁から3桁の足し算・引き算を行う「算数課題」や、詩・ことわざ・昔話を2〜5分程度声に出して読む「音読課題」を定期的に実施しました。
+                    </p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="font-bold text-slate-900 mb-1">■ 比較群（C群）</p>
+                    <p class="text-slate-600 text-justified">
+                        特別なトレーニングは行わず、普段通りに自宅で過ごします。
+                    </p>
+                </div>
+            </div>
+            <p class="text-slate-700 leading-relaxed text-justified mb-6">
+                結果、特別なトレーニングを行わなかったC群は短期記憶量や抑制能力が低下していったのに対し、定期的に音読や計算を行ったT群は、<strong class="highlight">短期記憶量（Span）が維持・向上する</strong>というデータが得られました。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">2. 各自が目指す学習の「転移」という現象</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ここで学術的に興味深いのは、訓練した「音読」や「単純計算」の能力だけでなく、直接訓練していないはずの「短期記憶量」や「不要な反応を抑える抑制能力」まで向上したという点です。過去にある状況で学んだことや培った能力が、新しい別の状況での学習や適応に影響を及ぼする現象を、心理学では<strong class="highlight">「転移（Transfer）」</strong>と呼びます。
+            </p>
+            <div class="bg-white border border-slate-200 p-5 rounded-xl text-sm sm:text-base my-4 text-justified space-y-2">
+                <p><strong class="text-indigo-950">・近転移：</strong> 類似した領域への転移（例：自動車の運転に慣れている人が、別の普通乗用車をスムーズに運転できること）。</p>
+                <p><strong class="text-indigo-950">・遠転移：</strong> 一見まったく異なる領域への転移（例：将棋で培った「先を読む思考力」を、企業の経営戦略の策定に活かすこと）。</p>
+            </div>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                今回の高齢者研究で起きた変化は、いわば「遠転移」のような現象です。なぜ、直接鍛えていない脳の機能まで向上したのでしょうか。それは、単にテキストを読んだからという理由だけではなく、「家から外に出て、他の人と定期的に関わりながら、楽しく頭を使う」という生活の営みそのものが、脳の認知的な柔軟性を幅広く支え、心身の健康維持・向上に役立った可能性が考えられているのです。
+            </p>
+        </section>
+
+        <!-- 第4章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第4章：動機づけ（モチベーション）を阻む罠
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-6">
+                私たちが自分らしい生活を送り、モチベーションを維持しようとするとき、心にはいくつかの「罠」が存在します。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">1. 機能的固着（画鋲の箱とろうそくの実験）</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                ダンッカーの有名な「ろうそく問題」が提示されています。中身の入った画鋲（タッカ）の箱、マッチ、ろうそくを渡し、「机にろうを落とさないように、ろうそくを壁に固定してください」という課題です。多くの人は、画鋲で直接ろうそくを壁に留めようとするなどして苦戦します。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                正解は「画鋲の入っていた箱を空にし、その箱を画鋲で壁に留めて、ろうそくの台座（入れ物）にする」という方法です。このように、物の従来の用途（箱＝物を入れるもの）にとらわれてしまい、新しい解決策を思いつけなくなる認知の偏りを<strong class="highlight">「機能的固着」</strong>と呼びます。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">2. 報酬がもたらす逆効果</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この実験では、興味深いデータが示されています。課題を達成できたら「報酬（ご褒美）をあげる」と約束された群と、そうでない群を比較したところ、課題を途中で諦めて辞めてしまった人の数は、報酬「なし」が10人だったのに対し、報酬「あり」は16人にのぼりました。ご褒美がある方が、かえってがんばる力が衰え、柔軟な問題解決が阻害される可能性を示唆しています。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">3. アンダーマイニング効果</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                外部からの報酬が、人の内なる意欲を損なってしまう現象を、エドワード・デシは幼児を対象とした実験で実証しました。元々絵を描くことが大好きな（内発的に動機づけられている）子どもたちを、以下の3つの条件に分けました。
+            </p>
+            <div class="bg-slate-50 p-4 rounded-xl text-xs sm:text-sm space-y-2 mb-4 text-justified">
+                <p><strong>【報酬期待群（A）】：</strong> 「上手に見せられたら、後でご褒美をあげるよ」と事前に約束して絵を描かせる。</p>
+                <p><strong>【報酬無期待群（B）】：</strong> 事前の約束はせず、楽しく描き終えた後で、サプライズとしてご褒美をあげる。</p>
+                <p><strong>【無報酬群（C）】：</strong> ご褒美の約束も支給もせず、ただ楽しく絵を描かせる。</p>
+            </div>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                その後、自由時間に子どもたちが自発的に絵を描くかどうかを観察（処置後の行動観察）しました。結果、BやCのグループの子どもたちはその後も自発的に楽しく絵を描き続けましたが、事前に報酬を期待させられたAのグループの子どもたちだけは、自発的に絵を描く割合が著しく低下してしまいました。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                これを<strong class="highlight">「アンダーマイニング効果」</strong>と呼びます。外部からの評価や報酬（成績やお金、ご褒美）を過度に期待すると、「楽しいからやる」という純粋な内的意欲（内発的動機づけ）が、「報酬をもらうための作業」へとすり替わってしまい、自発的なモチベーションが失われやすくなるのです。
+            </p>
+        </section>
+
+        <!-- 第5章 -->
+        <section class="mb-16 bg-gradient-to-br from-slate-900 to-indigo-950 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl">
+            <h2 class="text-lg sm:text-xl font-bold text-amber-400 border-b border-slate-700 pb-3 mb-6 flex items-center">
+                <span class="mr-2">🌿</span> 第5章：心身の健康を保つ暮らしのヒント ―つながりと生甲斐―
+            </h2>
+            
+            <h3 class="font-bold text-white mb-2 text-sm sm:text-base">1. 認知予備能（Cognitive Reserve）</h3>
+            <p class="text-slate-300 text-sm leading-relaxed text-justified mb-4">
+                コロンビア大学のスターン（Stern）先生らの研究によると、日常生活の中で、自ら新しいことや好きなことに挑戦している人は、認知症の発症リスクが35%減少することが報告されています。さらに、趣味や社会的な役割など、生活の中で「能動的に取り組むこと」が1つ増えるたびに、リスクがさらに8%ずつ減少していくというデータが得られています。
+            </p>
+
+            <h3 class="font-bold text-white mb-2 text-sm sm:text-base">2. 幸せの心理学：快楽と生甲斐</h3>
+            <div class="space-y-3 text-sm text-slate-200 my-4 text-justified">
+                <p><strong class="text-amber-300">・快楽（ヘドニック・ウェルビーイング）：</strong> 美味しいものを食べた、欲しいものが買えた、といった一時的な欲求の充足。こればかりに偏った生活を送ると、生物学的なストレス反応により、長期的には身体の免疫力が低下する傾向がみられることが示唆されています。</p>
+                <p><strong class="text-amber-300">・生甲斐（ユーダイモニック・ウェルビーイング）：</strong> 自分の人生には生きる意味がある、社会や誰かの役に立っている、といった持続的な自己実現の感覚。このような生甲斐を感じている人は、身体の遺伝子発現パターンが変化し、免疫力が上昇する傾向が報告されています。</p>
+            </div>
+
+            <h3 class="font-bold text-white mb-2 text-sm sm:text-base">3. 結論としての暮らしのヒント</h3>
+            <p class="text-slate-300 text-sm leading-relaxed text-justified mb-2">
+                私たちは、日々の生活がうまくいかないことや、ストレスに晒されることに直面します。しかし、そこで「外からの報酬や評価」だけに囚われてしまうと、アンダーマイニング効果によって日々の行動の楽しさが失われてしまいます。
+            </p>
+            <p class="text-slate-100 text-sm leading-relaxed text-justified font-medium bg-white/5 border border-white/10 p-4 rounded-xl">
+                健やかな発達と心身の健康を保つための本質は、「ひととの豊かなつながりの中で、他者の目を過度に気にせず、自分の好きなことを能動的に楽しく学び、使い（出力し）、目的本位に生きていくこと」にあります。頭は使えば使うほど、あるいは他者と心地よく響き合うほど、生涯にわたって維持・向上していく可能性を秘めているのです。心理学が提供するデータは、あなたの人生を縛る決定論ではなく、あなたが自分らしく生きていく方法を少しずつ学び続けるための、大切な「地図」となってくれるでしょう。
+            </p>
+        </section>
+
+        <hr class="border-slate-200 my-12">
+
+        <!-- 確認テスト＆感想フォーム -->
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-md p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span class="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md mr-3">確認テスト</span>
+                第7回 理解度確認・感想の提出
+            </h2>
+
+            <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
+                <!-- 学籍番号入力 -->
+                <div>
+                    <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
+                    <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
+                           class="w-full sm:w-64 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800">
+                </div>
+
+                <!-- 問1 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問1】単語ペア記憶テストおよびレミニセンス現象に関する説明として、実験データに基づいたとき最も適切なものはどれですか？
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 単語を学習した直後が最も記憶の量が安定しており、睡眠を挟むと時間の経過によって記憶は一律に減少する。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 大学生の実験では、学習直後（テスト1）で平均37個だった記憶数が、適切な睡眠を経た後（テスト2）では41個へと増加し、睡眠が記憶の定着を助けることが示された。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 15歳以上の平均睡眠時間の推移データをみると、有業者・無業者ともに一貫して睡眠時間は増加し続けている。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 睡眠段階の段階Ⅳ（深いノンレム睡眠）を経験しない方が、脳内の情報整理が急速に進み、レミニセンス現象が起きやすくなる。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問2 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問2】人間の知能の生涯発達変化における「流動性知能」と「結晶性知能」に関する記述として、最も正しいものはどれですか？
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 結晶性知能（はやく計算する能力など）は20代をピークに低下するが、流動性知能（人間関係の解決方法など）は高齢期になっても維持・向上する。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 数字の順唱・逆唱テスト（Digit span）のデータが示すように、作業記憶の容量は年齢を重ねるほど無限に拡大していく。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 年齢とともに新しい情報を素早く処理する流動性知能は低下する傾向があるが、長年の経験や知識に基づく結晶性知能は、高齢期になっても維持・向上しうる。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 久山町研究の推計モデルによると、日本の高齢化が進んでも、将来的な認知症の有病率や患者数は一貫して減少していくことが確定している。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問3 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問3】高齢者への介入研究において、直接訓練していない「短期記憶量（Span）」などが向上した理由を説明する心理学の概念、およびその解釈として適切なものはどれですか？
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q3" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 過去の学習が別の状況に影響する「転移（特に遠転移）」の現象であり、週2回大学に集まり他者と関わりながら楽しく頭を使う営み全体が脳の柔軟性を支えたと考えられる。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q3" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 普通乗用車の運転から自動車の運転への移行のように、類似した限られた領域のみで効果が生じる「近転移」の完全な典型例である。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q3" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 認知症のきざしである近時記憶障害が起きた場合、いかなる学習や知的な挑戦を行っても遠転移が生じる確率は統計的に0%であることが証明されている。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q3" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 音読課題や算数課題を自宅で完全に一人で、誰とも関わらずに黙々とこなすことこそが、短期記憶量を最も劇的に向上させる唯一の方法である。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問4 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問4】デシの実験で示された「アンダーマイニング効果」に関する記述として、最も適切なものはどれですか？
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q4" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 子どもに「上手く描けたらご褒美をあげる」と事前に約束して期待させる（報酬期待）と、絵を描くこと自体の純粋な楽しさ（内発的動機づけ）がかえって失われ、自発的に行動しなくなる現象。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q4" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 画鋲の箱をろうそくの台座として使うような、物の従来の用途にとらわれて新しい解決策を思いつけなくなる認知の偏りのこと。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q4" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 事前にご褒美の約束をせず、描き終えた後でサプライズとして報酬を与えた場合（報酬無期待）が、最も激しく自発的なやる気を破壊する。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q4" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 報酬を約束された群の方が、ろうそく問題の課題解決において途中で諦めてしまう人の数が統計的に有意に減少する現象。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問5 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問5】統計学における「サンプリングと信頼区間」に関する記述として、正しいものはどれですか？
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q5" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 信頼区間が広ければ広いほど、母平均の位置を極めて精密かつピンポイントに特定できていることを示している。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q5" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) まったく同じ手順でサンプリングを100回繰り返して100個の95%信頼区間を作ったとき、その変動する100個の区間のうち、およそ95個の区間が、固定された真の母平均を内部に包み込んでいる。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q5" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 95%信頼区間が「0」をその内部に含まない場合、帰無仮説は自動的に100%正しいと証明され、一切の不確実性は消失する。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q5" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) データの散らばり（標準偏差）が大きくなればなるほど、計算される信頼区間の幅はどこまでも狭くなっていく。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 感想・質問 -->
+                <div>
+                    <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
+                    <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて学んだことや、これからの自身の生活習慣の設計（睡眠、モチベーション、他者とのつながり）について考えたことを自由に記述してください。"
+                              class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 text-sm sm:text-base"></textarea>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="pt-2">
+                    <button type="submit" id="submit_btn" 
+                            class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer text-sm sm:text-base">
+                        解答と質問を送信する
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 text-xs border-t border-slate-800 mt-20">
+        <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
+    </footer>
+
+    <!-- ページ個別スクリプト：自動採点と中継API（Formspree）の結合 -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const classNum = "class_07"; // 第7回固定値
+            const studentId = document.getElementById("student_id").value;
+            const feedback = document.getElementById("student_feedback").value;
+            const btn = document.getElementById("submit_btn");
+
+            // 1. クイズの自動採点（問1: B, 問2: C, 問3: A, 問4: A, 問5: B）
+            let scoreCount = 0;
+            const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+            const q2Answer = document.querySelector('input[name="q2"]:checked').value;
+            const q3Answer = document.querySelector('input[name="q3"]:checked').value;
+            const q4Answer = document.querySelector('input[name="q4"]:checked').value;
+            const q5Answer = document.querySelector('input[name="q5"]:checked').value;
+
+            if (q1Answer === "B") scoreCount++;
+            if (q2Answer === "C") scoreCount++;
+            if (q3Answer === "A") scoreCount++;
+            if (q4Answer === "A") scoreCount++;
+            if (q5Answer === "B") scoreCount++;
+
+            const scoreRate = Math.floor((scoreCount / 5) * 100) + "%";
+            const subjectLabel = document.getElementById("subject_label").innerText;
+            const lectureTitle = document.title;
+
+            // 送信データ整形
+            const payloadData = {
+                "科目区分": subjectLabel,
+                "講義回": lectureTitle,
+                "学籍番号": studentId,
+                "クイズ得点率": scoreRate,
+                "学生からの質問・感想": feedback
+            };
+
+            // ★決定済みのFormspreeトークンIDを自動セット
+            const FORMSPREE_ID = "xjgqbqnl"; 
+
+            // ボタン表示の制御（連打防止）
+            btn.disabled = true;
+            btn.innerText = "送信中...";
+
+            // Formspreeのエンドポイントへ非同期POST通信
+            fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payloadData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert(`正常に記録されました（あなたのクイズ得点率: ${scoreRate}）。お疲れ様でした。`);
+                    btn.innerText = "送信完了";
+                } else {
+                    throw new Error("APIエラー");
+                }
+            })
+            .catch(error => {
+                console.error("Submission Error:", error);
+                alert("送信に失敗しました。時間をおいて再度送信ボタンを押してください。");
+                btn.disabled = false;
+                btn.innerText = "解答と質問を送信する";
+            });
+        }
+    </script>
+</body>
+</html>
