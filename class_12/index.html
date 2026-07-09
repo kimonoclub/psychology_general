@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ポータルの全体スキャナーが自動収集・クレンジングするタイトルタグ -->
+    <title>心理学入門：第12回 アイデンティティの模索と青年期の心の危機 ―不安やとらわれと付き合うために―：精神交互作用、マインドフルネス、およびセルフ・コンパッション</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- ★数式を確実に自動レンダリングさせるための MathJax 設定と CDN -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            chtml: {
+                matchFontHeight: false
+            },
+            startup: {
+                pageReady: () => {
+                    return MathJax.startup.defaultPageReady().then(() => {
+                        console.log('MathJax initial typesetting complete');
+                    });
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style>
+        /* 学術的気品を表現するハイライト装飾 */
+        .highlight {
+            background: linear-gradient(transparent 60%, #fef08a 60%);
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+        .text-justified {
+            text-align: justify;
+            text-justify: inter-character;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased line-height-relaxed">
+
+    <!-- 講義ヘッダー -->
+    <header class="bg-gradient-to-r from-blue-900 to-indigo-950 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <p id="subject_label" class="text-xs font-bold text-blue-300 uppercase tracking-wider">心理学入門</p>
+                <h1 id="lecture_title" class="text-sm sm:text-base font-bold text-white mt-0.5">第12回：アイデンティティの模索と青年期の心の危機</h1>
+            </div>
+            <a href="../index.html" class="text-xs bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap">講義ポータルへ戻る</a>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+        
+        <!-- タイトルエリア -->
+        <div class="text-center mb-16">
+            <p class="text-indigo-600 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">第12回 講義要約テキスト</p>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                アイデンティティの模索と青年期の心の危機<br class="hidden sm:inline">
+                <span class="text-xl sm:text-2xl text-slate-600 font-normal block mt-2">―不安やとらわれと付き合うために―</span>
+            </h1>
+            <div class="w-16 h-1 bg-indigo-600 mx-auto rounded"></div>
+        </div>
+
+        <!-- 第1章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第1章：前回の復習と認知の特性 ―システムと「とらわれ」の心理学―
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-6">
+                私たちは日常生活において、意識的に思考をコントロールしようと試みますが、そこには脳のシステムに起因する特有の罠が存在します。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">1. 象と象使い（システム1とシステム2）</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                人間の認知システムは、しばしば「象（システム1）」と「象使い（システム2）」に例えられます。
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-justified text-sm">
+                    <p class="font-bold text-indigo-950 mb-1">■ システム1（象）</p>
+                    <p class="text-slate-600">直感的、自動的、情動的に働く強力な力です。</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-justified text-sm">
+                    <p class="font-bold text-indigo-950 mb-1">■ システム2（象使い）</p>
+                    <p class="text-slate-600">論理的、理性的、意識的な思考ですが、エネルギー消費が激しく、常に象をコントロールできるわけではありません。</p>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">2. 皮肉なリバウンド現象（思考抑制の実験）</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                心理学の有名な実験に、対象者を以下の3つのグループに分けた思考抑制の記述があります。
+            </p>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 my-4 text-xs sm:text-sm space-y-1">
+                <p class="text-slate-700"><strong>・思考抑制群：</strong> 「シロクマのことだけは、絶対に考えないでください」と指示される。</p>
+                <p class="text-slate-700"><strong>・思考集中群：</strong> 「シロクマのことを考えてください」と指示される。</p>
+                <p class="text-slate-700"><strong>・自由群：</strong> 特に指示を受けない。</p>
+            </div>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                その後、すべての群に「もう考えていいですよ」と自由な状態にします。実験の結果、皮肉なことに、最初に「絶対に考えるな」と強く抑制を求められていたグループが、最も頻繁かつ強固にシロクマのことを思い出してしまうというデータが得られました。これを<strong class="highlight">「皮肉なリバウンド現象」</strong>と呼びます。私たちが特定の思考や感情を「考えないようにしよう」と努力することは、認知システムにとっては「その対象が現れないか常に監視を続けること」と同義になってしまいます。その結果、排除しようとしたはずの思考が、かえって脳内に強固に定着してしまうのです。
+            </p>
+        </section>
+
+        <!-- 第2章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第2章：青年期の特徴とアイデンティティの危機
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                思春期から青年期（12〜25歳頃）にかけて、人間の心は大きな転換期を迎えます。この時期は伝統的に「疾風怒濤（しっぷうどとう）の時代」とも表現されます。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">1. 自己意識の高まりとアイデンティティ</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                青年期は、体重の増減に一喜一憂したり、鏡に映る自分を過剰に気にするなど、「自分への意識（自己意識）」が急激に高まる時期です。就職活動におけるエントリーシートの記入や面接のように、「自分はどうやって生きていくのか」という問いに直面します。エリクソン（Erikson）が提唱した「アイデンティティ（自己同一性）」の確立において重要なのは、以下の2つのバランスです。
+            </p>
+            <div class="bg-white border border-slate-200 p-5 rounded-xl text-sm sm:text-base my-4 text-justified space-y-2">
+                <p class="flex items-center text-slate-700">💡 自分のしたいこと（内的な欲求）</p>
+                <p class="flex items-center text-slate-700">💡 他人が自分に期待すること（社会的な役割）</p>
+            </div>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                この2つのバランスが取れている状態が大切ですが、現代の日本社会は「ルールが多すぎる」「他人の目を気にしすぎる」傾向が強く、バランスを崩しやすい環境でもあります。その結果、「自分が醜いと思い込む」醜貌（しゅうぼう）恐怖や、「自分が臭いと思い込む」自己臭恐怖といった、過剰な自己意識の歪みが生じることがあります。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">2. 人は思う以上に傷つきやすい</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                発達段階によって、人間が抱く恐怖や不安の対象は以下のように変化します。
+            </p>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs sm:text-sm grid grid-cols-2 gap-2 mb-4">
+                <p class="text-slate-600">・生後6ヶ月まで：母親の不在</p>
+                <p class="text-slate-600">・7〜12ヶ月：見知らぬ人（人見知り）</p>
+                <p class="text-slate-600">・1〜5歳：親からの分離</p>
+                <p class="text-slate-600">・3〜5歳：怪物や幽霊</p>
+                <p class="text-slate-600">・6〜12歳：泥棒、先生に怒られること、失敗</p>
+                <p class="text-slate-700 font-bold">・12〜18歳（青年期）：学校のテスト、人前で恥をかくこと</p>
+            </div>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                データをみると、10代から20代半ばにかけて精神疾患の発症率が急上昇します。疾患全体の生涯有病率をみると、不安障害が**28.8%**（主な発症年齢：14歳）、大うつ病性障害が**16.8%**（主な発症年齢：32歳）にのぼり、青年期は心が生涯で最も傷つきやすく、脆い時期の一つであることが示されています。
+            </p>
+        </section>
+
+        <!-- 第3章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第3章：社交不安症と「精神交互作用」の悪循環
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                青年期に生じやすい代表的な心の危機が、「社交不安症（社交不安障害）」です。これは、人と関わるときに強い不安や恐怖を感じ、日常生活や社会生活に支障をきたす精神疾患で、日本人の約2%にみられます。主な症状には、人前でご飯が食べられなくなる「会食恐怖」、文字を書くときに手が震える「書痙（しょけい）」、他人の視線や自分の視線に恐怖する「視線恐怖」などがあります。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">1. 社交不安を駆動する自己意識のタイプ</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                スピーチ課題などを課されたとき、人の認知は以下の2つの自己意識のどちらに傾くかによって不安の強さが変わります。
+            </p>
+            <div class="space-y-3 text-sm my-4">
+                <p class="text-slate-700 text-justified"><strong class="text-indigo-900">・公的自己意識：</strong> 「自分が相手からどう見られているか」を過剰に気にする態度。不安を高めやすい性質を持ちます。</p>
+                <p class="text-slate-700 text-justified"><strong class="text-indigo-900">・私的自己意識：</strong> 「自分の内面的な感情や興味」に気持ちを向けている態度。</p>
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">2. 森田正馬が唱えた「精神交互作用」</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                日本発の精神療法を創始した森田正馬（もりた しょうま）は、社交不安や神経症が重症化するメカニズムを<strong class="highlight">「精神交互作用」</strong>という概念で説明しました。人間は、偶然生じた身体の違和感や不安に対し、一度気になると「これを消し去りたい」と意識を集中させます。しかし、意識を集中すればするほど、その感覚はさらに増幅され、とらわれが強固になります。この「症状を消そうとする頭の中の戦い（悪循環）」こそが苦しみの正体であると森田は考えました。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">3. とらわれの正体は「原始的な超・集中力」</h3>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                なぜ脳にこのような苦しい仕組みがあるのでしょうか。それは人類の進化における原始的な防衛機能に由来します。かつてサバンナの茂みで「カサッ」と音がしたとき、それをほおっておいた人間は捕食者に襲われて命を落としました。生存に関わるわずかな異変や不快感に「あえて注意を集中し、増幅して認識する脳の回路」を持っていた個体だけが生き残れたのです。つまり、現代人を苦しめる「とらわれ」の正体とは、かつて生存のために不可欠だった<strong class="highlight">「超・集中力」のスイッチが誤作動している状態</strong>だといえます。
+            </p>
+        </section>
+
+        <!-- 第4章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第4章：とらわれから降りる技法 ―マインドフルネスと行動―
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                精神交互作用の悪循環から抜け出すためのヒントは、「不安を消すこと」ではありません。不安を不快なまま、あるがままに受け止め、「目的本位」で目の前の行動を選ぶことです。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-6 mb-3">1. マインドフルネスの姿勢</h3>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                現代の臨床心理学で広く用いられるマインドフルネスは、単なるリラックス技法ではありません。それは、「今この瞬間の体験に注意を戻し、浮かんできた考えや不安を評価せず、ただあるがままに観察する（ほっておく）」という姿勢です。介入研究のデータでも、マインドフルネスのトレーニングを継続した群は、実施しなかった群（トレーニングなし）に比べて、週を追うごとにうつスコア（Depression score）が有意に減少していくことが示されています。
+            </p>
+
+            <h3 class="text-lg font-bold text-slate-800 mt-8 mb-3">2. 不安の波をやり過ごす</h3>
+            <p class="text-slate-700 leading-relaxed text-justified">
+                不安や感情の動きは、無理にコントロールしようとしなければ、時間とともに山を描いて自然と減衰していく特性を持っています。あせらず、あわてず、出てくる思いにとらわれないまま、ありのままの状態でいることで、私たちは情動の暴走をやり過ごすことができます。なお、現在の体験をメタ認知的に観察する「マインドフルネス（観察）」は、活動への完全な没入である「没頭（フロー）」とは区別されますが、「今ここに意識を向け、雑念に囚われない」という実践的な方向性においては共通しています。
+            </p>
+        </section>
+
+        <!-- 第5章 -->
+        <section class="mb-16 bg-gradient-to-br from-slate-900 to-indigo-950 text-slate-100 p-6 sm:p-8 rounded-2xl shadow-xl">
+            <h2 class="text-lg sm:text-xl font-bold text-amber-400 border-b border-slate-700 pb-3 mb-6 flex items-center">
+                <span class="mr-2">🛡️</span> 第5章：ストレスの脳神経科学とセルフ・コンパッション
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed text-justified mb-4">
+                私たちが強いストレスや自責の念に晒されているとき、脳の奥深くにある扁桃体が過剰に活性化し、視床下部を通じてストレスホルモンであるコルチゾールが分泌されます。コルチゾールは血液中の血糖値を急上昇させて脳のエネルギーを確保する一方、消化や生殖などの機能を一時的に抑え、免疫反応を抑制します。
+            </p>
+            <p class="text-slate-300 text-sm leading-relaxed text-justified mb-4">
+                この反応が慢性的になると健康を損ないます。特に幼少期に強いストレスに晒される「ACE（逆境的小境期体験）」を多く持つ人は、将来的なうつ、糖尿病、心臓病などのリスクが上昇し、平均寿命が短くなる可能性が公衆衛生上のデータから指摘されています。
+            </p>
+
+            <h3 class="font-bold text-white mb-2 text-sm sm:text-base mt-6">■ セルフ・コンパッションという対抗策</h3>
+            <p class="text-slate-300 text-sm leading-relaxed text-justified mb-4">
+                この過剰なストレス回路を鎮めるための強力なアプローチが、クリスティン・ネフ（Kristin Neff）らの提唱する<strong class="text-amber-300">「セルフ・コンパッション（Self-Compassion）」</strong>です。これは自分を厳しく責めるのをやめ、「大切な友人に接するように温かく自分を思いやる態度」を指します。
+            </p>
+
+            <!-- 比較表の最適化実装 -->
+            <div class="overflow-x-auto my-4 text-xs sm:text-sm">
+                <table class="w-full text-left border-collapse bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                    <thead>
+                        <tr class="bg-white/10 text-amber-300 font-bold">
+                            <th class="p-3 border-b border-white/10">項目</th>
+                            <th class="p-3 border-b border-white/10">自力（自己批判）の対応</th>
+                            <th class="p-3 border-b border-white/10">セルフ・コンパッションの対応</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-300 divide-y divide-white/10">
+                        <tr>
+                            <td class="p-3 font-bold bg-white/5">心の状態</td>
+                            <td class="p-3">緊張、自責、孤独感</td>
+                            <td class="p-3 text-emerald-300">安心感、あるがままの受容、つながり</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold bg-white/5">困難への反応</td>
+                            <td class="p-3">「なぜ私だけがこんな目に…」という孤立</td>
+                            <td class="p-3 text-emerald-300">「人間であれば誰にでもあること」という普遍性</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold bg-white/5">人間関係</td>
+                            <td class="p-3">自分に厳しい分、他人にも厳しくなる</td>
+                            <td class="p-3 text-emerald-300">自分を許せる分、周囲にも寛容になれる</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold bg-white/5">結果</td>
+                            <td class="p-3">心がやせ細り、疲弊する</td>
+                            <td class="p-3 text-emerald-300">心が豊かに潤い、回復力が高まる</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed text-justified">
+                近年、神経科学研究において、セルフ・コンパッションの実践は「脅威を検知する扁桃体の過剰活動を鎮めること」、そして脳内で「絆のホルモン」と呼ばれる「オキシトシン」の分泌を促し、心拍を落ち着かせ、身体の回復（レジリエンス）を助けることが報告されています。
+            </p>
+        </section>
+
+        <!-- 第6章 -->
+        <section class="mb-16">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-4 mb-6">
+                第6章：結び ―自分という人間と踊る―
+            </h2>
+            <p class="text-slate-700 leading-relaxed text-justified mb-4">
+                発達とは、自分を完璧な別人に作り変えることではありません。個人差研究や臨床心理学の視点から見ると、青年期という揺らぎやすい時期において、自分という人間の気質やクセ（不完全な地図）をありのままに受け止め、自分を大切にする習慣を少しずつ育てていく過程こそが、アイデンティティ確立への道筋なのです。
+            </p>
+            <p class="text-slate-700 leading-relaxed text-justified font-medium text-indigo-950 bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                「好きなことが自分を救ってくれる」という言葉のように、自分の興味や目的に沿って能動的に活動する習慣を持つことは、過剰な公的自己意識（他人の目）からあなたを解放してくれます。自分を責めず、今この瞬間の体験とステップを踏みながら、自分らしく生きる方法を学び続けていきましょう。
+            </p>
+        </section>
+
+        <hr class="border-slate-200 my-12">
+
+        <!-- 確認テスト＆感想フォーム（4問版に最適化） -->
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-md p-6 sm:p-8">
+            <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center">
+                <span class="bg-indigo-600 text-white text-xs px-2.5 py-1 rounded-md mr-3">確認テスト</span>
+                第12回 理解度確認・感想の提出
+            </h2>
+
+            <form id="lecture_form" onsubmit="submitForm(event)" class="space-y-6">
+                <!-- 学籍番号入力 -->
+                <div>
+                    <label for="student_id" class="block text-sm font-bold text-slate-700 mb-2">学籍番号</label>
+                    <input type="text" id="student_id" required placeholder="例: 13（半角数字）" 
+                           class="w-full sm:w-64 px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800">
+                </div>
+
+                <!-- 問1 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問1】心理学でいう「皮肉なリバウンド現象」に関する記述として、実験データに基づいたとき最も適切なものはどれですか？
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 最初に「シロクマのことを絶対に考えるな」と指示された抑制群が、自由になった後、最も頻繁にシロクマのことを思い出してしまった。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 「考えないようにしよう」と努力することは、脳の扁桃体を完全に破壊し、一切の記憶を消去する効果を持つ。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 思考集中群（シロクマのことを考えてと指示された群）は、自由になった後、シロクマに関する記憶が統計的に0個になった。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q1" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 皮肉なリバウンド現象は、日本の高齢者の計算・音読訓練においてのみ特異的に観察される転移の現象である。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問2 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問2】青年期の発達的特徴、およびアイデンティティ（自己同一性）に関する記述として、最も正しいものはどれですか？
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 青年期は自己意識が低下するため、自分の体型や他者からの見え方をまったく気にしなくなる時期である。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) アイデンティティの確立において重要なのは、「自分のしたいこと（内的な欲求）」と「他人が自分に期待すること（社会的な役割）」のバランスが取れていることである。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) 生涯有病率のデータをみると、大うつ病性障害や不安障害の大部分は、生後6ヶ月までの乳児期にすでに発症が集中している。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q2" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 日本社会は他人の目を気にするルールが非常に少ないため、醜貌恐怖や自己臭恐怖といったとらわれは理論的に発生しない。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問3 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問3】森田正馬が提唱した「精神交互作用」の本質、およびその進化的背景に関する説明として、最も適切なものはどれですか？
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q3" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 不安や違和感を「消し去ろう」と意識を集中して戦うほど、かえってその感覚が増幅されてとらわれの悪循環に陥る現象であり、これは原始のサバンナを生き抜くための「超・集中力」のスイッチの誤作動である。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q3" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 精神交互作用とは、他人の目を一切気にしない「私的自己意識」のみが過剰に駆動された結果、計算能力が無限に向上していく現象を指す。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q3" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) サバンナで草むらの物音を完全に無視して「ほっておく」個体だけが生き残れたため、現代の脳には不安を検知する回路がそもそも備わっていない。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q3" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 精神交互作用の悪循環を断つ唯一の解決策は、システム2（象使い）の力だけで、システム1（象）の情動を100%力ずくでねじ伏せることである。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 問4 -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-150">
+                    <p class="font-bold text-slate-800 text-sm sm:text-base mb-3">
+                        【問4】力強く機能する「セルフ・コンパッション」について、脳神経科学的な示唆を含んだ説明として正しいものはどれですか？
+                    </p>
+                    <div class="space-y-3 text-sm sm:text-base">
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q4" value="A" required class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">A) 困難に直面した際、「なぜ自分だけがこんな目に」と自分を厳しく徹底的に批判し、孤独感を高めること。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q4" value="B" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">B) 大切な友人に接するように温かく自分を思いやる態度であり、脳内の扁桃体の過剰活動を鎮め、回復を助けるオキシトシンの分泌を促すことが報告されている。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q4" value="C" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">C) セルフ・コンパッションとは、単なる「自分への甘やかし」であり、実践すると他者への寛容性が著しく低下して心がやせ細る。</span>
+                        </label>
+                        <label class="flex items-start space-x-3 cursor-pointer">
+                            <input type="radio" name="q4" value="D" class="w-4 h-4 mt-1 text-indigo-600 focus:ring-indigo-500">
+                            <span class="text-slate-700">D) 慢性的なストレスによって分泌されるコルチゾールは、筋肉の血糖値を一律に低下させ、消化や生殖機能を劇的に活性化させるホルモンである。</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 感想・質問 -->
+                <div>
+                    <label for="student_feedback" class="block text-sm font-bold text-slate-700 mb-2">講義の感想・質問（自由記述）</label>
+                    <textarea id="student_feedback" rows="4" required placeholder="今回の講義を通じて、「アイデンティティの模索」や、とらわれから降りるための「マインドフルネス・セルフコンパッション」の実践について考えたことを自由に記述してください。"
+                              class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-slate-800 text-sm sm:text-base"></textarea>
+                </div>
+
+                <!-- 送信ボタン -->
+                <div class="pt-2">
+                    <button type="submit" id="submit_btn" 
+                            class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-md hover:shadow-lg active:scale-98 cursor-pointer text-sm sm:text-base">
+                        解答と質問を送信する
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 text-xs border-t border-slate-800 mt-20">
+        <p>&copy; 2026 四国大学 心理学入門 講義ポータル All Rights Reserved.</p>
+    </footer>
+
+    <!-- ページ個別スクリプト：自動採点と中継API（Formspree）の結合 -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const classNum = "class_12"; // 第12回固定値
+            const studentId = document.getElementById("student_id").value;
+            const feedback = document.getElementById("student_feedback").value;
+            const btn = document.getElementById("submit_btn");
+
+            // 1. クイズの自動採点（問1: A, 問2: B, 問3: A, 問4: B）※問5は指示通り削除
+            let scoreCount = 0;
+            const q1Answer = document.querySelector('input[name="q1"]:checked').value;
+            const q2Answer = document.querySelector('input[name="q2"]:checked').value;
+            const q3Answer = document.querySelector('input[name="q3"]:checked').value;
+            const q4Answer = document.querySelector('input[name="q4"]:checked').value;
+
+            if (q1Answer === "A") scoreCount++;
+            if (q2Answer === "B") scoreCount++;
+            if (q3Answer === "A") scoreCount++;
+            if (q4Answer === "B") scoreCount++;
+
+            const scoreRate = Math.floor((scoreCount / 4) * 100) + "%";
+            const subjectLabel = document.getElementById("subject_label").innerText;
+            const lectureTitle = document.title;
+
+            // 送信データ構造の整形
+            const payloadData = {
+                "科目区分": subjectLabel,
+                "講義回": lectureTitle,
+                "学籍番号": studentId,
+                "クイズ得点率": scoreRate,
+                "学生からの質問・感想": feedback
+            };
+
+            // ★FormspreeトークンIDをバインド
+            const FORMSPREE_ID = "xjgqbqnl"; 
+
+            btn.disabled = true;
+            btn.innerText = "送信中...";
+
+            // Formspreeの正規エンドポイントへ非同期POST通信
+            fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payloadData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert(`正常に記録されました（あなたのクイズ得点率: ${scoreRate}）。お疲れ様でした。`);
+                    btn.innerText = "送信完了";
+                } else {
+                    throw new Error("APIエラー");
+                }
+            })
+            .catch(error => {
+                console.error("Submission Error:", error);
+                alert("送信に失敗しました。時間をおいて再度送信ボタンを押してください。");
+                btn.disabled = false;
+                btn.innerText = "解答と質問を送信する";
+            });
+        }
+    </script>
+</body>
+</html>
